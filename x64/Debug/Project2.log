@@ -1,0 +1,22 @@
+﻿  Source.cpp
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(68): warning C4129: ' ': unrecognized character escape sequence
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(220): warning C4101: 'rgb_info': unreferenced local variable
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(35): warning C4305: 'argument': truncation from 'double' to 'const float'
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctions.h(1196): note: see reference to function template instantiation 'T Eigen::internal::generic_fast_tanh_float<float>(const T &)' being compiled
+          with
+          [
+              T=float
+          ]
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(36): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(37): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(38): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(39): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(40): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(41): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(44): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(45): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(46): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(47): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(114): warning C4715: 'eyeRegion': not all control paths return a value
+  Project2.vcxproj -> C:\Users\LatinRealSense\Documents\Visual Studio 2015\Projects\CopiaRetanguloNaRegiaoDosOlhos\x64\Debug\Project2.exe
+  Project2.vcxproj -> C:\Users\LatinRealSense\Documents\Visual Studio 2015\Projects\CopiaRetanguloNaRegiaoDosOlhos\x64\Debug\Project2.pdb (Partial PDB)
