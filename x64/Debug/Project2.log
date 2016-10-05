@@ -1,6 +1,6 @@
 ﻿  Source.cpp
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(68): warning C4129: ' ': unrecognized character escape sequence
-c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(220): warning C4101: 'rgb_info': unreferenced local variable
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(226): warning C4101: 'rgb_info': unreferenced local variable
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(35): warning C4305: 'argument': truncation from 'double' to 'const float'
   c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctions.h(1196): note: see reference to function template instantiation 'T Eigen::internal::generic_fast_tanh_float<float>(const T &)' being compiled
           with
@@ -17,6 +17,19 @@ c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonare
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(45): warning C4305: 'argument': truncation from 'double' to 'const float'
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(46): warning C4305: 'argument': truncation from 'double' to 'const float'
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(47): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(114): warning C4715: 'eyeRegion': not all control paths return a value
-  Project2.vcxproj -> C:\Users\LatinRealSense\Documents\Visual Studio 2015\Projects\CopiaRetanguloNaRegiaoDosOlhos\x64\Debug\Project2.exe
-  Project2.vcxproj -> C:\Users\LatinRealSense\Documents\Visual Studio 2015\Projects\CopiaRetanguloNaRegiaoDosOlhos\x64\Debug\Project2.pdb (Partial PDB)
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\ref.h(215): error C2338: THIS_EXPRESSION_IS_NOT_A_LVALUE__IT_IS_READ_ONLY
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(96): note: see reference to function template instantiation 'Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>::Ref<Derived>(const Eigen::DenseBase<Derived> &,Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true> *)' being compiled
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(96): note: see reference to function template instantiation 'Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>::Ref<Derived>(const Eigen::DenseBase<Derived> &,Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true> *)' being compiled
+          with
+          [
+              Derived=Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(216): note: see reference to function template instantiation 'void pinvEigen<Derived>(const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>> &,Eigen::MatrixBase<Derived> &,bool)' being compiled
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]

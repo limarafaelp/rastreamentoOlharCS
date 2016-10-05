@@ -185,7 +185,12 @@ Mat drawCircle(int i, int j, int m, int n)
 
 int wmain(int argc, WCHAR* argv[])
 {
+	clock_t t1 = clock();
 	teste();
+	//printf("HELLOOOOOOO!");
+	clock_t t2 = clock();
+	double diff = double(t2 - t1) / CLOCKS_PER_SEC;
+	printf("tempo para calcular inversa: %f", diff);
 	return 1111;
 
 	int flag = false; //MUDAR ISSO

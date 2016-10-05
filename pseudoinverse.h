@@ -70,7 +70,77 @@ void printEigenMatrix(Eigen::MatrixXf *A)
 	printf("\n");
 	//A->lpNorm<Infinity>();
 }
-/*Mat pinv(Mat A, Mat *iA_1 = NULL)
+
+template<typename T1>
+void pinvEigen(
+	const Ref <Eigen::MatrixXf>&A,
+	Eigen::MatrixBase<T1> & iA,
+	bool iA_isNULL)
+{
+	const double eps = 0.0000000001;
+	int m = A.rows();
+	int n = A.cols();
+
+	if (n == 1)
+	{
+		double x = A.norm();
+		iA = A.transpose().eval();
+		if (x != 0)
+			iA /= x;
+	}
+
+	int k0;
+	if (iA_isNULL)
+	{
+		k0 = 1;
+		pinvEigen(A.leftCols(1), iA, true);
+	}
+	else
+	{
+		k0 = n - 1;
+	}
+
+	for (int k = k0; k < n; k++)
+	{
+		//Eigen::Map<Eigen::MatrixXd, 0, Eigen::OuterStride<> >
+		//	map2(block.data(), block.rows(), block.cols(), Eigen::OuterStride<>(block.outerStride()));
+
+		// Nao funciona assim
+		//Ref <T1> &A1 = A.leftCols(k);
+		//Ref <const MatrixXf> &a = A.col(k);
+		//Ref <const MatrixXf> &g = iA*a;
+		//Ref <const MatrixXf> &bloco_sup, &c;
+
+		//Eigen::Map <Eigen::MatrixXf, 0, Eigen::OuterStride<>> A1(A.leftCols(k), A.rows(), k, Eigen::OuterStride<>(A.leftCols(k).outerStride()));
+		//Eigen::Map <Eigen::MatrixXf, 0, Eigen::OuterStride<>> a(A.col(k), A.rows(), 1, Eigen::OuterStride<>(A.col(k).outerStride()));
+		//MatrixXf block_sup, c;
+
+		Ref <T1> A1 = A.leftCols(k);
+		Ref <const MatrixXf> a = A.col(k);
+		Ref <const MatrixXf> g = iA*a;
+		MatrixXf bloco_sup, c;
+
+		float gg = g.squaredNorm();
+		
+		bloco_sup = a - A1*g;
+		if ((A1*g - a).lpNorm<Eigen::Infinity>() < eps)
+		{
+			g.transposeInPlace();
+			c = (1 / (1 + gg))*g*iA;
+			g.transposeInPlace();
+		}
+		else
+		{			
+			pinvEigen(bloco_sup, c, false);
+		}
+		iA.resize(iA.rows() + 1, iA.cols());
+		iA << bloco_sup,
+			c;
+	}
+
+}
+
+Mat pinv(Mat A, Mat *iA_1 = NULL)
 {
 	// Calcula a pseudoinversa da matriz A = [a1 | ... | ak] //
 	 // onde iA_1 é a pseudoinversa de [a1 | ... | ak-1]       //
@@ -126,60 +196,9 @@ void printEigenMatrix(Eigen::MatrixXf *A)
 		vconcat(iA - g*c, c, iA);
 	}
 	return iA;
-}*/
-
-Eigen::MatrixXf pinv(
-	const Ref <const MatrixXf>& A,
-	const Ref <const MatrixXf> &iA_1 = NULL)
-{
-	Ref <MatrixXf> &iA;
-
-	const double eps = 0.0000000001;
-	int m = A->rows();
-	int n = A->cols();
-
-	if (n == 1)
-	{
-		double x = A->squaredNorm();
-		iA = A->transpose();
-		if (x != 0)
-			iA /= x;
-		return iA;
-	}
-
-	int k0;
-	if (iA_1 == NULL)
-	{
-		k0 = 1;
-		iA = pinv(A.topLeftCorner(1, m));
-	}
-	else
-	{
-		k0 = n - 1;
-		iA = iA_1;
-	}
-
-	for (int k = k0; k < n; k++)
-	{
-		const Ref <const Matrix> A1 = A.topLeftCorner(k, m);
-		const Ref <const Matrix> a = A.col(k);
-		MatrixXf g = iA*a;
-		double gg = g.squaredNorm();
-
-		MatrixXf c;
-		if ((A1*g - a).lpNorm <Infinity>() < eps)
-		{
-			g = g.transpose();
-			c = (1. / (1 + gg))*g*iA;
-			g = g.transpose();
-		}
-		else
-			c = pinv(a - A1*g);
-		MatrixXf ret(iA.rows() + 1, iA.cols());
-		ret << a - A1*g, c;
-		return ret
-	}
 }
+
+
 void teste()
 {
 	/*Mat I(Mat::eye(cv::Size(3,3), CV_64FC1)); //CV_64FC1
@@ -189,20 +208,31 @@ void teste()
 	//double data[4] = { 1,3,2,3 };
 	//Mat A = Mat(4, 1, CV_64FC1, data);
 	double data[14] = { 2,2,3,1,2,3,4,-1,2,0,0,7,5,4 };
-	Mat A = Mat(2, 7, CV_64FC1, data);
-	printMatrix(A);
-	time_t begin, end;
-	begin = clock();
-	Mat iA = pinv(A, NULL);
-	end = clock();
-	double dt = (double(end - begin)) / CLOCKS_PER_SEC;
-	printf("%f segundos", dt);
-	printMatrix(iA);
+	//Mat A = Mat(2, 7, CV_64FC1, data);
+	Mat A = Mat(14, 1, CV_64FC1, data);
 
-	Eigen::MatrixXf iA_eigen;
+	Eigen::MatrixXf A_eigen, iA_eigen;
+	cv2eigen(A, A_eigen);
+	pinvEigen(A_eigen, iA_eigen, true);
+/*
+	cout << "A" << endl;
+	cout << A_eigen;
+	cout << "pinv(A)" << endl;
+	cout << iA_eigen;
+*/
+	//printMatrix(A);
+	//time_t begin, end;
+	//begin = clock();
+	//Mat iA = pinv(A, NULL);
+	//end = clock();
+	//double dt = (double(end - begin)) / CLOCKS_PER_SEC;
+	//printf("%f segundos", dt);
+	//printMatrix(iA);
+
+	/*Eigen::MatrixXf iA_eigen;
 	cv2eigen(iA, iA_eigen);
 	printEigenMatrix(&iA_eigen);
-
+	*/
 	//Ref<MatrixXd> sub = iA_eigen.block(1, 2, 1, 1);
 	//iA_eigen.block<1, 2>(1, 1);
 }
