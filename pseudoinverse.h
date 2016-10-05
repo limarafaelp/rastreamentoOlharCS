@@ -65,16 +65,18 @@ void printEigenMatrix(Eigen::MatrixXf *A)
 		{
 			printf("%.7f\t", (*A)(i, j));
 		}
-		printf("%.7f\ ]\n", (*A)(i, n-1));
+		printf("%.7f\ ]\n", (*A)(i, n - 1));
 	}
 	printf("\n");
 	//A->lpNorm<Infinity>();
 }
 
-template<typename T1>
+//estava const Ref <Eigen::MatrixXf>&A,
+//estava Eigen::MatrixBase<T1> & iA,
+template<typename T1, typename T2>
 void pinvEigen(
-	const Ref <Eigen::MatrixXf>&A,
-	Eigen::MatrixBase<T1> & iA,
+	const Eigen::MatrixBase<T1> & A,
+	const Eigen::MatrixBase<T2> & iA,
 	bool iA_isNULL)
 {
 	const double eps = 0.0000000001;
@@ -84,6 +86,8 @@ void pinvEigen(
 	if (n == 1)
 	{
 		double x = A.norm();
+		///A.resize
+		//iA.resize(A.cols(), A.rows());
 		iA = A.transpose().eval();
 		if (x != 0)
 			iA /= x;
@@ -213,6 +217,9 @@ void teste()
 
 	Eigen::MatrixXf A_eigen, iA_eigen;
 	cv2eigen(A, A_eigen);
+	cout << "Matriz A" << endl;
+	cout << A_eigen;
+	
 	pinvEigen(A_eigen, iA_eigen, true);
 /*
 	cout << "A" << endl;

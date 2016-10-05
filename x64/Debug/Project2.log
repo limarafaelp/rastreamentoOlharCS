@@ -17,18 +17,96 @@ c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonare
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(45): warning C4305: 'argument': truncation from 'double' to 'const float'
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(46): warning C4305: 'argument': truncation from 'double' to 'const float'
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(47): warning C4305: 'argument': truncation from 'double' to 'const float'
-c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\ref.h(215): error C2338: THIS_EXPRESSION_IS_NOT_A_LVALUE__IT_IS_READ_ONLY
-  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(96): note: see reference to function template instantiation 'Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>::Ref<Derived>(const Eigen::DenseBase<Derived> &,Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true> *)' being compiled
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(91): error C2678: binary '=': no operator found which takes a left-hand operand of type 'const Eigen::MatrixBase<Derived>' (or there is no acceptable conversion)
           with
           [
-              Derived=Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true>
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
           ]
-  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(96): note: see reference to function template instantiation 'Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>::Ref<Derived>(const Eigen::DenseBase<Derived> &,Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true> *)' being compiled
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\matrixbase.h(137): note: could be 'Eigen::Matrix<float,-1,-1,0,-1,-1> &Eigen::MatrixBase<Derived>::operator =(const Eigen::MatrixBase<Derived> &)'
           with
           [
-              Derived=Eigen::Block<const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>>,-1,-1,true>
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
           ]
-  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(216): note: see reference to function template instantiation 'void pinvEigen<Derived>(const Eigen::Ref<Eigen::MatrixXf,0,Eigen::OuterStride<-1>> &,Eigen::MatrixBase<Derived> &,bool)' being compiled
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\assign.h(73): note: or       'Derived &Eigen::MatrixBase<Derived>::operator =<Eigen::Matrix<float,-1,-1,1,-1,-1>>(const Eigen::EigenBase<Eigen::Matrix<float,-1,-1,1,-1,-1>> &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\assign.h(64): note: or       'Derived &Eigen::MatrixBase<Derived>::operator =<Eigen::Matrix<float,-1,-1,1,-1,-1>>(const Eigen::DenseBase<Eigen::Matrix<float,-1,-1,1,-1,-1>> &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(91): note: while trying to match the argument list '(const Eigen::MatrixBase<Derived>, const Eigen::Matrix<float,-1,-1,1,-1,-1>)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(223): note: see reference to function template instantiation 'void pinvEigen<Derived,Derived>(const Eigen::MatrixBase<Derived> &,const Eigen::MatrixBase<Derived> &,bool)' being compiled
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(93): error C2678: binary '/=': no operator found which takes a left-hand operand of type 'const Eigen::MatrixBase<Derived>' (or there is no acceptable conversion)
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\densebase.h(390): note: could be 'Eigen::Matrix<float,-1,-1,0,-1,-1> &Eigen::DenseBase<Derived>::operator /=(const float &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\opencv-3.1.0\build\include\opencv2\core\operations.hpp(260): note: or       'const cv::Mat &cv::operator /=(const cv::Mat &,const double &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\operations.hpp(260): note: or       'cv::Mat &cv::operator /=(cv::Mat &,const double &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\operations.hpp(257): note: or       'const cv::Mat &cv::operator /=(const cv::Mat &,const cv::Mat &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\operations.hpp(257): note: or       'cv::Mat &cv::operator /=(cv::Mat &,const cv::Mat &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\mat.inl.hpp(3265): note: or       'const cv::Mat &cv::operator /=(const cv::Mat &,const cv::MatExpr &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\mat.inl.hpp(3258): note: or       'cv::Mat &cv::operator /=(cv::Mat &,const cv::MatExpr &)'
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(93): note: while trying to match the argument list '(const Eigen::MatrixBase<Derived>, double)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(140): error C2663: 'Eigen::DenseBase<Derived>::resize': 2 overloads have no legal conversion for 'this' pointer
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(141): error C2678: binary '<<': no operator found which takes a left-hand operand of type 'const Eigen::MatrixBase<Derived>' (or there is no acceptable conversion)
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\densebase.h(307): note: could be 'Eigen::CommaInitializer<Derived> Eigen::DenseBase<Derived>::operator <<(const float &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\opencv-3.1.0\build\include\opencv2\core\cvstd.inl.hpp(181): note: or       'std::ostream &cv::operator <<(std::ostream &,const cv::Mat &)'
+  c:\opencv-3.1.0\build\include\opencv2\core\cvstd.inl.hpp(172): note: or       'std::ostream &cv::operator <<(std::ostream &,cv::Ptr<cv::Formatted>)'
+  c:\opencv-3.1.0\build\include\opencv2\core\cvstd.inl.hpp(166): note: or       'std::ostream &cv::operator <<(std::ostream &,const cv::String &)'
+  c:\opencv-3.1.0\build\include\opencv2\core.hpp(2930): note: or       'cv::String &cv::operator <<(cv::String &,const cv::Mat &)'
+  c:\opencv-3.1.0\build\include\opencv2\core.hpp(2921): note: or       'cv::String &cv::operator <<(cv::String &,cv::Ptr<cv::Formatted>)'
+  c:\opencv-3.1.0\build\include\opencv2\core\persistence.hpp(1082): note: or       'cv::FileStorage &cv::operator <<(cv::FileStorage &,char *)'
+  c:\opencv-3.1.0\build\include\opencv2\core\persistence.hpp(1074): note: or       'cv::FileStorage &cv::operator <<(cv::FileStorage &,const char *)'
+  c:\opencv-3.1.0\build\include\opencv2\core\persistence.hpp(741): note: or       'cv::FileStorage &cv::operator <<(cv::FileStorage &,const cv::String &)'
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\commainitializer.h(153): note: or       'Eigen::CommaInitializer<Derived> Eigen::DenseBase<Derived>::operator <<<Derived>(const Eigen::DenseBase<Derived> &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\opencv-3.1.0\build\include\opencv2\core\persistence.hpp(1059): note: or       'cv::FileStorage &cv::operator <<<Eigen::MatrixXf>(cv::FileStorage &,const _Tp &)'
+          with
+          [
+              _Tp=Eigen::MatrixXf
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\io.h(231): note: or       'std::ostream &Eigen::operator <<<Derived>(std::ostream &,const Eigen::DenseBase<Derived> &)'
+          with
+          [
+              Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
+          ]
+  c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(141): note: while trying to match the argument list '(const Eigen::MatrixBase<Derived>, Eigen::MatrixXf)'
           with
           [
               Derived=Eigen::Matrix<float,-1,-1,0,-1,-1>
