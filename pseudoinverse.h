@@ -73,10 +73,12 @@ void printEigenMatrix(Eigen::MatrixXf *A)
 
 //estava const Ref <Eigen::MatrixXf>&A,
 //estava Eigen::MatrixBase<T1> & iA,
-template<typename T1, typename T2>
+template<typename T1, typename T2> //typename
 void pinvEigen(
-	const Eigen::MatrixBase<T1> & A,
-	const Eigen::MatrixBase<T2> & iA,
+	Eigen::MatrixBase<T1> & A,
+	Eigen::MatrixBase<T2> & iA,
+	//Ref T1  A,
+	//Ref T2 iA,
 	bool iA_isNULL)
 {
 	const double eps = 0.0000000001;
@@ -92,42 +94,31 @@ void pinvEigen(
 		if (x != 0)
 			iA /= x;
 	}
-
+	
 	int k0;
 	if (iA_isNULL)
 	{
 		k0 = 1;
-		pinvEigen(A.leftCols(1), iA, true);
+		//pinvEigen(A.leftCols(1), iA, true);  // <-- NAO ESTA FUNCIONANDO!
 	}
 	else
 	{
 		k0 = n - 1;
 	}
-
+	/*
 	for (int k = k0; k < n; k++)
 	{
-		//Eigen::Map<Eigen::MatrixXd, 0, Eigen::OuterStride<> >
-		//	map2(block.data(), block.rows(), block.cols(), Eigen::OuterStride<>(block.outerStride()));
-
-		// Nao funciona assim
-		//Ref <T1> &A1 = A.leftCols(k);
-		//Ref <const MatrixXf> &a = A.col(k);
-		//Ref <const MatrixXf> &g = iA*a;
-		//Ref <const MatrixXf> &bloco_sup, &c;
-
-		//Eigen::Map <Eigen::MatrixXf, 0, Eigen::OuterStride<>> A1(A.leftCols(k), A.rows(), k, Eigen::OuterStride<>(A.leftCols(k).outerStride()));
-		//Eigen::Map <Eigen::MatrixXf, 0, Eigen::OuterStride<>> a(A.col(k), A.rows(), 1, Eigen::OuterStride<>(A.col(k).outerStride()));
-		//MatrixXf block_sup, c;
-
-		Ref <T1> A1 = A.leftCols(k);
+		//auto A1 = A.leftCols(k);
 		Ref <const MatrixXf> a = A.col(k);
 		Ref <const MatrixXf> g = iA*a;
 		MatrixXf bloco_sup, c;
 
 		float gg = g.squaredNorm();
 		
-		bloco_sup = a - A1*g;
-		if ((A1*g - a).lpNorm<Eigen::Infinity>() < eps)
+		bloco_sup = a - A.leftCols(k)*g;
+		MatrixXf aux = A.leftCols(k)*g - a;
+
+		if (aux.lpNorm<Eigen::Infinity>() < eps)
 		{
 			g.transposeInPlace();
 			c = (1 / (1 + gg))*g*iA;
@@ -138,10 +129,9 @@ void pinvEigen(
 			pinvEigen(bloco_sup, c, false);
 		}
 		iA.resize(iA.rows() + 1, iA.cols());
-		iA << bloco_sup,
-			c;
+		iA << bloco_sup, c;
 	}
-
+	*/
 }
 
 Mat pinv(Mat A, Mat *iA_1 = NULL)
