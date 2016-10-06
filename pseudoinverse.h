@@ -33,6 +33,9 @@
 
 #include <Eigen/Core>
 #include <Eigen/Dense>
+#include <Eigen/Eigen>
+//#include <Eigen/src/Core/Block.h>
+//#include<Eigen/src/Core/DenseBase.h>
 #include <opencv2/core/eigen.hpp>
 
 using namespace Eigen;
@@ -71,67 +74,87 @@ void printEigenMatrix(Eigen::MatrixXf *A)
 	//A->lpNorm<Infinity>();
 }
 
+template<typename Number, typename T1>
+void foo(Number &x, const Eigen::DenseBase<T1>& matrix)
+{
+	MatrixXf AA = matrix.eval();
+	cout << AA.lpNorm<2>();
+	//matrix.template lpNorm<2>();
+	//return matrix.lpNorm<2>();
+}
+
 //estava const Ref <Eigen::MatrixXf>&A,
 //estava Eigen::MatrixBase<T1> & iA,
 template<typename T1, typename T2> //typename
 void pinvEigen(
-	Eigen::MatrixBase<T1> & A,
-	Eigen::MatrixBase<T2> & iA,
-	//Ref T1  A,
-	//Ref T2 iA,
+	Eigen::DenseBase<T1> & A,
+	Eigen::DenseBase<T2> & iA,
+	//Eigen::MatrixBase<T1> & A,
+	//Eigen::MatrixBase<T2> & iA,
 	bool iA_isNULL)
 {
 	const double eps = 0.0000000001;
 	int m = A.rows();
 	int n = A.cols();
 
-	if (n == 1)
+	if (iA_isNULL) //Deve ser chamada também quando n == 1
 	{
-		double x = A.norm();
-		///A.resize
-		//iA.resize(A.cols(), A.rows());
-		iA = A.transpose().eval();
+		cout << "NORMA DE A" << endl;
+		MatrixXf AA = A.leftCols(1).eval();
+		double x = AA.squaredNorm();
+
+		iA = AA.transpose().eval();
 		if (x != 0)
 			iA /= x;
 	}
-	
-	int k0;
-	if (iA_isNULL)
+	if(n != 1)
 	{
-		k0 = 1;
-		//pinvEigen(A.leftCols(1), iA, true);  // <-- NAO ESTA FUNCIONANDO!
-	}
-	else
-	{
-		k0 = n - 1;
-	}
-	/*
-	for (int k = k0; k < n; k++)
-	{
-		//auto A1 = A.leftCols(k);
-		Ref <const MatrixXf> a = A.col(k);
-		Ref <const MatrixXf> g = iA*a;
-		MatrixXf bloco_sup, c;
-
-		float gg = g.squaredNorm();
-		
-		bloco_sup = a - A.leftCols(k)*g;
-		MatrixXf aux = A.leftCols(k)*g - a;
-
-		if (aux.lpNorm<Eigen::Infinity>() < eps)
+		int k0;
+		if (iA_isNULL)
 		{
-			g.transposeInPlace();
-			c = (1 / (1 + gg))*g*iA;
-			g.transposeInPlace();
+			k0 = 1;
 		}
 		else
-		{			
-			pinvEigen(bloco_sup, c, false);
+		{
+			k0 = n - 1;
 		}
-		iA.resize(iA.rows() + 1, iA.cols());
-		iA << bloco_sup, c;
+		
+		for (int k = k0; k < n; k++)
+		{
+			//cout << "iA ate agora:" << endl << iA << endl;
+			auto A1 = A.leftCols(k);
+			Ref <const MatrixXf> iA_mat = iA;
+			Ref <const MatrixXf> a = A.col(k);
+			//Ref <const MatrixXf> g = iA_mat*a;
+			MatrixXf g = iA_mat*a;
+			
+			//Eigen::DenseBase<T1> a = A.col(k);
+			MatrixXf c;
+
+			float gg = g.squaredNorm();
+			//cout << "iA.shape = (" << iA_mat.rows() << ", " << iA_mat.cols() << ")" << endl;
+			//cout << "a shape = (" << a.rows() << ", " << a.cols() << "), A[:,:k].shape = (" << A.rows() << ", "<< k <<"), g.shape = (" << g.rows() << ", " << g.cols() << ")";
+			//cout << "Ate aqui OK" << endl;
+			MatrixXf bloco_sup = a - A.leftCols(k)*g;	
+			//cout << "e ate aqui" << endl;
+			MatrixXf aux = A.leftCols(k)*g - a;
+			//cout << "e ate aqui de novo" << endl;
+			if (aux.lpNorm<Eigen::Infinity>() < eps)
+			{	
+				c = (1 / (1 + gg))*g.transpose()*iA_mat;
+			}
+			else
+			{
+				pinvEigen(bloco_sup, c, false);
+			}
+			cout << "Nao funciona apos esta linha" << endl;
+			iA.resize(iA.rows() + 1, iA.cols());
+			iA << bloco_sup, c;
+			//iA_mat.resize(iA_mat.rows() + 1, iA_mat.cols());
+			//iA_mat << bloco_sup, c;
+			//iA << iA_mat;
+		}
 	}
-	*/
 }
 
 Mat pinv(Mat A, Mat *iA_1 = NULL)
@@ -195,22 +218,21 @@ Mat pinv(Mat A, Mat *iA_1 = NULL)
 
 void teste()
 {
-	/*Mat I(Mat::eye(cv::Size(3,3), CV_64FC1)); //CV_64FC1
-	I.at <double>(1, 0) = 3;
-	printf("HERE!");*/
-
-	//double data[4] = { 1,3,2,3 };
-	//Mat A = Mat(4, 1, CV_64FC1, data);
 	double data[14] = { 2,2,3,1,2,3,4,-1,2,0,0,7,5,4 };
-	//Mat A = Mat(2, 7, CV_64FC1, data);
-	Mat A = Mat(14, 1, CV_64FC1, data);
+	Mat A = Mat(7, 2, CV_64FC1, data);
 
 	Eigen::MatrixXf A_eigen, iA_eigen;
 	cv2eigen(A, A_eigen);
-	cout << "Matriz A" << endl;
-	cout << A_eigen;
-	
-	pinvEigen(A_eigen, iA_eigen, true);
+
+	cout << "MATRIZ A" << endl;
+	cout << A_eigen << endl;
+	cout << "------------------------------------------------------" << endl << endl;
+
+	pinvEigen(A_eigen, iA_eigen, true); //A_eigen.block<A_eigen.rows(), A_eigen.cols()>(0,0)
+
+	cout << "PSEUDOINVERSA DE A" << endl;
+	cout << iA_eigen << endl;
+	cout << "------------------------------------------------------" << endl << endl;
 /*
 	cout << "A" << endl;
 	cout << A_eigen;

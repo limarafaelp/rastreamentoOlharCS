@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(68): warning C4129: ' ': unrecognized character escape sequence
+c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\pseudoinverse.h(71): warning C4129: ' ': unrecognized character escape sequence
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\source.cpp(226): warning C4101: 'rgb_info': unreferenced local variable
 c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctionsimpl.h(35): warning C4305: 'argument': truncation from 'double' to 'const float'
   c:\users\latinrealsense\documents\visual studio 2015\projects\copiaretangulonaregiaodosolhos\packages\eigen.3.2.9\build\native\include\eigen\src\core\mathfunctions.h(1196): note: see reference to function template instantiation 'T Eigen::internal::generic_fast_tanh_float<float>(const T &)' being compiled
