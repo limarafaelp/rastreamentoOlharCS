@@ -96,13 +96,13 @@ bool eyeRegion(cv::Mat *frame, cv::Mat *eyeRect, PXCFaceData::LandmarkPoint *poi
 	output.push_back(Point2f(width, height));
 	output.push_back(Point2f(width,      0));
 
-	Mat lambda; 
+	cv::Mat lambda; 
 	lambda = findHomography(input, output);
 	*eyeRect = cv::Mat(height, width, PXCImage::PIXEL_FORMAT_RGB24);
 
 	cv::Rect roi = cv::Rect(0,0,width,height);
 	cv::warpPerspective(*frame, *eyeRect, lambda, eyeRect->size());
-	Mat m = (*eyeRect)(roi);
+	cv::Mat m = (*eyeRect)(roi);
 	//Mat *eyeRect1 = NULL;
 	//*eyeRect1 = (*eyeRect)(roi);
 	m.copyTo(*eyeRect);
@@ -141,12 +141,12 @@ void drawRect(int row, int col) {
 	::ReleaseDC(0, screenDC);
 }
 
-Mat drawCircle(int i, int j, int m, int n)
+cv::Mat drawCircle(int i, int j, int m, int n)
 {
 	int width  = GetSystemMetrics(SM_CXSCREEN);
 	int height = GetSystemMetrics(SM_CXSCREEN);
 
-	Mat frame = cv::Mat::zeros(height, width, CV_8U);
+	cv::Mat frame = cv::Mat::zeros(height, width, CV_8U);
 	frame.setTo(200);
 
 	int rad = 60;
@@ -289,7 +289,7 @@ int wmain(int argc, WCHAR* argv[])
 		cv::Mat rgb = cvarrToMat(image);
 
 		//Mat rgbOut = Mat(rgb.rows, rgb.cols * 2, CV_8UC3);
-		Mat eyeRect;
+		cv::Mat eyeRect;
 		if (eyeRegion(&rgb, &eyeRect, headPoints, npoints))
 		{
 			//eyeRect.copyTo(rgbOut(cv::Rect(rgb.cols, 0, eyeRect.cols, eyeRect.rows)));
@@ -311,7 +311,7 @@ int wmain(int argc, WCHAR* argv[])
 
 				begin = clock();
 			}
-			Mat rgbOut = Mat(eyeRect.rows, eyeRect.cols, CV_8UC3);
+			cv::Mat rgbOut = cv::Mat(eyeRect.rows, eyeRect.cols, CV_8UC3);
 			eyeRect.copyTo(rgbOut);
 			//outputVideo.write(rgbOut);
 			outputVideo << rgbOut;

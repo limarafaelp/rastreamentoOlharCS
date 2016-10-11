@@ -1,0 +1,5 @@
+https://codeyarns.com/2013/11/15/how-to-use-armadillo-on-windows/
+
+https://icl.cs.utk.edu/lapack-for-windows/
+
+http://stackoverflow.com/questions/26973970/conversion-between-cvmat-and-armamat

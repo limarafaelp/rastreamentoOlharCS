@@ -72,8 +72,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\OpenCV-3.1.0\build\include;C:\Program Files (x86)\Intel\RSSDK\include</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;C:\OpenCV-3.1.0\build\x64\vc14\lib;C:\Program Files (x86)\Intel\RSSDK\lib\x64;C:\Program Files (x86)\Intel\RSSDK\sample\common\lib\x64\v140;C:\Program Files (x86)\Common Files\Intel\RSSDK\v7\bin\win32;C:\Program Files (x86)\Intel\RSSDK\UWP\ExtensionSDKs\Intel.RealSense\7.0.23.8048\redist\CommonConfiguration\x64</LibraryPath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\OpenCV-3.1.0\build\include;$(ARMADILLO_ROOT)/include;C:\Program Files (x86)\Intel\RSSDK\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;C:\OpenCV-3.1.0\build\x64\vc14\lib;C:\Program Files (x86)\Intel\RSSDK\lib\x64;C:\Program Files (x86)\Intel\RSSDK\sample\common\lib\x64\v140;C:\Program Files (x86)\Common Files\Intel\RSSDK\v7\bin\win32;C:\Program Files (x86)\Intel\RSSDK\UWP\ExtensionSDKs\Intel.RealSense\7.0.23.8048\redist\CommonConfiguration\x64;$(ARMADILLO_ROOT)\examples\lib_win64</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,6 +93,9 @@
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);opencv_world310d.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>../common/lib/$(PlatformName)/$(PlatformToolset);../../lib/$(PlatformName);$(RSSDK_DIR)/lib/$(PlatformName);$(RSSDK_DIR)/sample/common/lib/$(PlatformName)/$(PlatformToolset);;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <CustomBuildStep>
+      <Inputs>$(ARMADILLO_ROOT)/examples/lib_win64/blas_win64_MT.lib;$(ARMADILLO_ROOT)/examples/lib_win64/lapack_win64_MT.lib;%(Inputs)</Inputs>
+    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
