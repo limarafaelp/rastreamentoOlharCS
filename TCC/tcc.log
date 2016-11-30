@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  29 NOV 2016 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  30 NOV 2016 17:18
 entering extended mode
 **tcc.tex
 (tcc.tex
@@ -539,18 +539,18 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@corolario=\count121
 \c@teorema=\count122
  (tcc.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -598,154 +598,222 @@ Cap\'{\i }tulo 1.
 
 ]) (cap-rastreamento.tex [7]
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
  [8
 
 ]
 <imagens/eye.jpg, id=38, 200.75pt x 150.5625pt>
 File: imagens/eye.jpg Graphic file (type jpg)
  <use imagens/eye.jpg>
-Package pdftex.def Info: imagens/eye.jpg used on input line 37.
+Package pdftex.def Info: imagens/eye.jpg used on input line 39.
 (pdftex.def)             Requested size: 200.7495pt x 150.56212pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 37.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 39.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [9 <./imagens/eye.jpg>] <imagens/pupil.png, id=45, 200.75pt x 202.7575pt>
+) [9 <./imagens/eye.jpg>] [10] <imagens/pupil.png, id=48, 200.75pt x 202.7575pt
+>
 File: imagens/pupil.png Graphic file (type png)
- <use imagens/pupil.png>
-Package pdftex.def Info: imagens/pupil.png used on input line 60.
+
+<use imagens/pupil.png>
+Package pdftex.def Info: imagens/pupil.png used on input line 85.
 (pdftex.def)             Requested size: 140.52403pt x 141.92928pt.
-)
-(cap-cs.tex [10 <./imagens/pupil.png>]
+) (cap-cs.tex [11 <./imagens/pupil.png>]
 Cap\'{\i }tulo 3.
-[11
+<imagens/homotopy/original.png, id=53, 164.7756pt x 112.0185pt>
+File: imagens/homotopy/original.png Graphic file (type png)
 
-] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]) (cap-homotopia.tex [2
-3]
+<use imagens/homotopy/original.png>
+Package pdftex.def Info: imagens/homotopy/original.png used on input line 13.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+
+<imagens/homotopy/80porcentoMMQ.png, id=55, 164.7756pt x 112.0185pt>
+File: imagens/homotopy/80porcentoMMQ.png Graphic file (type png)
+
+<use imagens/homotopy/80porcentoMMQ.png>
+Package pdftex.def Info: imagens/homotopy/80porcentoMMQ.png used on input line 
+20.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+ [12
+
+] [13 <./imagens/homotopy/original.png> <./imagens/homotopy/80porcentoMMQ.png>]
+
+<imagens/Beale_Arboretum_gray.png, id=71, 361.35pt x 241.3818pt>
+File: imagens/Beale_Arboretum_gray.png Graphic file (type png)
+
+<use imagens/Beale_Arboretum_gray.png>
+Package pdftex.def Info: imagens/Beale_Arboretum_gray.png used on input line 70
+.
+(pdftex.def)             Requested size: 252.94327pt x 168.96611pt.
+
+<imagens/Beale_Arboretum_60porc_freq_maiores.png, id=72, 361.35pt x 239.2137pt>
+File: imagens/Beale_Arboretum_60porc_freq_maiores.png Graphic file (type png)
+<use imagens/Beale_Arboretum_60porc_freq_maiores.png>
+Package pdftex.def Info: imagens/Beale_Arboretum_60porc_freq_maiores.png used o
+n input line 70.
+(pdftex.def)             Requested size: 252.94327pt x 167.44844pt.
+ [14] [15 <./imagens/Beale_Arboretum_gray.png> <./imagens/Beale_Arboretum_60por
+c_freq_maiores.png>]
+<imagens/normas.png, id=82, 711.4078pt x 197.23688pt>
+File: imagens/normas.png Graphic file (type png)
+ <use imagens/normas.png>
+Package pdftex.def Info: imagens/normas.png used on input line 137.
+(pdftex.def)             Requested size: 426.84798pt x 118.34302pt.
+
+[16 <./imagens/normas.png>] [17] [18] [19] [20] [21] [22] [23] [24] [25]
+[26] [27]) (cap-homotopia.tex [28]
 Cap\'{\i }tulo 4.
-[24
+[29
 
-] [25]) (cap-cross-bouquet.tex [26]
+] [30] [31] [32]
+File: imagens/homotopy/original.png Graphic file (type png)
+ <use imagens/homotopy/original.png>
+Package pdftex.def Info: imagens/homotopy/original.png used on input line 159.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+
+<imagens/homotopy/80porcento.png, id=144, 164.7756pt x 112.0185pt>
+File: imagens/homotopy/80porcento.png Graphic file (type png)
+
+<use imagens/homotopy/80porcento.png>
+Package pdftex.def Info: imagens/homotopy/80porcento.png used on input line 166
+.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+
+<imagens/homotopy/40porcento.png, id=145, 164.7756pt x 112.0185pt>
+File: imagens/homotopy/40porcento.png Graphic file (type png)
+
+<use imagens/homotopy/40porcento.png>
+Package pdftex.def Info: imagens/homotopy/40porcento.png used on input line 172
+.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+
+<imagens/homotopy/20porcento.png, id=146, 164.7756pt x 112.0185pt>
+File: imagens/homotopy/20porcento.png Graphic file (type png)
+
+<use imagens/homotopy/20porcento.png>
+Package pdftex.def Info: imagens/homotopy/20porcento.png used on input line 179
+.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+File: imagens/homotopy/80porcentoMMQ.png Graphic file (type png)
+ <use imagens/homotopy/80porcentoMMQ.png>
+Package pdftex.def Info: imagens/homotopy/80porcentoMMQ.png used on input line 
+185.
+(pdftex.def)             Requested size: 164.77518pt x 112.0182pt.
+) (cap-cross-bouquet.tex [33] [34 <./imagens/homotopy/80porcento.png> <./imagen
+s/homotopy/40porcento.png> <./imagens/homotopy/20porcento.png>]
 Cap\'{\i }tulo 5.
-[27
+[35
 
-] <imagens/cross-and-bouquet.png, id=118, 487.8225pt x 285.065pt>
+] <imagens/cross-and-bouquet.png, id=159, 487.8225pt x 285.065pt>
 File: imagens/cross-and-bouquet.png Graphic file (type png)
 
 <use imagens/cross-and-bouquet.png>
 Package pdftex.def Info: imagens/cross-and-bouquet.png used on input line 44.
 (pdftex.def)             Requested size: 292.69576pt x 171.04031pt.
-) (cap-algoritmo-principal.tex [28 <./imagens/cross-and-bouquet.png>]
+) (cap-algoritmo-principal.tex [36 <./imagens/cross-and-bouquet.png>]
 Cap\'{\i }tulo 6.
-[29
+[37
 
-] <imagens/ajustando_camera.png, id=127, 240.9pt x 135.50626pt>
+] <imagens/ajustando_camera.png, id=168, 240.9pt x 135.50626pt>
 File: imagens/ajustando_camera.png Graphic file (type png)
 
 <use imagens/ajustando_camera.png>
 Package pdftex.def Info: imagens/ajustando_camera.png used on input line 25.
 (pdftex.def)             Requested size: 240.8994pt x 135.5059pt.
- [30 <./imagens/ajustando_camera.png (PNG copy)>] <imagens/alvo.png, id=131, 36
+ [38 <./imagens/ajustando_camera.png (PNG copy)>] <imagens/alvo.png, id=172, 36
 1.35pt x 203.5605pt>
 File: imagens/alvo.png Graphic file (type png)
  <use imagens/alvo.png>
 Package pdftex.def Info: imagens/alvo.png used on input line 39.
 (pdftex.def)             Requested size: 361.34912pt x 203.56pt.
 
-[31 <./imagens/alvo.png (PNG copy)>] [32]
-<imagens/erros5pyrDown.png, id=139, 462.528pt x 346.896pt>
+[39 <./imagens/alvo.png (PNG copy)>] [40]
+<imagens/erros5pyrDown.png, id=179, 462.528pt x 346.896pt>
 File: imagens/erros5pyrDown.png Graphic file (type png)
 
 <use imagens/erros5pyrDown.png>
 Package pdftex.def Info: imagens/erros5pyrDown.png used on input line 74.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/erros4pyrDown.png, id=140, 462.528pt x 346.896pt>
+<imagens/erros4pyrDown.png, id=180, 462.528pt x 346.896pt>
 File: imagens/erros4pyrDown.png Graphic file (type png)
 
 <use imagens/erros4pyrDown.png>
 Package pdftex.def Info: imagens/erros4pyrDown.png used on input line 80.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/erros3pyrDown.png, id=141, 462.528pt x 346.896pt>
+<imagens/erros3pyrDown.png, id=181, 462.528pt x 346.896pt>
 File: imagens/erros3pyrDown.png Graphic file (type png)
 
 <use imagens/erros3pyrDown.png>
 Package pdftex.def Info: imagens/erros3pyrDown.png used on input line 86.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/errosParticipantes_pyrDown3.png, id=142, 462.528pt x 346.896pt>
+<imagens/errosParticipantes_pyrDown3.png, id=182, 462.528pt x 346.896pt>
 File: imagens/errosParticipantes_pyrDown3.png Graphic file (type png)
 
 <use imagens/errosParticipantes_pyrDown3.png>
 Package pdftex.def Info: imagens/errosParticipantes_pyrDown3.png used on input 
 line 98.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [33 <./imagens/erros5pyrDown.png> <./imagens/erros4pyrDown.png> <./imagens/err
+ [41 <./imagens/erros5pyrDown.png> <./imagens/erros4pyrDown.png> <./imagens/err
 os3pyrDown.png>])
-(cap-conclusao.tex [34 <./imagens/errosParticipantes_pyrDown3.png>]
+(cap-conclusao.tex [42 <./imagens/errosParticipantes_pyrDown3.png>]
 Cap\'{\i }tulo 7.
-) (ape-pseudoinversa.tex [35
+) (tcc.bbl [43
 
-]
-Ap\^endice A.
-) (tcc.bbl [36
+] [44
 
-] [37
-
-]) [38] (tcc.aux) )
+]) [45] (tcc.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6508 strings out of 493698
- 93167 string characters out of 3144409
- 187196 words of memory out of 3000000
- 9677 multiletter control sequences out of 15000+200000
- 30863 words of font info for 80 fonts, out of 3000000 for 9000
+ 6566 strings out of 493698
+ 94849 string characters out of 3144409
+ 189384 words of memory out of 3000000
+ 9731 multiletter control sequences out of 15000+200000
+ 30223 words of font info for 82 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 36i,13n,39p,835b,2306s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,18n,41p,739b,2509s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi600\ecrm1095.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\
+ppen\ec\dpi600\ecbx0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\
 ljfour\jknappen\ec\dpi600\ectt0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\ecit0800.pk> <C:\Users\rafael\AppData\Loca
-l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\rafael\A
-ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Use
-rs\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi2488.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\rafael\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\rafael\A
+ppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi2488.pk> <C:\Use
+rs\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.
 pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi60
-0\ectt1000.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
-en\ec\dpi600\ecrm0700.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\lj
-four\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\rafael\AppData\Local\
-MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\rafael\App
-Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users
-\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
+0\ecrm0700.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
+en\ec\dpi600\ecrm0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\
+fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\rafael\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\rafael\App
+Data\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users
+\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 > <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecbx1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\ecrm1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\jknappen\ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on tcc.pdf (38 pages, 679158 bytes).
+ecrm1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on tcc.pdf (45 pages, 1330660 bytes).
 PDF statistics:
- 669 PDF objects out of 1000 (max. 8388607)
+ 727 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

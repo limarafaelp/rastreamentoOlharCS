@@ -1,10 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{ddek}
+Mark~A Davenport, Marco~F Duarte, Yonina~C Eldar, and Gitta Kutyniok.
+\newblock Introduction to compressed sensing.
+\newblock {\em Preprint}, 93(1):2, 2011.
+
 \bibitem{dontsa}
 D~Donoho and Y~Tsaig.
 \newblock Fast solution of l1-norm minimization problems when the solution may
   be sparse, 2006.
 \newblock {\em Preprint}, 1(2).
+
+\bibitem{duchowski2002breadth}
+Andrew~T Duchowski.
+\newblock A breadth-first survey of eye-tracking applications.
+\newblock {\em Behavior Research Methods, Instruments, \& Computers},
+  34(4):455--470, 2002.
 
 \bibitem{fornasier}
 Massimo Fornasier.
@@ -16,6 +27,13 @@ Massimo Fornasier.
 Simon Foucart and Holger Rauhut.
 \newblock {\em A mathematical introduction to compressive sensing}, volume~1.
 \newblock Springer, 2013.
+
+\bibitem{greville1958pseudoinverse}
+TNE Greville.
+\newblock The pseudoinverse of a rectangular matrix and its statistical
+  applications.
+\newblock {\em Amer. Statist. Assoc., Proc. Soc. Statist. Sect}, pages
+  116--121, 1958.
 
 \bibitem{kutyniok}
 Gitta Kutyniok.
@@ -39,6 +57,12 @@ R~Lima, A~Borges, and A~Kurauchi.
 Robert~Gabriel Lupu and Florina Ungureanu.
 \newblock A survey of eye tracking methods and applications.
 \newblock {\em Bul Inst Polit Iasi}, pages 71--86, 2013.
+
+\bibitem{valenti2009webcam}
+Roberto Valenti, Jacopo Staiano, Nicu Sebe, and Theo Gevers.
+\newblock Webcam-based visual gaze estimation.
+\newblock In {\em International Conference on Image Analysis and Processing},
+  pages 662--671. Springer, 2009.
 
 \bibitem{wrima}
 J~Wright and Y~Ma.

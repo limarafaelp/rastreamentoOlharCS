@@ -2,16 +2,119 @@
 
 \textit{Compressive Sensing}(CS), também conhecido como \textit{Compressive Sampling} ou \textit{Compressed Sensing},  estuda formas de reconstruir um vetor a partir de poucas amostras. De agora em diante, será assumido que as amostras $(y_i)_{i = 1}^m$, representadas pelo vetor $y \in \mathbb{R}^m$ de um sinal $x \in \mathbb{R}^n$ são obtidas a partir de uma transformação linear $y = Ax$, onde $A$ é uma matriz $n \times m$, com $n < m$.
 
-Como $n < m$, a equação não possui uma única solução $x$, se possuir. A idéia é então escolher, entre todas as soluções possíveis, o vetor $x$ com o maior número de coeficientes nulos. Para entender melhor o problema, as seguintes definições serão enunciadas:
+{\bf Observação:} Durante o texto, sempre que referirmos a um vetor como uma imagem, assumimos que o vetor é calculado ao empilhar todas as colunas da imagem em escala de cinza.
+
+Como $n < m$, a equação não possui uma única solução $x$, se possuir. Poderíamos calcular $x$ como $x = A^{\dagger} y$, resolvendo o problema de mínimos quadrados, ou seja, encontrando $x$ que minimiza $\Vert Ax - y \Vert_2$. Porém, as imagens recuperadas dessa forma não são parecidas com a imagem original. A Figura $\ref{fig:mmq}$ mostra uma imagem recuperada pelo método de mínimos quadrados para uma matriz $A$ $m \times n$, onde $m = 80 \% \cdot n$(compressão de $80\%$) e as entradas de $A$ são iid $\mathcal{N}(0,1)$.
+
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[scale=1]{imagens/homotopy/original.png}
+        \caption{imagem original}
+%	    \label{fig:homotopy/original.png}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[scale=1]{imagens/homotopy/80porcentoMMQ.png}
+        \caption{compressão de $80\%$}
+%	    \label{fig:homotopy/80porcentoMMQ.png}
+    \end{subfigure}
+    \caption{Recuperando imagem usando o método de mínimos quadrados para $y = Ax$, onde o vetor $x$ representa a imagem original e $A$ é uma matriz $m \times n$ com $m = 80 \% \cdot n$ cujas entradas são iid e seguem uma distribuição $\mathcal{N}(0,1)$.}
+    \label{fig:mmq} %label deve ficar após caption
+\end{figure}
+
+Sabemos que, geralmente, imagens são esparsas no espectro da frequência. Uma imagem pode ser decomposta como uma combinação linear de senoidais e, na prática, os coeficientes correspondentes às frequências mais altas são muito próximos de zero. Na Figura $\ref{fig:coeficientes_altos}$ mostramos uma imagem após descartar $40\%$ dos coeficientes de valores mais baixos (compressão de $60\%$). Note que as imagens {\bf (a)} e {\bf (b)} são bastante parecidas, indicando que a imagem é esparsa, ou aproximadamente esparsa (com muitos coeficientes muito próximos de zero) no espectro da frequência. 
+
+\afterpage{
+\begin{figure}
+\begin{center}
+	\begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[scale=.7]{imagens/Beale_Arboretum_gray.png}
+        \caption{imagem original}
+%	    \label{fig:homotopy/originals.png}
+    \end{subfigure}
+    \\
+    \begin{subfigure}[b]{1\textwidth}
+        \centering
+        \includegraphics[scale=.7]{imagens/Beale_Arboretum_60porc_freq_maiores.png}
+        \caption{compressão de $60\%$}
+%	    \label{fig:homotopy/80porcentoMMQ.png}
+    \end{subfigure}
+    \caption[]{A imagem em {\bf (b)} é calculada ao descartar $40\%$ das senoidais que compõem a imagem cujos coefientes têm menor módulo. Adaptado de \protect \footnotemark}
+     \label{fig:coeficientes_altos}
+\end{center}
+\end{figure}
+\footnotetext{NÃO CONSEGUI POR LINK}
+%\footnotetext{\url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum_-_West_Lodge_Park_-_Hadley_Wood_-_Enfield_London_2.jpg}}
+}
+ A ideia é então escolher, entre todas as soluções possíveis, o vetor $x$ com o maior número de coeficientes nulos. Para entender melhor o problema, as seguintes definições serão enunciadas:
 
 \textbf{Def:} Seja $x \in \mathbb{R}^n$. $x$ é $k$-esparso se possui, no mínimo, $k$ coeficientes nulos.
 
 \textbf{Def:} Dado $x \in \mathbb{R}^n$, a `norma' $0$ de $x$ é definida como
 $\Vert x \Vert_{0} = \# \lbrace i : \vert x_i \vert > 0 \rbrace$ 
 
-Observe que a `norma' 0 não é uma norma, pois, se $x = (1, 0)$, $\Vert 2x \Vert = 1 \neq 2 \Vert x \Vert$.
+Observe que a `norma' 0 não é uma norma, pois, se $x = (1, 0)$, $\Vert 2x \Vert = 1 \neq 2 \Vert x \Vert$. Porém, $\Vert \cdot \Vert_0$ satisfaz as propriedades demonstradas na Proposicao $\ref{prp:norma_0}$.
 
-O problema será formulado da seguinte forma:
+\begin{proposicao}
+Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$, a `norma' $0$ satisfaz as seguintes propriedades:
+\begin{enumerate}[(i)]
+\item $\Vert x \Vert_0 \geq 0$
+\item $\Vert x \Vert_0 = 0 \Leftrightarrow x = 0$
+\item Se $\lambda \neq 0, \Vert \lambda x \Vert_0 = \vert \lambda \vert \Vert x \Vert_0$
+\item $\Vert x + y \Vert_0 \leq \Vert x \Vert_0 + \Vert y \Vert_0$
+\item `norma' $0$ não é uma norma.
+\end{enumerate}
+\label{prp:norma_0}
+\end{proposicao}
+\begin{proof}
+Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$
+
+\begin{enumerate}[(i)]
+\item $\Vert x \Vert_0 = \# \lbrace i \in \lbrace 1, \hdots, n \rbrace: \vert x_i \vert > 0 \rbrace \geq 0$
+\item \begin{subequations}
+\begin{align*}
+\Vert x \Vert_0 = 0 &
+\Rightarrow \# \lbrace i \in \lbrace 1, \hdots, n \rbrace: \vert x_i \vert > 0 \rbrace = 0 \\
+& \Rightarrow \forall i \in \lbrace 1, \hdots, n \rbrace, \vert x_i \vert = 0 \\
+& \Rightarrow x = 0
+\end{align*}
+\end{subequations}
+
+\item Se $\lambda \neq 0$,
+\begin{subequations}
+\begin{align*}
+\Vert \lambda x \Vert_0 & = \# \lbrace i \in \lbrace 1, \hdots, n \rbrace: \vert \lambda x_i \vert > 0 \rbrace \\
+& = \# \lbrace i \in \lbrace 1, \hdots, n \rbrace: \vert x_i \vert > 0 \rbrace\\
+& = \Vert x \Vert_0
+\end{align*}
+\end{subequations}
+
+\item
+\begin{subequations}
+\begin{align*}
+\Vert x \Vert_0 + \Vert y \Vert_0 & = \# \lbrace i : \vert x_i \vert > 0 \rbrace
+									+ \# \lbrace i : \vert y_i \vert > 0 \rbrace \\
+& \geq \#(\lbrace i : \vert x_i \vert > 0 \rbrace \cup \lbrace i : \vert y_i \vert > 0 \rbrace) \\
+& = \# \lbrace i : \vert x_i \vert > 0 \textit{ ou } \vert y_i \vert > 0 \rbrace \\
+& = \# \lbrace i : \vert x_i \vert + \vert y_i \vert > 0 \rbrace \\
+& \geq  \# \lbrace i : \vert x_i + y_i \vert > 0\rbrace \\
+& = \Vert x + y \Vert_0
+\end{align*}
+\end{subequations}
+
+\item Sejam $\lambda = 2, x = e_1$, então
+
+$$ \Vert \lambda x \Vert_0 = \Vert x \Vert_0 = 1 \neq \vert \lambda \vert \Vert x \Vert_0 $$
+
+Portanto `norma' $0$ não é uma norma.
+\end{enumerate}
+\end{proof}
+
+O problema que resolveremos para encontrar o vetor $x$ mais esparso amostrado como $x = Ay$ será formulado do seguinte modo:
 
 \begin{equation}
 \tag{$P_0$}
@@ -27,41 +130,22 @@ No entanto, $\eqref{eqn:P0}$ é NP-difícil \cite{fourau}. Então tentamos resol
 \label{eqn:P1}
 \end{equation}
 
-Um dos objetivos de CS é estudar condições para garantir a equivalência entre os dois problemas, e condições para a unicidade de soluções de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. Para isso, essas condições foram estudadas.%Portanto, nesse período o aluno estudou essas condições.
+A Figura $\ref{fig:normas}$ nos ajuda a entender a semelhança entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. A figura mostra o problema de minimização de $\Vert x \Vert_p$ sujeito a $Ax = y$ para $x \in \mathbb{R}^2$ e $y \in \mathbb{R}$. O ponto $x$ minimiza a norma em um único ponto se a fronteira de uma bola fechada centrada em $0$ toca a reta $Ax = y$ apenas em $x$. Nest caso, as soluções calculadas para $p = 1$ e $p = 1/2$ são esparsas. Note que $\Vert \cdot \Vert_{\frac{1}{2}}$ não é norma.
 
-%\section{Atividades realizadas}
-%\subsection{Condições para equivalência entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$}
+\begin{figure}
+\centering
+\includegraphics[scale=.6]{imagens/normas.png}
+\caption{Pontos na reta $Ax = y$ que minimizam a norma $\Vert \cdot \Vert_p$ para diferentes valores de $p$. As soluções encontradas para $p = 1$ e $p = 1/2$ são esparsas. Note que $\Vert \cdot \Vert_{\frac{1}{2}}$ não é norma. Reproduzido de \cite{ddek}.}
+\label{fig:normas}
+\end{figure}
 
-%Durante esse período, o aluno pesquisou a teoria de Compressive Sensing (CS). Estudou e escreveu a demonstração de alguns dos principais teoremas, que fornecem:
+CS tem como objetivo estudar condições para garantir a equivalência entre os dois problemas, e condições para a unicidade de soluções de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. Descrevemos estas condições a seguir.
 
-%%\begin{itemize}
-
-%\item Condições para garantir a unicidade de soluções do problema $\eqref{eqn:P0}$
-%\begin{equation}
-%\tag{$P_0$}
-%\min_{x \in \mathbb{R}^n} \Vert x \Vert_{0} \textit{ sujeito a } Ax = y
-%\label{eqn:P0}
-%\end{equation}
-
-%\item Condições para garantir a unicidade de soluções de $\eqref{eqn:P1}$
-%\begin{equation}
-%\tag{$P_1$}
-%\min_{x \in \mathbb{R}^n} \Vert x \Vert_{1} \textit{ sujeito a } Ax = y
-%\label{eqn:P1}
-%\end{equation}
-
-%\item Condições suficientes para a equivalência entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$
-%\end{itemize}
-
-%CS tem como objetivo reconstruir um vetor $x \in \mathbb{R}^n$ a partir de poucas amostras. Assumindo que $x$ é esparso, podemos construir uma matriz $A$ de ordem $m \times n$, tal que $y = Ax$. A partir da amostra $y$, queremos recuperar o vetor $x$ resolvendo o problema $\eqref{eqn:P0}$, ou seja, queremos encontrar o vetor $x$ mais esparso com $y = Ax$.
-
-%Fixado $k \in \{1, \hdots, n \}$, dizemos que $x$ é $k$-esparso se possui, no máximo, $k$ coeficientes não nulos. Seria interessante se cada amostra $y = Ax$ tivesse um único vetor $z$ $k$-esparso com $y = Az$. Nesse caso, a solução de $\eqref{eqn:P0}$ seria única.
-
-\subsection{Unicidade de $\eqref{eqn:P0}$}
-Se a matriz $A$ fosse $n \times n$ de posto máximo, a unicidade estaria garantida. Como $m < n$, definimos o conceito de \textit{spark}, que verbalmente é uma fusão dos conceitos `esparso' e `posto'(rank) \cite{kutyniok}.
+\section{Unicidade de $\eqref{eqn:P0}$}
+Se a matriz $A$ fosse $n \times n$ de posto máximo, a unicidade estaria garantida. Como $m < n$, definimos o conceito de \textit{spark}, que verbalmente é uma fusão dos conceitos `esparso' e `posto'(\textit{rank}) \cite{kutyniok}.
 
 \begin{definicao}
-Seja $A$ uma matriz $m \times n$. O spark de $A$ denotado por $\textit{spark}(A)$ é o menor número de colunas linearmente dependentes de $A$.
+Seja $A$ uma matriz $m \times n$. O spark de $A$, denotado por $\textit{spark}(A)$, é o menor número de colunas linearmente dependentes de $A$.
 \end{definicao}
 
 O Teorema a seguir nos indica uma condição que $A$ deve satisfazer para garantir a unicidade de $\eqref{eqn:P0}$
@@ -148,7 +232,7 @@ $$ Ax = \sum_{j = 1}^{\Vert x \Vert_0} A_{\mu(j)} x_{\mu(j)} = 0$$
 Como $x \neq 0$, existe algum $j \in \lbrace 1, \hdots, \Vert x \Vert_0 \rbrace$ tal que $x_{\mu(j)} \neq 0$. Logo, $A$ possui $\Vert x \Vert_0$ colunas linearmente dependentes. Portanto, $\textit{spark}(A) \leq \Vert x \Vert_0 \leq 2k$.
 \end{itemize}
 \end{proof}
-\subsection{Unicidade de $\eqref{eqn:P1}$}
+\section{Unicidade de $\eqref{eqn:P1}$}
 
 Ao encontrar a solução única de $\eqref{eqn:P0}$, encontramos o vetor desejado. No entanto, $\eqref{eqn:P0}$ é NP-difícil. Uma alternativa seria resolver o problema $\eqref{eqn:P1}$.
 
@@ -263,7 +347,7 @@ Seja $x$ um vetor $k$-esparso tal que $Ax = y$. Então existe $\Lambda \subset [
 \end{itemize}
 \end{proof}
 
-\subsection{Equivalência entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$}
+\section{Equivalência entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$}
 Para estudar a equivalência entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$, por enquanto, assumimos que as colunas $a_i$ de $A$ possuem norma $\Vert a_i \Vert_2 = 1$. Definimos também o conceito de coerência.
 
 \begin{definicao}
@@ -378,9 +462,9 @@ $$ \vert \lambda - 1 \vert \leq \sum_{j \neq i} \vert G_{ij} \vert \leq (m - 1)$
 Agora demonstraremos o Teorema \ref{thm:equivalencia_P0P1}.
 \begin{proof}
 
-[CORRIGIR: Assumindo que x é solução única de $\eqref{eqn:P0}$]
+Assumindo que x é solução única de $\eqref{eqn:P0}$
 
-[ESCREVER LEMA $\vert v + m\vert - \vert v \vert \geq -\vert m \vert$]
+%[ESCREVER LEMA $\vert v + m\vert - \vert v \vert \geq -\vert m \vert$]
 
 Seja $z \in \mathbb{R}^n$ tal que $z \neq x$. Então $z = x + h$ para algum $h \in \ker(A) \setminus{0}$.
 Seja $\Lambda$ o suporte de $x$. Temos que
@@ -494,8 +578,8 @@ Uma matriz $A$ cujas entradas são amostradas através de uma distribuição nor
 
 \begin{teorema} \cite{zhang2008theory} Sejam $m < n$, $\Omega \subset \mathbb{R}^n$ e $A \in \mathbb{R}^{m \times n}$ tais que apenas uma das afirmações é verdadeira:
 \begin{enumerate}
-\item os elementos $a_ij$ de A são iid e $a_{ij} \sim \mathcal{N}(0,1)$
-\item $A$ é uma matriz de posto $m$ com $BA^{\texttt{T}} = 0$ para uma matriz $B \in \mathbb{R}^{(n - m) \times n}$ cujas entradas são iid $\mathcal{N}(0,1)$.
+\item os elementos $a_{ij}$ de A são iid e $a_{ij} \sim \mathcal{N}(0,1)$
+\item $A$ é uma matriz de posto $m$ com $BA^{T} = 0$ para uma matriz $B \in \mathbb{R}^{(n - m) \times n}$ cujas entradas são iid $\mathcal{N}(0,1)$.
 \end{enumerate}
 Então com probabilidade maior que $1 - e^{-c_0(n-m)}$, $\bar{x}$ é solução única de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$ se $\bar{x}$ satisfaz
 

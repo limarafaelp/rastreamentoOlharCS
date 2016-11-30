@@ -1,6 +1,14 @@
 \chapter{Rastreamento de olhar}
 
-Rastreamento de olhar consiste em técnicas para determinar a direção do olhar, ou seja, determinar onde determinada pessoa está olhando, a partir da posição da íris.
+%Rastreamento de olhar consiste em técnicas para determinar a direção do olhar, ou seja, a partir da posição da íris identificar para onde uma pessoa está olhando.
+
+Rastreamento de olhar consiste em determinar a direção do olhar, ou seja, a partir da posição do olho identificar para onde uma pessoa está olhando em determinado instante e também mudanças na direção do olhar em determinado período \cite{lupung}.
+
+Podemos usar o rastreamento de olhar para construir interfaces para ajudar pessoas com dificuldades motoras a interagir com computadores \cite{lidade}. Informações de olhar também podem ser usadas em pesquisas com o objetivo de entender como o olho se move quando uma pessoa realiza diferentes atividades \cite{lupung}.
+
+Através da análise da posição do olhar é possível avaliar a influência de um anúncio sobre a atenção dos consumidores e, assim, ajudar na criação de propagandas mais eficientes \cite{duchowski2002breadth}.
+
+O olhar também pode ser usado como um indicador de usabilidade de interfaces de \textit{software}, sendo usado em estudos de interação humano-computador (IHC) \cite{duchowski2002breadth}.
 
 Algumas partes do olho humano, que estão representadas na figura $\ref{fig:olho}$,  são as seguintes$\cite{lidade}$:
 
@@ -17,18 +25,27 @@ Algumas partes do olho humano, que estão representadas na figura $\ref{fig:olho
 }
 
 \begin{itemize}
-
-\item \textbf{pupila}: a abertura que permite a entrada de luz no o olho.
+\item \textbf{pupila}: a abertura que permite a entrada de luz no olho.
 \item \textbf{íris}: o músculo colorido que controla o diâmetro da pupila.
-\item \textbf{esclera}: tecido branco protetor que envolve os restante do olho.
+\item \textbf{esclera}: tecido branco protetor que envolve o restante do olho.
 \item \textbf{limbo}: o contorno entre a íris e a esclera.
 \end{itemize}
 
-%Ao longo do tempo, diferentes abordagens foram usadas para estimar a posição do olhar. \cite{lupung}. Em 1901 Dodge e Cline desenvolveram o primeiro dispositivo não invasivo de estimação de olhar \cite{lupung}, eles usaram fotografias para registrar movimentos do olho. Até o início da década de 70, o rastreamento de olhar era feito com o uso de lentes de contato ou com fotografias \cite{wnek2008eye}.
+%[sic: no texto estava Eye location/tracking techniques can be...]
+%Técnicas de rastreamento de olhar podem ser divididas em três modalidades \cite{valenti2009webcam}.
 
-%No início da década de 70, passaram-se a gravar o olho com câmeras e identificar eletronicamente regiões no olho. 
+~ %para evitar um erro estranho de missing item
 
-Existem algumas abordagens de rastreamento, uma delas é a partir do processamento de imagens em vídeo, também conhecida como rastreamento de olhar baseado em vídeo $\cite{lupung}$. Neste tipo de rastreamento, tentamos localizar o olho na imagem e procuramos a posição relativa da pupila no olho.
+Técnicas de rastreamento de olhar podem ser divididas em três modalidades \cite{valenti2009webcam}:
+
+\begin{enumerate}
+\item {\bf Eletro-oculografia}, que registra diferenças de potencial elétrico na pele ao redor da cavidade ocular.
+\item Instalando algum dispositivo mecânico sobre uma lente de contato.
+%sic: no texto estava oculografia baseada em foto ou vídeo
+\item  {\bf Rastreamento baseado em vídeo}, que usa técnicas de processamento de imagens para identificar a posição da pupila nas imagens do olho.
+\end{enumerate}
+
+O rastreamento baseado em vídeo a modalidade de rastreamento de olhar menos invasiva.
 
 Dois tipos de imagem podem ser usados no rastramento baseado em vídeo: imagens no espectro visual ou imagens em infravermelho.
 
@@ -38,7 +55,7 @@ No caso de imagens em infravermelho, não temos esse problema, pois o olho é co
 
 A principal desvantagem é que não é possível usar esse tipo de rastreador ao ar livre durante o dia devido à luz infravermelha do ambiente $\cite{lidade}$.
 
-As técnicas de rastreamento de olhar também variam de acordo com a localização da câmera, que pode ser instalada junto à cabeça do usuário (head-mounted) ou remotamente. No caso do rastreamento head-mounted, o usuário deve usar um acessário equipado com uma câmera que registra as imagens do olho. A figura $\ref{fig:pupil}$ mostra um rastreador desse tipo
+As técnicas de rastreamento de olhar também variam de acordo com a localização da câmera, que pode ser instalada junto à cabeça do usuário (\textit{head-mounted}) ou remotamente. No caso do rastreamento \textit{head-mounted}, o usuário deve usar um acessário equipado com uma câmera que registra as imagens do olho. A figura $\ref{fig:pupil}$ mostra um rastreador desse tipo
 
 \afterpage{
 %assim o footnote funciona http://blog.peschla.net/2012/11/latex-footnotes-in-captions/
@@ -52,7 +69,7 @@ As técnicas de rastreamento de olhar também variam de acordo com a localizaç�
 \footnotetext{\url{https://pupil-labs.com/blog/2014-01/new-pupil-pro-headset-capture-software-0-3-7/}}
 }
 
-Uma vantagem do rastreamento head-mounted é que a câmera move-se com a cabeça, então mudanças de pose não causam mudanças da posição da pupila na imagem. A desvantagem é a necessidade de usar um equipamento acoplado à cabeça.
+Uma vantagem do rastreamento \textit{head-mounted} é que a câmera move com a cabeça, então mudanças de pose não causam mudanças da posição da pupila na imagem. A desvantagem é a necessidade de usar um equipamento acoplado à cabeça. Por estar muito próxima do olho, a câmera do olho pode ocultar parte do campo de visão, dificultando a interação com o usuário.
 
 \section{Métricas em rastreamento de olhar}
 
