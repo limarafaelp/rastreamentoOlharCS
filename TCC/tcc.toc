@@ -1,0 +1,16 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{6}
+\contentsline {chapter}{\numberline {2}Rastreamento de olhar}{8}
+\contentsline {section}{\numberline {2.1}M\IeC {\'e}tricas em rastreamento de olhar}{10}
+\contentsline {chapter}{\numberline {3}\textit {Compressive Sensing}}{11}
+\contentsline {subsection}{\numberline {3.0.1}Unicidade de $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P0}\unskip \@@italiccorr )}}$}{12}
+\contentsline {subsection}{\numberline {3.0.2}Unicidade de $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P1}\unskip \@@italiccorr )}}$}{14}
+\contentsline {subsection}{\numberline {3.0.3}Equival\IeC {\^e}ncia entre $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P0}\unskip \@@italiccorr )}}$ e $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P1}\unskip \@@italiccorr )}}$}{17}
+\contentsline {section}{\numberline {3.1}Matrizes que satisfazem as condi\IeC {\c c}\IeC {\~o}es de CS}{22}
+\contentsline {chapter}{\numberline {4}O algoritmo de homotopia}{24}
+\contentsline {chapter}{\numberline {5}O modelo \textit {cross-and-bouquet}}{27}
+\contentsline {chapter}{\numberline {6}Desenvolvimento de um rastreador de olhar usando CS}{29}
+\contentsline {subsection}{\numberline {6.0.1}Coleta de amostras}{30}
+\contentsline {subsubsection}{Estimar posi\IeC {\c c}\IeC {\~a}o da olhar nas imagens coletadas}{31}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{35}
+\contentsline {chapter}{\numberline {A}Pseudoinversa}{36}

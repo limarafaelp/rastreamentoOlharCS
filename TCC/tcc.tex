@@ -1,0 +1,177 @@
+%\documentclass[12pt]{article}
+\documentclass[12pt]{report}
+
+%% Escrevendo em português
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage{isolatin1}
+ %% Figuras  eps
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+%%para inserir figuras lado a lado
+% \usepackage{subfig} Dá erro
+\usepackage{caption}
+\usepackage{subcaption}
+
+%usa a, b, c ... em enumerate
+%\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{afterpage}
+\usepackage{url}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}   % loads »amsmath
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+
+\usepackage{longtable}
+%% Pulando linhas
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\vsp}{\vspace{0.2in}}
+
+\newcommand{\beq}{\begin{equation}} 
+\newcommand{\eeq}{\end{equation}} 
+\newcommand{\beqa}{\begin{eqnarray}} 
+\newcommand{\eeqa}{\end{eqnarray}} 
+\newcommand{\bfga}{\begin{figure*}} 
+\newcommand{\efga}{\end{figure*}} 
+\newcommand{\bfg}{\begin{figure}} 
+\newcommand{\efg}{\end{figure}} 
+\newcommand{\etal}{{\it et al.}} 
+\newcommand{\aluno}{{ Rafael Pereira Lima}}
+\newcommand{\link}{\textit{link}} 
+\newcommand{\links}{\textit{links}} 
+
+
+
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+
+%\usepackage[fapesp]
+
+% Tamanho da página
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+
+% Parágrafo
+\setlength{\parindent}{5mm}
+\setlength{\parskip}{1mm}
+
+% Empurra para cá empurra para lá
+\evensidemargin -0.3cm
+\oddsidemargin -0.3cm
+\topmargin -0.7in
+
+\newtheorem{definicao}{Definição}
+\newtheorem{proposicao}{Proposição}
+\newtheorem{lema}{Lema}
+\newtheorem{corolario}{Colorário}
+\newtheorem{teorema}{Teorema}
+
+\begin {document}
+
+% ---------------------------------------------------------------------------- %
+% CAPA
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{2.3cm}
+    Universidade de São Paulo\\
+    Instituto de Matemática e Estatística\\
+    Matemática Aplicada - Bacharelado - Habilitação em Métodos Matemáticos
+
+
+    \vspace*{3cm}
+    \Large{Rafael Pereira Lima}
+    
+
+    \vspace{3cm}
+    \textbf{\Large{Rastreamento de Olhar Usando Compressive Sensing}}
+    
+       
+    \vskip 5cm
+    \normalsize{São Paulo}
+
+    \normalsize{Dezembro de 2016}
+\end{center}
+
+% ---------------------------------------------------------------------------- %
+% Página de rosto
+%
+\newpage
+\thispagestyle{empty}
+    \begin{center}
+        \vspace*{2.3 cm}
+        \textbf{\Large{Rastreamento de Olhar Usando Compressive Sensing}}
+        \vspace*{2 cm}
+    \end{center}
+
+    \vskip 2cm
+
+    \begin{flushright}
+	Monografia final da disciplina \\
+        MAP2080 -- Trabalho de Formatura.
+    \end{flushright}
+
+    \vskip 5cm
+
+    \begin{center}
+    Supervisor: Prof. Dr. Carlos Hitoshi Morimoto\\
+%    $[$ Cosupervisor: Prof. Dr. Nome do Cosupervisor $]$
+
+%    \vskip 5cm
+    \vskip 4.5cm
+    \normalsize{São Paulo}
+    
+    \normalsize{Dezembro de 2016}
+    \end{center}
+\pagebreak
+% ---------------------------------------------------------------------------- %
+
+% Resumo
+\chapter*{Resumo}
+
+Informações do olhar podem ser usadas para melhorar a experiência do usuário ou possibilitar a interação com o computador quando, por limitações físicas, a pessoa é incapaz de interagir com dispositivos de entrada usuais. Rastreamento de olhar consiste na identificação da posição do olhar durante determinado período. Desenvolvemos um programa de rastreamento de olhar usando \textit{Compressive Sensing}, uma técnica usada para recuperar sinais esparsos. Os resultados obtidos foram semelhantes aos presentes na literatura.
+
+\noindent \textbf{Palavras-chave:} \textit{Compressive Sensing}, rastreamento de olhar, processamento de imagens.
+
+%Elemento obrigatório, constituído de uma sequência de frases concisas e objetivas, em forma de texto.  Deve apresentar os objetivos, métodos empregados, resultados e conclusões.  O resumo deve ser redigido em parágrafo único, conter no máximo 500 palavras e ser seguido dos termos representativos do conteúdo do trabalho (palavras-chave).
+
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+% Abstract
+\chapter*{Abstract}
+
+Gaze information can be used to improve user experience or enable human-computer interaction when the person is unable to use common input devices due to physical disabilities. Gaze tracking is the gaze position estimation in some period of time.  We developed a gaze tracking algorithm with Compressive Sensing, a technique used to recover sparse signals. The results are similar to those in the literature.
+
+\noindent \textbf{Keywords:} Compressive Sensing, gaze tracking, image processing.
+
+% ---------------------------------------------------------------------------- %
+% Sumário
+\tableofcontents    % imprime o sumário
+
+\input{cap-introducao}
+\input{cap-rastreamento}
+\input{cap-cs}
+\input{cap-homotopia}
+\input{cap-cross-bouquet}
+\input{cap-algoritmo-principal}
+\input{cap-conclusao}
+
+\appendix
+\input{ape-pseudoinversa}
+
+% ---------------------------------------------------------------------------- %
+% Bibliografia
+%\backmatter \singlespacing   % espaçamento simples
+%\bibliographystyle{plainnat-ime} % citação bibliográfica textual
+\bibliographystyle{plain}
+\bibliography{bibliografia}  % associado ao arquivo: 'bibliografia.bib'
+
+\end{document}

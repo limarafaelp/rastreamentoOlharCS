@@ -1,0 +1,99 @@
+\chapter{O algoritmo de homotopia}
+
+O algoritmo de Homotopia é um algoritmo com o objetivo de resolver $\eqref{eqn:P1}$ minimizando funções do tipo
+$$J_{\lambda_n}(x) = \frac{1}{2} \Vert Ax - y \Vert_2^2 + \lambda_n \Vert x \Vert_1$$
+para uma sequência decrescente $(\lambda_n)$ de números positivos.
+
+Podemos encontrar o mínimo de uma função diferencial $f: \mathbb{R}^n \longrightarrow \mathbb{R}$ procurando os pontos $x$ no domínio em que $\nabla f(x) = 0$. No nosso caso, a norma $1$ não é diferenciável. Então será definida uma generalização para a diferencial, que será usada no algoritmo, chamado de Homotopia.
+
+\begin{definicao}
+Seja $f: \mathbb{R}^n \longrightarrow \mathbb{R}$. A subdiferencial de $f$ em $x \in \mathbb{R}$ é dada por
+
+$$\partial f(x) = \{ v \in \mathbb{R}^N : f(y) - f(x) \geq \langle v, y - x \rangle, \forall y \in \mathbb{R}^N \}$$
+
+%Mostrar que a subdiferencial é uma generalização da diferencial
+% >>> http://www.staff.science.uu.nl/~balde101/cao10/cursus10_1.pdf
+\end{definicao}
+
+Não é difícil ver que o operador $\partial$ é linear. A subdiferencial coincide com a diferencial de uma função, quando ela for convexa e diferenciável, como mostra a seguinte proposição:
+
+\begin{proposicao}
+Se $f: \mathbb{R}^n \longrightarrow \mathbb{R}$ for convexa e diferenciável, então para todo $x \in \mathbb{R}^n$, $\partial f(x) = \{ \nabla f(x) \}$.
+\end{proposicao}
+%\begin{proof}
+%Dados $x, y \in \mathbb{R}^n$, defina a seguinte curva $\gamma: \left[0,1\right]$.
+%\end{proof}
+
+Um ponto $x_0$ é ponto de mínimo de uma função $f$ se, e somente se, $0 \in \partial f$, pois
+$$ \forall x \in \mathbb{R}^n, f(x) - f(x_0) \geq 0 = \langle 0, x - x_0 \rangle$$.
+
+%Explicar melhor, por exemplo, dizer que \partial (v1, v2) = \partial v1 \times \partial v2
+Como a norma $1$ é convexa, sua subdiferencial em um ponto $x$ é um vetor $v$ tal que para cada $i = 1, \hdots, n$,
+$$ v_i =
+\begin{cases}
+	sgn(v_i) & \mbox{ se } v_i \neq 0 \\
+	\lbrace 1, -1\rbrace & \mbox{ se } v_i = 0
+\end{cases}$$
+%Citar FornasireFinal_red.pdf, que definiu a subdiferencial de f
+
+%@inproceedings{yang2010fast,
+%  title={Fast ℓ 1-minimization algorithms and an application in robust face recognition: A review},
+%  author={Yang, Allen Y and Sastry, S Shankar and Ganesh, Arvind and Ma, Yi},
+%  booktitle={2010 IEEE International Conference on Image Processing},
+%  pages={1849--1852},
+%  year={2010},
+%  organization={IEEE}
+%}
+
+O algoritmo de Homotopia \cite{fornasier} \cite{dontsa} minimiza a função em um número finito de passos. Fixado um $\lambda$ positivo, considere a seguinte função :
+
+$$J_{\lambda} (x) = \frac{1}{2} \Vert Ax - y \Vert_2^2 + \lambda \Vert x \Vert_1$$
+
+%citar quem mostra que a curva é linear por partes
+e seu respectivo minimizador $x_\lambda$. Quando $\lambda$ é grande, $x_{\lambda} = 0$. O ponto $\tilde{x}$, solução de $\eqref{eqn:P1}$ é solução de algum $J_{\tilde{\lambda}}$. A curva $\lambda \longmapsto x_{\lambda}$ é linear por partes, então é possível encontrar a solução de $\eqref{eqn:P1}$ com um número finito de passos.
+
+A subdiferencial de $J_\lambda$ é
+
+$$\partial J_\lambda(x) = A^{T}(Ax - y) + \lambda \partial \Vert x \Vert_1$$
+
+Se $x = x_\lambda$ então $0 \in \partial J_\lambda(x)$ é equivalente a
+
+\begin{equation}
+\begin{cases}
+(A^*(Ax - y))_i           =    \lambda sgn(x_i), &\mbox{se } x_i = 0\\
+\vert A^*(Ax - y)\vert_i  \leq \lambda,          &\mbox{se } x_i \neq 0
+\end{cases}
+\label{eqn:hom0}
+\end{equation}
+
+para $i \in \{1, \hdots, n \}$. Escrevendo $c = A^{T}(Ax - y)$ e denotando $I$ como o suporte de $x$, então $\eqref{eqn:hom0}$ equivale a
+
+\begin{equation}
+\begin{cases}
+c(I)           =    \lambda sgn(x_{\lambda}(I)) \\
+\vert c(I^{\texttt{c}}) \vert \leq \lambda
+\end{cases}
+\label{eqn:hom1}
+\end{equation}
+
+O algoritmo de Homotopia procura os vértices da curva $\lambda \longmapsto x_\lambda$. Começando com $x_0 = 0$, em uma iteração $l$, $\lambda_l = \Vert c(I) \Vert_{\infty}$, com $I$ denotando o suporte de $x_l$. Depois, o algoritmo calcula uma direção $d_l$, onde
+
+\begin{equation}
+\begin{cases}
+A^{\texttt{T}}_I A_I d_l(I) = sgn (c_l(I)) \\
+d_l(I^{\texttt{c}}) = 0
+\end{cases}
+\label{eqn:hom2}
+\end{equation}
+
+A magnitude $\gamma_l$ do passo $d_l$ é calculada como o menor valor em que a equação $\eqref{eqn:hom1}$ não seja mais válida, ou seja, para $x_{l+1} = x_{l} + \gamma_l d_l$, teremos que pelo menos uma das seguintes condições será satisfeita:
+
+\begin{enumerate}[(i)]
+\item para algum $i \in I, \vert (c_l)_i \vert \ > \lambda$. Isso ocorre para $\gamma_l = \gamma_l^{+}$, onde
+$$ \gamma_l^{+} = \min_{i \in I^c} \left\lbrace \frac{\lambda_l - c_l(i)}{1 - a_i^T v_l}, \frac{\lambda_l + c_l(i)}{1 + a_i^T v_l} \right\rbrace$$
+
+\item para algum $i \in I, (x_{l+1})_i = 0$, o que equivale a $\gamma = \gamma^{-}$, onde
+$$ \gamma_l^{-} = \min_{i \in I} \left\lbrace \frac{- x_l(i)}{d_l(i)} \right\rbrace$$
+\end{enumerate}
+
+Então calculamos $\gamma = \min \lbrace \gamma_l^{-}, \gamma_l^{+} \rbrace$. O algoritmo termina quando $c_l = 0$.
