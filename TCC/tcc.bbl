@@ -11,6 +11,11 @@ D~Donoho and Y~Tsaig.
   be sparse, 2006.
 \newblock {\em Preprint}, 1(2).
 
+\bibitem{duchowski2007eye}
+Andrew Duchowski.
+\newblock {\em Eye tracking methodology: Theory and practice}, volume 373.
+\newblock Springer Science \& Business Media, 2007.
+
 \bibitem{duchowski2002breadth}
 Andrew~T Duchowski.
 \newblock A breadth-first survey of eye-tracking applications.
@@ -34,6 +39,11 @@ TNE Greville.
   applications.
 \newblock {\em Amer. Statist. Assoc., Proc. Soc. Statist. Sect}, pages
   116--121, 1958.
+
+\bibitem{horn2012matrix}
+Roger~A Horn and Charles~R Johnson.
+\newblock {\em Matrix analysis}.
+\newblock Cambridge university press, 2012.
 
 \bibitem{kutyniok}
 Gitta Kutyniok.

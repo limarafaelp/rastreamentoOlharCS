@@ -2,30 +2,32 @@
 
 \textit{Compressive Sensing}(CS), também conhecido como \textit{Compressive Sampling} ou \textit{Compressed Sensing},  estuda formas de reconstruir um vetor a partir de poucas amostras. De agora em diante, será assumido que as amostras $(y_i)_{i = 1}^m$, representadas pelo vetor $y \in \mathbb{R}^m$ de um sinal $x \in \mathbb{R}^n$ são obtidas a partir de uma transformação linear $y = Ax$, onde $A$ é uma matriz $n \times m$, com $n < m$.
 
-{\bf Observação:} Durante o texto, sempre que referirmos a um vetor como uma imagem, assumimos que o vetor é calculado ao empilhar todas as colunas da imagem em escala de cinza.
+{\bf Observação:} Durante o texto, sempre que referirmos a um vetor como uma imagem, assumimos que o vetor é calculado ao empilhar todas as linhas da imagem em escala de cinza.
 
-Como $n < m$, a equação não possui uma única solução $x$, se possuir. Poderíamos calcular $x$ como $x = A^{\dagger} y$, resolvendo o problema de mínimos quadrados, ou seja, encontrando $x$ que minimiza $\Vert Ax - y \Vert_2$. Porém, as imagens recuperadas dessa forma não são parecidas com a imagem original. A Figura $\ref{fig:mmq}$ mostra uma imagem recuperada pelo método de mínimos quadrados para uma matriz $A$ $m \times n$, onde $m = 80 \% \cdot n$(compressão de $80\%$) e as entradas de $A$ são iid $\mathcal{N}(0,1)$.
+Como $n < m$, a equação não possui uma única solução $x$, se possuir. Poderíamos calcular $x$ como $x = A^{\dagger} y$, resolvendo o problema de mínimos quadrados, ou seja, encontrando $x$ que minimiza $\Vert Ax - y \Vert_2$. Porém, as imagens recuperadas dessa forma não são parecidas com a imagem original. A Figura $\ref{fig:mmq}$ mostra uma imagem recuperada pelo método de mínimos quadrados para uma matriz $A$ $m \times n$, onde $m = 80 \% \cdot n$(compressão de \oldc{$80\%$} \newc{$20\%$}) e as entradas de $A$ são iid $\mathcal{N}(0,1)$.
 
+\afterpage{
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[scale=1]{imagens/homotopy/original.png}
+        \includegraphics[scale=.35]{imagens/homotopy/joaninha.png}
         \caption{imagem original}
 %	    \label{fig:homotopy/original.png}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.4\textwidth}
         \centering
-        \includegraphics[scale=1]{imagens/homotopy/80porcentoMMQ.png}
-        \caption{compressão de $80\%$}
+        \includegraphics[scale=.35]{imagens/homotopy/joaninhaMMQ_20porcento.png}
+        \caption{compressão de \oldc{$80\%$}\newc{$20\%$}}
 %	    \label{fig:homotopy/80porcentoMMQ.png}
     \end{subfigure}
-    \caption{Recuperando imagem usando o método de mínimos quadrados para $y = Ax$, onde o vetor $x$ representa a imagem original e $A$ é uma matriz $m \times n$ com $m = 80 \% \cdot n$ cujas entradas são iid e seguem uma distribuição $\mathcal{N}(0,1)$.}
+    \caption{Recuperando imagem usando o método de mínimos quadrados para $y = Ax$, onde o vetor $x$ representa a imagem original e $A$ é uma matriz $m \times n$ com $m = 80 \% \cdot n$ cujas entradas são iid e seguem uma distribuição $\mathcal{N}(0,1)$. Adaptado de \protect \footnotemark}
     \label{fig:mmq} %label deve ficar após caption
 \end{figure}
-
-Sabemos que, geralmente, imagens são esparsas no espectro da frequência. Uma imagem pode ser decomposta como uma combinação linear de senoidais e, na prática, os coeficientes correspondentes às frequências mais altas são muito próximos de zero. Na Figura $\ref{fig:coeficientes_altos}$ mostramos uma imagem após descartar $40\%$ dos coeficientes de valores mais baixos (compressão de $60\%$). Note que as imagens {\bf (a)} e {\bf (b)} são bastante parecidas, indicando que a imagem é esparsa, ou aproximadamente esparsa (com muitos coeficientes muito próximos de zero) no espectro da frequência. 
+\footnotetext{\newc{ \url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}}
+}
+Sabemos que, geralmente, imagens são esparsas no espectro da frequência. Uma imagem pode ser decomposta como uma combinação linear de senoidais e, na prática, os coeficientes correspondentes às frequências mais altas são muito próximos de zero. Na Figura $\ref{fig:coeficientes_altos}$ \oldc{mostramos uma imagem após descartar $40\%$ dos coeficientes de valores mais baixos (compressão de $60\%$)} \newc{a imagem é reconstruída apenas com as frequências cujos coeficientes estão entre os $60\%$ maior valor absoluto (compressão de $40\%$).} Note que as imagens {\bf (a)} e {\bf (b)} são bastante parecidas, indicando que a imagem é esparsa, ou aproximadamente esparsa (com muitos coeficientes muito próximos de zero) no espectro da frequência. 
 
 \afterpage{
 \begin{figure}
@@ -43,21 +45,23 @@ Sabemos que, geralmente, imagens são esparsas no espectro da frequência. Uma i
         \caption{compressão de $60\%$}
 %	    \label{fig:homotopy/80porcentoMMQ.png}
     \end{subfigure}
-    \caption[]{A imagem em {\bf (b)} é calculada ao descartar $40\%$ das senoidais que compõem a imagem cujos coefientes têm menor módulo. Adaptado de \protect \footnotemark}
+    \caption[]{A imagem em {\bf (b)} é calculada ao descartar $40\%$ das senoidais que compõem a imagem cujos coefientes têm menor módulo. Adaptado de \protect \footnotemark .}
      \label{fig:coeficientes_altos}
 \end{center}
 \end{figure}
-\footnotetext{NÃO CONSEGUI POR LINK}
-%\footnotetext{\url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum_-_West_Lodge_Park_-_Hadley_Wood_-_Enfield_London_2.jpg}}
+%\footnotetext{\url{www.google.com/very-very-very-very-very-very-very-very-very-very-very-very}\protect \\ \url{-very-very-very-very-very-very-very-very-very}}
+%\footnotetext{NÃO CONSEGUI POR LINK}
+\footnotetext{\newc{ \url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum_} \\ \url{-_West_Lodge_Park_-_Hadley_Wood_-_Enfield_London_2.jpg} }}
 }
- A ideia é então escolher, entre todas as soluções possíveis, o vetor $x$ com o maior número de coeficientes nulos. Para entender melhor o problema, as seguintes definições serão enunciadas:
+
+A ideia é então escolher, entre todas as soluções possíveis, o vetor $x$ com o maior número de coeficientes nulos. Para entender melhor o problema, as seguintes definições\newc{, retiradas de \cite{ddek},} serão enunciadas:
 
 \textbf{Def:} Seja $x \in \mathbb{R}^n$. $x$ é $k$-esparso se possui, no mínimo, $k$ coeficientes nulos.
 
 \textbf{Def:} Dado $x \in \mathbb{R}^n$, a `norma' $0$ de $x$ é definida como
 $\Vert x \Vert_{0} = \# \lbrace i : \vert x_i \vert > 0 \rbrace$ 
 
-Observe que a `norma' 0 não é uma norma, pois, se $x = (1, 0)$, $\Vert 2x \Vert = 1 \neq 2 \Vert x \Vert$. Porém, $\Vert \cdot \Vert_0$ satisfaz as propriedades demonstradas na Proposicao $\ref{prp:norma_0}$.
+Observe que a `norma' 0 não é uma norma, pois, se $x = (1, 0)$, $\Vert 2x \Vert = 1 \neq 2 \Vert x \Vert$. Porém, $\Vert \cdot \Vert_0$ satisfaz as propriedades demonstradas na Proposicao $\ref{prp:norma_0}$ \newc{, retirada de \cite{ddek}}.
 
 \begin{proposicao}
 Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$, a `norma' $0$ satisfaz as seguintes propriedades:
@@ -71,6 +75,7 @@ Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$, a `norma' $0$ satisfaz 
 \label{prp:norma_0}
 \end{proposicao}
 \begin{proof}
+
 Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$
 
 \begin{enumerate}[(i)]
@@ -83,7 +88,6 @@ Fixados $x, y \in \mathbb{R}^n, \lambda \in \mathbb{R}$
 & \Rightarrow x = 0
 \end{align*}
 \end{subequations}
-
 \item Se $\lambda \neq 0$,
 \begin{subequations}
 \begin{align*}
@@ -130,7 +134,7 @@ No entanto, $\eqref{eqn:P0}$ é NP-difícil \cite{fourau}. Então tentamos resol
 \label{eqn:P1}
 \end{equation}
 
-A Figura $\ref{fig:normas}$ nos ajuda a entender a semelhança entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. A figura mostra o problema de minimização de $\Vert x \Vert_p$ sujeito a $Ax = y$ para $x \in \mathbb{R}^2$ e $y \in \mathbb{R}$. O ponto $x$ minimiza a norma em um único ponto se a fronteira de uma bola fechada centrada em $0$ toca a reta $Ax = y$ apenas em $x$. Nest caso, as soluções calculadas para $p = 1$ e $p = 1/2$ são esparsas. Note que $\Vert \cdot \Vert_{\frac{1}{2}}$ não é norma.
+A Figura $\ref{fig:normas}$ nos ajuda a entender a semelhança entre $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. A figura mostra o problema de minimização de $\Vert x \Vert_p$ sujeito a $Ax = y$ para $x \in \mathbb{R}^2$ e $y \in \mathbb{R}$. O ponto $x$ minimiza a norma em um único ponto se a fronteira de uma bola fechada centrada em $0$ toca a reta $Ax = y$ apenas em $x$. \newc{Neste caso}, as soluções calculadas para $p = 1$ e $p = 1/2$ são esparsas. Note que $\Vert \cdot \Vert_{\frac{1}{2}}$ não é norma.
 
 \begin{figure}
 \centering
@@ -139,7 +143,7 @@ A Figura $\ref{fig:normas}$ nos ajuda a entender a semelhança entre $\eqref{eqn
 \label{fig:normas}
 \end{figure}
 
-CS tem como objetivo estudar condições para garantir a equivalência entre os dois problemas, e condições para a unicidade de soluções de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. Descrevemos estas condições a seguir.
+CS tem como objetivo estudar condições para garantir a equivalência entre os dois problemas, e condições para a unicidade de soluções de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$. Descrevemos estas condições \oldc{a seguir.} \newc{nas seções 3.2, 3.3 e 3.4. Todos resultados mostrados nessas seções podem ser encontrados em \cite{ddek}, exceto quando indicados explicitamente.}
 
 \section{Unicidade de $\eqref{eqn:P0}$}
 Se a matriz $A$ fosse $n \times n$ de posto máximo, a unicidade estaria garantida. Como $m < n$, definimos o conceito de \textit{spark}, que verbalmente é uma fusão dos conceitos `esparso' e `posto'(\textit{rank}) \cite{kutyniok}.
@@ -414,7 +418,7 @@ $$
 \end{proof}
 
 \begin{teorema}
-(citar referência) Seja $A$ uma matriz $n \times n$, de elementos $a_{ij}, 1\leq i,j \leq n$. Então, para cada autovalor $\lambda$ de $A$,
+(Ger\v{s}gorin) \cite{horn2012matrix} Seja $A$ uma matriz $n \times n$, de elementos $a_{ij}, 1\leq i,j \leq n$. Então, para cada autovalor $\lambda$ de $A$,
 
 $$ \lambda \in \bigcup_{i = 1}^n \overline{B}(a_{ii}, r_i) $$
 
@@ -483,17 +487,19 @@ Seja $\Lambda$ o suporte de $x$. Temos que
 + \sum_{k \in \Lambda} \left( \vert x_k + h_k \vert - \vert x_k \vert \right) \\
 & \geq \sum_{k \in \Lambda^{\mathsf{c}}} \vert h_k \vert
 - \sum_{k \in \Lambda} \vert h_k \vert \\
-& = \Vert h_{\Lambda^{\mathsf{c}}} \Vert_1 - \Vert h_\Lambda \Vert_1
+& = \Vert h_{\Lambda^{\mathsf{c}}} \Vert_1 - \Vert h_\Lambda \Vert_1 \\
+& = \Vert h_{\Lambda^{\mathsf{c}}} \Vert_1 - \Vert h_\Lambda \Vert_1 + (\Vert h_\Lambda \Vert_1 - \Vert h_\Lambda \Vert_1) \\
+& = \Vert h \Vert_1 - 2 \Vert h_{\Lambda^\mathsf{c}} \Vert_1
 \end{align*}
 \end{subequations}
 
-Pelo [LEMA ...],
-$$\inf_{\substack{Ah = 0 \\ h \neq 0}} \Vert h \Vert_1 - 2 \Vert h_\Lambda \Vert_1
-= \inf_{\substack{Ah = 0 \\ \Vert h \Vert_1 = 1}} \Vert h \Vert_1 - 2 \Vert h_\Lambda \Vert_1
-= \inf_{\substack{Ah = 0 \\ \Vert h \Vert_1 = 1}} 1 - 2 \Vert h_\Lambda \Vert_1
-$$
+%Pelo [LEMA ...],
+%$$\inf_{\substack{Ah = 0 \\ h \neq 0}} \Vert h \Vert_1 - 2 \Vert h_\Lambda \Vert_1
+%= \inf_{\substack{Ah = 0 \\ \Vert h \Vert_1 = 1}} \Vert h \Vert_1 - 2 \Vert h_\Lambda \Vert_1
+%= \inf_{\substack{Ah = 0 \\ \Vert h \Vert_1 = 1}} 1 - 2 \Vert h_\Lambda \Vert_1
+%$$
 
-Como $Ah = 0 \Rightarrow A^{\mathsf{T}} A h = 0$, temos que
+Como $\forall h, Ah = 0 \Rightarrow A^{\mathsf{T}} A h = 0$, temos que
 
 $$ \inf_{\substack{Ah = 0 \\ \Vert h \Vert_1 = 1}} 1 - 2 \Vert h_\Lambda \Vert_1
 \geq \inf_{\substack{A^{\mathsf{T}}Ah = 0 \\ \Vert h \Vert_1 = 1}} 1 - 2 \Vert h_\Lambda \Vert_1$$
@@ -522,10 +528,10 @@ $$
 Todos as entradas de $G - I$ maiores os iguais a zero e os elementos da diagonal são nulos, então
 $$ \vert G - I \vert_{ij} \leq \max_{i \neq j} G_{ij} = \max_{i \neq j} \langle a_i, a_j \rangle = \mu(A)$$
 Então
-$$ \vert G - I \vert \leq \mu(A) (\mathbb{1} - I)$$
+$$ \vert G - I \vert \leq \mu(A) (\mathbbm{1} - I)$$
 
 Logo
-$$ z \leq \mu(A) (\mathbb{1} - I) z$$
+$$ z \leq \mu(A) (\mathbbm{1} - I) z$$
 
 Então, dado $i \in \Lambda$,
 
@@ -574,7 +580,7 @@ Como vimos anteriormente, a matriz $A$ deve satisfazer algumas condições para 
 
 %http://www.math.ucla.edu/~wotaoyin/summer2013/slides/Lec03_SparseRecoveryGuarantees.pdf
 
-Uma matriz $A$ cujas entradas são amostradas através de uma distribuição normal satisfazem as condições de CS com alta probabilidade, como mostra o Teorema \ref{thm:normalCS}.
+Uma matriz $A$ cujas entradas são amostradas através de uma distribuição normal satisfazem as condições de CS com alta probabilidade, como mostra o Teorema \ref{thm:normalCS}, que foi extraído de \cite{zhang2008theory}.
 
 \begin{teorema} \cite{zhang2008theory} Sejam $m < n$, $\Omega \subset \mathbb{R}^n$ e $A \in \mathbb{R}^{m \times n}$ tais que apenas uma das afirmações é verdadeira:
 \begin{enumerate}

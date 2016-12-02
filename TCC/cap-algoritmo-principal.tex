@@ -5,7 +5,7 @@ Desenvolvemos um programa para estimar o olhar do usuário, ou seja, estimar qua
 \begin{itemize}
 \item {\bf Calibração:} exibimos alvos em posições específicas na tela e coletamos uma imagem do olho por alvo, assumindo que o usuário está olhando para o alvo.
 
-\item {\bf Rastreamento:} para cada frame $f$, encontramos as amostras mais parecidas com $f$. Estimamos a posição da olhar como a média das posições da na tela correspondentes às amostras selecionadas.
+\item {\bf Rastreamento:} para cada frame $f$, encontramos as amostras mais parecidas com $f$. Estimamos a posição do olhar como a média das posições da na tela correspondentes às amostras selecionadas.
 \end{itemize}
 
 Essas etapas são descritas mais detalhadamente abaixo.
@@ -37,11 +37,11 @@ Usamos um monitor de lagura $37,3cm$ e altura de $32cm$, com resolução $1280 \
 \begin{figure}
 \centering
 \includegraphics[scale=1]{imagens/alvo.png}
-\caption{Durante uma coleta, a pessoa deve olhar. Os alvos são exibidos em posições diferentes em uma grade $7 \times 7$ na tela.}
+\caption{\oldc{Durante uma coleta, a pessoa deve olhar. Os alvos são exibidos em posições diferentes em uma grade $7 \times 7$ na tela.} \newc{Durante uma coleta, a pessoa deve olhar para os alvos que são exibidos em posições diferentes em uma grade $7 \times 7$.}}
 \label{fig:alvo}
 \end{figure}
 
-\subsubsection{Estimar posição da olhar nas imagens coletadas}
+\section{\newc{Rastreamento de olhar}}
 
 Após terminar a coleta das imagens, estimamos a posição do olhar para imagens correspondendo a todos os pontos da grade $7 \times 7$. Como todas imagens registradas correspondem aos pontos da grade, já sabemos a posição do olhar em cada um deles, então usaremos a posição exata e a posição estimada para calcular o erro como a distância euclidiana entre elas. Usaremos a posição de cada alvo em graus horizontal e vertical, e não em \textit{pixels} na tela.
 
@@ -60,8 +60,9 @@ A Tabela $\ref{tab:erros}$ mostra a média dos erros (conhecida como acurácia) 
 & \multicolumn{3}{| c |}{dimensão das imagens} \\ \hline
 dimensões das imagens & $15 \times 20$ & $30 \times 40$ & $60 \times 80$ \\ \hline
 Erro				  & $1,471 \pm 2,398$ & $1,113 \pm 2,291$ & $1,053 \pm 2,279$ \\ \hline
+Imagem & \vspace{2pt} \includegraphics[width=2cm]{imagens/olho_20_15.jpg} & \includegraphics[width=2cm]{imagens/olho_40_30.jpg} & \includegraphics[width=2cm]{imagens/olho_80_60.jpg} \\ \hline
 \end{tabular}
-\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus.}
+\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus. A última linha mostra exemplos de imagens usadas nas respectivas dimensões.}
 \label{tab:erros}
 \end{table}
 
@@ -96,7 +97,7 @@ A Figura \ref{fig:erros_participante} mostra a acurácia para cada participante.
 \begin{figure}
     \centering
     \includegraphics[scale=.6]{imagens/errosParticipantes_pyrDown3.png}
-    \caption{A figura mostra a acurácia para diferentes participantes usando o algoritmo para estimar olhar com imagens $60 \times 80$.}
+    \caption{A figura mostra a acurácia para diferentes participantes usando o algoritmo para estimar olhar com imagens $60 \times 80$. \newc{A acurácia para o participante $2$ foi pior porque ele piscou durante a coleta das amostras.}}
     \label{fig:erros_participante}
 \end{figure}
 

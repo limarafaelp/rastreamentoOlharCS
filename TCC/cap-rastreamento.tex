@@ -10,7 +10,7 @@ Através da análise da posição do olhar é possível avaliar a influência de
 
 O olhar também pode ser usado como um indicador de usabilidade de interfaces de \textit{software}, sendo usado em estudos de interação humano-computador (IHC) \cite{duchowski2002breadth}.
 
-Algumas partes do olho humano, que estão representadas na figura $\ref{fig:olho}$,  são as seguintes$\cite{lidade}$:
+Algumas partes do olho humano, que estão representadas na Figura $\ref{fig:olho}$,  são as seguintes \cite{lidade}:
 
 \afterpage{
 %assim o footnote funciona http://blog.peschla.net/2012/11/latex-footnotes-in-captions/
@@ -40,18 +40,19 @@ Técnicas de rastreamento de olhar podem ser divididas em três modalidades \cit
 
 \begin{enumerate}
 \item {\bf Eletro-oculografia}, que registra diferenças de potencial elétrico na pele ao redor da cavidade ocular.
-\item Instalando algum dispositivo mecânico sobre uma lente de contato.
+\item \oldc{Instalando algum dispositivo mecânico sobre uma lente de contato.} \newc{{\bf Lente de contato}, uma bobina é instalada no olho sobre uma lente de contato e a posição do olho é estimada ao medir o campo eletromagnético. \cite{duchowski2007eye}. Este método é o mais preciso para medir movimentos do olho, porém é o mais invasivo \cite{duchowski2007eye}.}
+
 %sic: no texto estava oculografia baseada em foto ou vídeo
 \item  {\bf Rastreamento baseado em vídeo}, que usa técnicas de processamento de imagens para identificar a posição da pupila nas imagens do olho.
 \end{enumerate}
 
-O rastreamento baseado em vídeo a modalidade de rastreamento de olhar menos invasiva.
+O rastreamento baseado em vídeo \newc{é} a modalidade de rastreamento de olhar menos invasiva.
 
-Dois tipos de imagem podem ser usados no rastramento baseado em vídeo: imagens no espectro visual ou imagens em infravermelho.
+Dois tipos de imagem \oldc{podem ser} \newc{são comumente} usados no rastramento baseado em vídeo: imagens no espectro visual ou imagens em infravermelho.
 
 No rastreamento pelo espectro visual, a luz refletida pelos olhos é registrada. Neste caso, a eficiência do rastreamento depende das condições de iluminação do ambiente, o que torna o processo complicado $\cite{lidade}$.
 
-No caso de imagens em infravermelho, não temos esse problema, pois o olho é constantemente iluminado por uma fonte de luz infravermelha, que não é percebida pelo usuário. Uma vantagem desta abordagem é que a pupila reflete boa parte da luz infravermelha recebida, sendo a região mais brilhante do olho na imagem $\cite{lidade}$. Devido ao tamanho, a pupila tem menor chance de ser parcialmente ocultada pelos  cílios do que a esclera, outra região que reflete o infravermelho. %pupila será sempre a região mais brilhante na imagem $\cite{lupung}$: se a fonte de luz estiver alinhada com o olho, a pupila aparecerá branca, caso contrário, estará preta na imagem.
+No caso de imagens em infravermelho, não temos esse problema, pois o olho é constantemente iluminado por uma fonte de luz infravermelha, que não é percebida pelo usuário. Uma vantagem desta abordagem é que a pupila reflete \oldc{boa} parte da luz infravermelha recebida, sendo a região mais brilhante do olho na imagem $\cite{lidade}$. Devido \oldc{ao tamanho} \newc{ao seu tamanho e posição}, a pupila tem menor chance de ser parcialmente ocultada pelos  cílios do que a esclera, outra região que reflete o infravermelho. %pupila será sempre a região mais brilhante na imagem $\cite{lupung}$: se a fonte de luz estiver alinhada com o olho, a pupila aparecerá branca, caso contrário, estará preta na imagem.
 
 A principal desvantagem é que não é possível usar esse tipo de rastreador ao ar livre durante o dia devido à luz infravermelha do ambiente $\cite{lidade}$.
 
@@ -69,11 +70,11 @@ As técnicas de rastreamento de olhar também variam de acordo com a localizaç�
 \footnotetext{\url{https://pupil-labs.com/blog/2014-01/new-pupil-pro-headset-capture-software-0-3-7/}}
 }
 
-Uma vantagem do rastreamento \textit{head-mounted} é que a câmera move com a cabeça, então mudanças de pose não causam mudanças da posição da pupila na imagem. A desvantagem é a necessidade de usar um equipamento acoplado à cabeça. Por estar muito próxima do olho, a câmera do olho pode ocultar parte do campo de visão, dificultando a interação com o usuário.
+Uma vantagem do rastreamento \textit{head-mounted} é que a câmera \newc{se} move com a cabeça, então mudanças de pose não causam mudanças da posição da pupila na imagem. A desvantagem é a necessidade de usar um equipamento acoplado à cabeça. Por estar muito próxima do olho, a câmera do olho pode ocultar parte do campo de visão, dificultando a interação com o usuário.
 
-\section{Métricas em rastreamento de olhar}
+\section{\newc{Características em} rastreamento de olhar}
 
-Em algumas aplicações de rastreamento de olhar não estamos interessados apenas na direção do olhar em determinado instante, mas também poderemos querer observar outras características (métricas) relacionadas ao movimento do olhos. As métricas mais específicas são \cite{lupung}:
+Em algumas aplicações de rastreamento de olhar não estamos interessados apenas na direção do olhar em determinado instante, mas também \oldc{poderemos} \newc{podemos} querer observar outras características \oldc{(métricas)} relacionadas ao movimento do olhos. As \oldc{métricas}\newc{características} mais específicas são \cite{lupung}:
 
 \begin{itemize}
 \item {\bf Fixação e sacada:} Em 1989, Emile Java (oftalmologista francês) observou que os movimentos do olho não ocorrem de forma contínua, e sim de movimentos rápidos, chamados de sacadas, seguidos por breves pausas, conhecidas como fixações;
