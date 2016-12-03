@@ -1,0 +1,5 @@
+Calibração: exibimos alvos em posições especícas na tela e coletamos
+uma imagem do olho por alvo, assumindo que o usuário está olhando para o
+alvo.
+
+Coleta: exibimos alvos em posições específicas na tela e coletamos imagens do olho para cada alvo, assumindo que o usuário está olhando para o alvo (página 37)
