@@ -1,0 +1,453 @@
+\documentclass[11pt]{beamer}
+%\setbeamertemplate{frametitle}
+%{\begin{centering}\smallskip
+%   \insertframetitle\par
+%   \smallskip\end{centering}}
+%\setbeamertemplate{itemize item}{$\bullet$}
+%\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[text line]{%
+%\hfill\strut{%
+%        \scriptsize\sf\color{black!60}%
+%        \quad\insertframenumber
+%     }%
+%\hfill
+%}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage[brazil]{babel}
+\usepackage{subfig}
+
+% Evita Warning Font shape `OT1/cmss/m/n' in size <4> not available(Font) size <5> substituted
+\usepackage{lmodern}
+
+\usepackage{tikz}
+\usepgflibrary{arrows}% for more options on arrows
+
+\author{\mbox{Rafael Pereira Lima} \and
+		\mbox{Orientador: Prof. Dr. Carlos Hitoshi Morimoto}}
+\title{Rastreamento de Olhar Usando Compressive Sensing}
+\subtitle{Trabalho de formatura}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{IME-USP} 
+\date{8 de dezembro de 2016} 
+\subject{} 
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+Rastreamento de olhar consiste na determinação da posição do olhar em determinado período.
+\begin{figure}
+\includegraphics[scale=1]{imagens/dmk-headset.jpg}
+\caption{\tiny{Reproduzido de \url{https://pupil-labs.com/blog/2016-07/new-headset-color/}}}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+\framesubtitle{Aplicações}
+\begin{figure}
+	%\subfloat{\includegraphics[scale=.5]{imagens/deficientes.png} }
+	\subfloat{\includegraphics[scale=.3]{imagens/teclado.png} }
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+\framesubtitle{Aplicações}
+\begin{figure}
+	\subfloat{\includegraphics[scale=.4]{imagens/census-homepage-heatmap.jpg} }
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+\framesubtitle{Aplicações}
+\begin{figure}
+	\subfloat{\includegraphics[scale=.3]{imagens/dolcegabbana.jpg} }
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+\framesubtitle{Rastreamento baseado em vídeo}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\hspace{10cm}
+\includegraphics[scale=.6]{imagens/pupil.png}
+\column{.5\textwidth}
+\centering
+Imagem do olho em RGB
+\includegraphics[scale=.03]{imagens/Myeye.jpg} \\
+\vspace{1cm}
+Imagem  em Infravermelho\\
+\includegraphics[scale=.1]{imagens/26.jpg}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rastreamento de olhar}
+\framesubtitle{Rastreamento baseado em vídeo}
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\textit{Head-mounted}
+\includegraphics[scale=.6]{imagens/pupil.png}
+
+\column{.5\textwidth}
+\centering
+\textit{remoto}
+\includegraphics[scale=1]{imagens/eyex.jpg}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+Compressive Sensing(CS), ou Compressed Sensing, estuda formas de reconstruir um vetor $x$ com
+
+$$ Ax = y$$
+
+onde $A$ é $m \times n$ e $m \ll n$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+Poderíamos tentar o método dos mínimos quadrados:
+
+$$\min_{x \in \mathbb{R}^n} \Vert Ax - y \Vert_2^2$$
+
+mas
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{center}
+\includegraphics[scale=.25]{imagens/joaninha.png}
+\end{center}
+
+\column{.5\textwidth}
+\begin{center}
+\includegraphics[scale=.25]{imagens/joaninhaMMQ_20porcento.png}
+\end{center}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+Imagens geralmente são esparsas no espectro da frequência.
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=.4]{imagens/Beale_Arboretum_gray.png}
+%\caption{Imagem original}
+\end{figure}
+Imagem original
+\end{center}
+
+\column{.5\textwidth}
+\begin{center}
+\begin{figure}
+\includegraphics[scale=.4]{imagens/Beale_Arboretum_60porc_freq_maiores.png}
+%\caption{Compressão de $40%$}
+\end{figure}
+Compressão de $40\%$
+\end{center}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+Queremos encontrar $x$ mais esparso com $Ax = y$, ou seja,
+\begin{equation}
+\min_{x \in \mathbb{R}^n} \Vert x \Vert_0 \textit{ sujeito a } Ax = y
+\tag{$P_0$}
+\label{eqn:P0}
+\end{equation}
+
+onde $\Vert x \Vert_0$ é a quantidade de elementos não nulos de $x$. \\
+
+Mas $\eqref{eqn:P0}$ é NP.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\begin{center}
+\includegraphics[scale=.4]{imagens/normas.png}
+\end{center}
+\begin{equation}
+\min_{x \in \mathbb{R}^n} \Vert x \Vert_p \textit{ sujeito a } Ax = y
+\tag{$P_p$}
+\label{eqn:Pp}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+CS estuda as condições que $A$ deve satisfazer para garantir a equivalência entre
+
+\begin{equation}
+\min_{x \in \mathbb{R}^n} \Vert x \Vert_0 \textit{ sujeito a } Ax = y
+\tag{$P_0$}
+%\label{eqn:P0}
+\end{equation}
+
+e
+
+\begin{equation}
+\min_{x \in \mathbb{R}^n} \Vert x \Vert_1 \textit{ sujeito a } Ax = y
+\tag{$P_1$}
+\label{eqn:P1}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+Uma dessas condições leva em conta a coerência de $A$, definida como
+
+$$\mu(A) = \max_{i \neq j} \vert \langle a_i, a_j \rangle \vert$$
+
+\begin{center}
+\begin{columns}[t]
+\column{.5\textwidth}
+\vspace{.5cm}
+\begin{center}
+\begin{tikzpicture}[thick]
+\begin{scope}[-stealth]
+%    \draw [blue   ] (0,7.5) -- (1,7.5) node [right] {stealth};;
+%    \draw [red,   ] (0,7.0) -- (1,7.0) node [right] {stealth};
+%    \draw [brown,-] (0,6.5) -- (1,6.5);
+	\draw [gray ]  (0,-1) -- (0,.5) node [right] {$a_1$};
+	\draw [gray ]  (0,-1) -- (1,-.7) node [right] {$a_2$};
+	\draw [gray ]  (0,-1) -- (1.5,-1) node [right] {$a_3$};
+	\draw [gray ]  (0,-1) -- (-.6,.1) node [right] {$a_4$};
+	\draw [black ] (0,-1) -- (.2,0) node [right] {$y$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\column{.5\textwidth}
+\begin{center}
+Note que
+$$y = Ax = \sum_{i = 1}^n a_i \langle a_i, x \rangle$$
+\end{center}
+\end{columns}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+$A$ com $a_{ij}$ iid $\mathcal{N}(0,1)$ satisfaz essas condições com alta probabilidade.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{Algoritmo de homotopia}
+Resolve $\eqref{eqn:P1}$ encontrando uma sequência $(x_n)$ de soluções para
+
+$$J_n(x) = \Vert Ax - y \Vert_2^2 + \lambda_n \Vert x \Vert_1$$
+
+com $(\lambda_n)$ decrescente.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{Algoritmo de homotopia}
+\begin{center}
+Imagens recuperadas com taxa de compressão de $20\%$\\
+\end{center}
+
+\begin{columns}[t]
+\column{.33\textwidth}
+\centering
+\includegraphics[scale=.25]{imagens/joaninha.png}\\
+Imagem original
+
+\column{.33\textwidth}
+\centering
+\includegraphics[scale=.25]{imagens/joaninhaHomotopy_20porcento.png}\\
+Homotopia
+
+\column{.33\textwidth}
+\centering
+\includegraphics[scale=.25]{imagens/joaninhaMMQ_20porcento.png}\\
+Mínimos quadrados
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{O modelo cross-and-bouquet}
+
+Dada uma matriz
+
+$$ A = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(0,0).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(2,4).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(4,1).jpg}} \vert \cdots \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(6,4).jpg}}  \right]$$
+
+e um vetor
+
+$$y = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(5,2).jpg}} \right]$$
+
+qual é a coluna de $A$ (amostra) mais parecida com $y$?
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{O modelo cross-and-bouquet}
+
+Vamos formular essa pergunta como um problema de CS.
+
+$$y = Ax + e = \left[ \begin{tabular}{c | c} A & I \end{tabular} \right] \left[ \begin{tabular}{c} x \\ e \end{tabular}\right] = Bc$$
+
+$$\min_{c \in \mathbb{R}^n} \Vert c \Vert_1 \textit{ sujeito a } Bc = y$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{O modelo cross-and-bouquet}
+\centering
+\includegraphics[scale=.4]{imagens/cross-and-bouquet.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{O modelo cross-and-bouquet}
+\centering
+Identificaremos a amostra $a_i$ mais próxima de $y$ satisfazendo
+
+$$i = \arg \max_{1 \leq i \leq n} \vert x_i \vert$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+
+Usamos uma câmera da Pupil Labs
+
+\vspace{1cm}
+\centering
+\includegraphics[scale=.6]{imagens/pupil.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Coleta}
+
+Coletamos imagens do olho direito de $6$ participantes.
+\centering
+\includegraphics[scale=1]{imagens/26.jpg}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Coleta}
+
+\centering
+\includegraphics[scale=.6]{imagens/alvo.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Rastreamento}
+
+Escolhemos a primeira imagem registrada para cada alvo, reduzimos a imagem e calculamos a matriz $A$.
+
+$$ A = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(0,0).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(2,4).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(4,1).jpg}} \vert \cdots \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(6,4).jpg}}  \right]$$
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Rastreamento}
+
+Escolhemos $5$ imagens por alvo e estimamos a posiçao do olhar para cada imagem.
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Rastreamento}
+$$ A = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(0,0).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(2,4).jpg}} \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(4,1).jpg}} \vert \cdots \vert \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(6,4).jpg}}  \right]$$
+
+$$y = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(5,2).jpg}} \right]$$
+
+$$y = Ax + e$$
+
+Calculamos o olhar como a média das posições das três amostras mais próximas de $y$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Resultados}
+
+\begin{center}
+Desempenho do rastreador para diferentes resoluções de imagem
+\end{center}
+\footnotesize{
+\begin{table}
+\centering
+\begin{tabular}{ c  c  c  c }
+\hline
+dimensões das imagens & $15 \times 20$ & $30 \times 40$ & $60 \times 80$ \\ \hline
+Erro				  & $1,471 \pm 2,398$ & $1,113 \pm 2,291$ & $1,053 \pm 2,279$ \\ \hline
+Imagem & \vspace{2pt} \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_20_15.jpg}} & \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_40_30.jpg}} & \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_80_60.jpg}} \\ \hline
+\end{tabular}
+\end{table}
+}
+
+O rastreador apresenta desempenho semelhante ao Eyex ( $1,42 \pm 1,7$)
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Resultados}
+
+%\begin{center}
+%Acurácia por posição na tela
+%\end{center}
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\centering
+\tiny{usando imagens $15 \times 20$}
+\includegraphics[scale=.3]{imagens/erros5pyrDown.png}
+
+%\column{.5\textwidth}
+%\centering
+\includegraphics[scale=.3]{imagens/erros4pyrDown.png}
+
+\tiny{usando imagens $30 \times 40$}
+
+\column{.5\textwidth}
+\centering
+\tiny{usando imagens $60 \times 80$}
+\includegraphics[scale=.3]{imagens/erros3pyrDown.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Desenvolvimento de um rastreador de olhar}
+\framesubtitle{Resultados}
+
+%\begin{center}
+%Erros por participante
+%\end{center}
+\includegraphics[scale=.65]{imagens/errosParticipantes_pyrDown3.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusão}
+\begin{itemize}
+\item Neste trabalho estudamos conceitos de rastreamento de olhar e Compressed Sensing
+\item Elaboramos um experimento para testar o desempenho do rastreador
+\item Apesar das limitações, o rastreador apresenta desempenho semelhante a um rastreador comercial
+\end{itemize}
+\end{frame}
+\end{document}
