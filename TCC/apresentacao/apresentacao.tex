@@ -38,6 +38,10 @@
 \date{8 de dezembro de 2016} 
 \subject{} 
 
+\captionsetup{labelformat=empty,labelsep=none}%remove prefixo 'Figura' em caption
+
+\setbeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber} 
+
 \begin{document}
 
 \begin{frame}
@@ -49,7 +53,7 @@
 Rastreamento de olhar consiste na determinação da posição do olhar em determinado período.
 \begin{figure}
 \includegraphics[scale=1]{imagens/dmk-headset.jpg}
-\caption{\tiny{Reproduzido de \url{https://pupil-labs.com/blog/2016-07/new-headset-color/}}}
+\caption{\tiny{\url{https://pupil-labs.com/blog/2016-07/new-headset-color/}}}
 \end{figure}
 \end{frame}
 
@@ -58,7 +62,8 @@ Rastreamento de olhar consiste na determinação da posição do olhar em determ
 \framesubtitle{Aplicações}
 \begin{figure}
 	%\subfloat{\includegraphics[scale=.5]{imagens/deficientes.png} }
-	\subfloat{\includegraphics[scale=.3]{imagens/teclado.png} }
+	\subfloat{\includegraphics[scale=.3]{imagens/teclado.png}}
+	\caption{\tiny{Kurauchi, Andrew, et al. "EyeSwipe: Dwell-free Text Entry Using Gaze Paths." Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, 2016.}}
 \end{figure}
 \end{frame}
 
@@ -67,6 +72,7 @@ Rastreamento de olhar consiste na determinação da posição do olhar em determ
 \framesubtitle{Aplicações}
 \begin{figure}
 	\subfloat{\includegraphics[scale=.4]{imagens/census-homepage-heatmap.jpg} }
+	\caption{\tiny{\url{https://www.nngroup.com/articles/fancy-formatting-looks-like-an-ad/}}}
 \end{figure}
 \end{frame}
 
@@ -75,6 +81,7 @@ Rastreamento de olhar consiste na determinação da posição do olhar em determ
 \framesubtitle{Aplicações}
 \begin{figure}
 	\subfloat{\includegraphics[scale=.3]{imagens/dolcegabbana.jpg} }
+	\caption{\tiny{\url{http://www.businessinsider.com.au/eye-tracking-heatmaps-2014-7}}}
 \end{figure}
 \end{frame}
 
@@ -85,14 +92,20 @@ Rastreamento de olhar consiste na determinação da posição do olhar em determ
 \column{.5\textwidth}
 \centering
 \hspace{10cm}
+\begin{figure}
 \includegraphics[scale=.6]{imagens/pupil.png}
+\caption{\tiny{\url{https://pupil-labs.com/blog/2014-01/new-pupil-pro-headset-capture-software-0-3-7/}}}
+\end{figure}
 \column{.5\textwidth}
 \centering
 Imagem do olho em RGB
-\includegraphics[scale=.03]{imagens/Myeye.jpg} \\
-\vspace{1cm}
+\begin{figure}
+\includegraphics[scale=.03]{imagens/Myeye.jpg}
+\caption{\tiny{\url{https://commons.wikimedia.org/wiki/File:My_eye.jpg}}}
+\end{figure}
+\vspace{.2cm}
 Imagem  em Infravermelho\\
-\includegraphics[scale=.1]{imagens/26.jpg}
+\includegraphics[scale=.65]{imagens/26.jpg}
 \end{columns}
 \end{frame}
 
@@ -103,12 +116,17 @@ Imagem  em Infravermelho\\
 \column{.5\textwidth}
 \centering
 \textit{Head-mounted}
+\begin{figure}
 \includegraphics[scale=.6]{imagens/pupil.png}
-
+\caption{\tiny{\url{https://pupil-labs.com/blog/2014-01/new-pupil-pro-headset-capture-software-0-3-7/}}}
+\end{figure}
 \column{.5\textwidth}
 \centering
 \textit{remoto}
+\begin{figure}
 \includegraphics[scale=1]{imagens/eyex.jpg}
+\caption{\tiny{\url{http://www.tobii.com/group/news-media/press-releases/2015/12/tobii-validated-for-windows-hello-}\\\url{login-announces-support-for-facial-recognition/}}}
+\end{figure}
 \end{columns}
 \end{frame}
 
@@ -132,7 +150,10 @@ mas
 \begin{columns}[t]
 \column{.5\textwidth}
 \begin{center}
+\begin{figure}
 \includegraphics[scale=.25]{imagens/joaninha.png}
+%\caption{\tiny{\url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}}
+\end{figure}
 \end{center}
 
 \column{.5\textwidth}
@@ -140,6 +161,7 @@ mas
 \includegraphics[scale=.25]{imagens/joaninhaMMQ_20porcento.png}
 \end{center}
 \end{columns}
+\center{\tiny{Adaptado de \url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}}
 \end{frame}
 
 \begin{frame}
@@ -151,7 +173,7 @@ Imagens geralmente são esparsas no espectro da frequência.
 \begin{center}
 \begin{figure}
 \includegraphics[scale=.4]{imagens/Beale_Arboretum_gray.png}
-%\caption{Imagem original}
+%\caption{\tiny{\url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum}}}
 \end{figure}
 Imagem original
 \end{center}
@@ -165,6 +187,7 @@ Imagem original
 Compressão de $40\%$
 \end{center}
 \end{columns}
+\center{\tiny{Adaptado de \url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum}}}
 \end{frame}
 
 \begin{frame}
@@ -185,6 +208,8 @@ Mas $\eqref{eqn:P0}$ é NP.
 \frametitle{Compressive Sensing}
 \begin{center}
 \includegraphics[scale=.4]{imagens/normas.png}
+
+\tiny{Davenport, Mark A., et al. "Introduction to compressed sensing." Preprint 93.1 (2011): 2.}
 \end{center}
 \begin{equation}
 \min_{x \in \mathbb{R}^n} \Vert x \Vert_p \textit{ sujeito a } Ax = y
@@ -284,6 +309,7 @@ Homotopia
 \includegraphics[scale=.25]{imagens/joaninhaMMQ_20porcento.png}\\
 Mínimos quadrados
 \end{columns}
+\center{\tiny{Adaptado de \url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}}
 \end{frame}
 
 \begin{frame}
@@ -317,6 +343,8 @@ $$\min_{c \in \mathbb{R}^n} \Vert c \Vert_1 \textit{ sujeito a } Bc = y$$
 \framesubtitle{O modelo cross-and-bouquet}
 \centering
 \includegraphics[scale=.4]{imagens/cross-and-bouquet.png}
+
+\tiny{Yang, Allen Y., et al. A Review of Fast L (1)-Minimization Algorithms for Robust Face Recognition. CALIFORNIA UNIV BERKELEY DEPT OF ELECTRICAL ENGINEERING AND COMPUTER SCIENCE, 2010.}
 \end{frame}
 
 \begin{frame}
@@ -336,6 +364,8 @@ Usamos uma câmera da Pupil Labs
 \vspace{1cm}
 \centering
 \includegraphics[scale=.6]{imagens/pupil.png}
+
+\tiny{\url{https://pupil-labs.com/blog/2016-07/new-headset-color/}}
 \end{frame}
 
 \begin{frame}
