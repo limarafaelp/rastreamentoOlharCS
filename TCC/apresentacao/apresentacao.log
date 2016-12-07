@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  7 DEC 2016 00:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  7 DEC 2016 09:24
 entering extended mode
 **apresentacao.tex
 (apresentacao.tex
@@ -1488,180 +1488,183 @@ Package pdftex.def Info: imagens/olhos/(5,2).jpg used on input line 329.
  <./imagens/olhos/(0,0).jpg> <./imagens/olhos/(2,4).jpg> <./imagens/olhos/(4,1)
 .jpg> <./imagens/olhos/(6,4).jpg> <./imagens/olhos/(5,2).jpg>] [19
 
-] [20
-
 ]
-<imagens/cross-and-bouquet.png, id=592, 487.8225pt x 285.065pt>
+<imagens/cross-and-bouquet.png, id=567, 487.8225pt x 285.065pt>
 File: imagens/cross-and-bouquet.png Graphic file (type png)
 
 <use imagens/cross-and-bouquet.png>
-Package pdftex.def Info: imagens/cross-and-bouquet.png used on input line 359.
+Package pdftex.def Info: imagens/cross-and-bouquet.png used on input line 349.
 (pdftex.def)             Requested size: 195.12553pt x 114.02397pt.
- [21
+ [20
 
  <./imagens/cross-and-bouquet.png>]
-[22
+[21
 
 ]
 File: imagens/pupil.png Graphic file (type png)
  <use imagens/pupil.png>
-Package pdftex.def Info: imagens/pupil.png used on input line 380.
+Package pdftex.def Info: imagens/pupil.png used on input line 370.
 (pdftex.def)             Requested size: 120.45091pt x 121.65543pt.
- [23
+ [22
 
 ]
 File: imagens/26.jpg Graphic file (type jpg)
  <use imagens/26.jpg>
-Package pdftex.def Info: imagens/26.jpg used on input line 389.
+Package pdftex.def Info: imagens/26.jpg used on input line 379.
 (pdftex.def)             Requested size: 120.44969pt x 90.33727pt.
- [24
+ [23
 
 ]
-<imagens/alvo.png, id=695, 361.35pt x 289.08pt>
+<imagens/alvo.png, id=670, 361.35pt x 289.08pt>
 File: imagens/alvo.png Graphic file (type png)
  <use imagens/alvo.png>
-Package pdftex.def Info: imagens/alvo.png used on input line 397.
+Package pdftex.def Info: imagens/alvo.png used on input line 387.
 (pdftex.def)             Requested size: 216.81168pt x 173.44933pt.
- [25
+ [24
 
  <./imagens/alvo.png (PNG copy)>]
 File: imagens/olhos/(0,0).jpg Graphic file (type jpg)
  <use imagens/olhos/(0,0).jpg>
-Package pdftex.def Info: imagens/olhos/(0,0).jpg used on input line 406.
+Package pdftex.def Info: imagens/olhos/(0,0).jpg used on input line 396.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(2,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(2,4).jpg>
-Package pdftex.def Info: imagens/olhos/(2,4).jpg used on input line 406.
+Package pdftex.def Info: imagens/olhos/(2,4).jpg used on input line 396.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(4,1).jpg Graphic file (type jpg)
  <use imagens/olhos/(4,1).jpg>
-Package pdftex.def Info: imagens/olhos/(4,1).jpg used on input line 406.
+Package pdftex.def Info: imagens/olhos/(4,1).jpg used on input line 396.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(6,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(6,4).jpg>
-Package pdftex.def Info: imagens/olhos/(6,4).jpg used on input line 406.
+Package pdftex.def Info: imagens/olhos/(6,4).jpg used on input line 396.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
- [26
+ [25
 
-] [27
+] [26
 
 ]
 File: imagens/olhos/(0,0).jpg Graphic file (type jpg)
  <use imagens/olhos/(0,0).jpg>
-Package pdftex.def Info: imagens/olhos/(0,0).jpg used on input line 425.
+Package pdftex.def Info: imagens/olhos/(0,0).jpg used on input line 415.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(2,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(2,4).jpg>
-Package pdftex.def Info: imagens/olhos/(2,4).jpg used on input line 425.
+Package pdftex.def Info: imagens/olhos/(2,4).jpg used on input line 415.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(4,1).jpg Graphic file (type jpg)
  <use imagens/olhos/(4,1).jpg>
-Package pdftex.def Info: imagens/olhos/(4,1).jpg used on input line 425.
+Package pdftex.def Info: imagens/olhos/(4,1).jpg used on input line 415.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(6,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(6,4).jpg>
-Package pdftex.def Info: imagens/olhos/(6,4).jpg used on input line 425.
+Package pdftex.def Info: imagens/olhos/(6,4).jpg used on input line 415.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
 File: imagens/olhos/(5,2).jpg Graphic file (type jpg)
  <use imagens/olhos/(5,2).jpg>
-Package pdftex.def Info: imagens/olhos/(5,2).jpg used on input line 425.
+Package pdftex.def Info: imagens/olhos/(5,2).jpg used on input line 415.
 (pdftex.def)             Requested size: 19.27214pt x 14.4541pt.
- [28
+ [27
+
+] [28
 
 ]
-<imagens/olho_20_15.jpg, id=797, 20.075pt x 15.05624pt>
-File: imagens/olho_20_15.jpg Graphic file (type jpg)
-
-<use imagens/olho_20_15.jpg>
-Package pdftex.def Info: imagens/olho_20_15.jpg used on input line 449.
-(pdftex.def)             Requested size: 28.45274pt x 21.34026pt.
-
-<imagens/olho_40_30.jpg, id=798, 40.15pt x 30.1125pt>
-File: imagens/olho_40_30.jpg Graphic file (type jpg)
-
-<use imagens/olho_40_30.jpg>
-Package pdftex.def Info: imagens/olho_40_30.jpg used on input line 449.
-(pdftex.def)             Requested size: 28.45274pt x 21.34003pt.
-
-<imagens/olho_80_60.jpg, id=799, 80.3pt x 60.225pt>
-File: imagens/olho_80_60.jpg Graphic file (type jpg)
-
-<use imagens/olho_80_60.jpg>
-Package pdftex.def Info: imagens/olho_80_60.jpg used on input line 449.
-(pdftex.def)             Requested size: 28.45274pt x 21.33911pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 449.
+(Font)              <9> on input line 447.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 449.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 447.
 
  [29
 
+]
+<imagens/olho_20_15.jpg, id=825, 20.075pt x 15.05624pt>
+File: imagens/olho_20_15.jpg Graphic file (type jpg)
+
+<use imagens/olho_20_15.jpg>
+Package pdftex.def Info: imagens/olho_20_15.jpg used on input line 471.
+(pdftex.def)             Requested size: 28.45274pt x 21.34026pt.
+
+<imagens/olho_40_30.jpg, id=826, 40.15pt x 30.1125pt>
+File: imagens/olho_40_30.jpg Graphic file (type jpg)
+
+<use imagens/olho_40_30.jpg>
+Package pdftex.def Info: imagens/olho_40_30.jpg used on input line 471.
+(pdftex.def)             Requested size: 28.45274pt x 21.34003pt.
+
+<imagens/olho_80_60.jpg, id=827, 80.3pt x 60.225pt>
+File: imagens/olho_80_60.jpg Graphic file (type jpg)
+
+<use imagens/olho_80_60.jpg>
+Package pdftex.def Info: imagens/olho_80_60.jpg used on input line 471.
+(pdftex.def)             Requested size: 28.45274pt x 21.33911pt.
+ [30
+
  <./imagens/olho_20_15.jpg> <./imagens/olho_40_30.jpg> <./imagens/olho_80_60.jp
 g>]
-<imagens/erros5pyrDown.png, id=828, 462.528pt x 346.896pt>
+<imagens/erros5pyrDown.png, id=854, 462.528pt x 346.896pt>
 File: imagens/erros5pyrDown.png Graphic file (type png)
 
 <use imagens/erros5pyrDown.png>
-Package pdftex.def Info: imagens/erros5pyrDown.png used on input line 476.
+Package pdftex.def Info: imagens/erros5pyrDown.png used on input line 498.
 (pdftex.def)             Requested size: 115.63171pt x 86.72379pt.
 
-<imagens/erros4pyrDown.png, id=829, 462.528pt x 346.896pt>
+<imagens/erros4pyrDown.png, id=855, 462.528pt x 346.896pt>
 File: imagens/erros4pyrDown.png Graphic file (type png)
 
 <use imagens/erros4pyrDown.png>
-Package pdftex.def Info: imagens/erros4pyrDown.png used on input line 476.
+Package pdftex.def Info: imagens/erros4pyrDown.png used on input line 498.
 (pdftex.def)             Requested size: 115.63171pt x 86.72379pt.
 
-<imagens/erros3pyrDown.png, id=830, 462.528pt x 346.896pt>
+<imagens/erros3pyrDown.png, id=856, 462.528pt x 346.896pt>
 File: imagens/erros3pyrDown.png Graphic file (type png)
 
 <use imagens/erros3pyrDown.png>
-Package pdftex.def Info: imagens/erros3pyrDown.png used on input line 476.
+Package pdftex.def Info: imagens/erros3pyrDown.png used on input line 498.
 (pdftex.def)             Requested size: 115.63171pt x 86.72379pt.
- [30
+ [31
 
  <./imagens/erros5pyrDown.png> <./imagens/erros4pyrDown.png> <./imagens/erros3p
 yrDown.png>]
-<imagens/errosParticipantes_pyrDown3.png, id=860, 462.528pt x 346.896pt>
+<imagens/errosParticipantes_pyrDown3.png, id=887, 462.528pt x 346.896pt>
 File: imagens/errosParticipantes_pyrDown3.png Graphic file (type png)
 
 <use imagens/errosParticipantes_pyrDown3.png>
 Package pdftex.def Info: imagens/errosParticipantes_pyrDown3.png used on input 
-line 486.
+line 508.
 (pdftex.def)             Requested size: 300.63962pt x 225.47972pt.
- [31
+ [32
 
- <./imagens/errosParticipantes_pyrDown3.png>] [32
+ <./imagens/errosParticipantes_pyrDown3.png>] [33
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 518.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 518.
  (apresentacao.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 496.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 518.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 518.
 Package rerunfilecheck Info: File `apresentacao.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 518.
  ) 
 Here is how much of TeX's memory you used:
- 22052 strings out of 493698
- 432615 string characters out of 3144409
- 501743 words of memory out of 3000000
- 24783 multiletter control sequences out of 15000+200000
+ 22056 strings out of 493698
+ 432650 string characters out of 3144409
+ 501746 words of memory out of 3000000
+ 24785 multiletter control sequences out of 15000+200000
  45697 words of font info for 51 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  56i,14n,59p,393b,1075s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fon
-ts/enc/dvips/lm/lm-mathex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/l
-m-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Progra
+ts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ma
+thex.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rmtt.enc}<C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/lm/lmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi9.pfb><
@@ -1670,15 +1673,16 @@ MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/lm/lmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
 ss9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on apresentacao.pdf (32 pages, 3250508 bytes).
+2.9/fonts/type1/public/lm/lmsso9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/lm/lmtt8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb>
+Output written on apresentacao.pdf (33 pages, 3281804 bytes).
 PDF statistics:
- 986 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
+ 1015 PDF objects out of 1200 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
  183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

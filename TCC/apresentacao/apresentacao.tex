@@ -332,16 +332,6 @@ qual é a coluna de $A$ (amostra) mais parecida com $y$?
 \frametitle{Compressive Sensing}
 \framesubtitle{O modelo cross-and-bouquet}
 
-Poderíamos estimar a amostra mais parecida com $y$ como a coluna $a_i$ que maximiza, em módulo, a correlação entre $y$ e $a_i$.\\
-
-
-Fizemos um teste para identificar a posição do olho e taxa de acerto foi de $14,286\%$.
-\end{frame}
-
-\begin{frame}
-\frametitle{Compressive Sensing}
-\framesubtitle{O modelo cross-and-bouquet}
-
 Vamos formular essa pergunta como um problema de Compressive Sensing.
 
 $$y = Ax + e = \left[ \begin{tabular}{c | c} A & I \end{tabular} \right] \left[ \begin{tabular}{c} x \\ e \end{tabular}\right] = Bc$$
@@ -422,6 +412,38 @@ $$y = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(5,2).jpg}
 $$y = Ax + e$$
 
 Calculamos o olhar como a média ponderada das posições das três amostras mais próximas de $y$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{Rastreamento}
+
+Poderíamos estimar a amostra mais parecida com $y$ como a coluna $a_i$ que maximiza, em módulo, a correlação entre $y$ e $a_i$.\\
+
+
+Fizemos um teste para identificar a posição do olho e taxa de acerto foi de $14,286\%$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{Rastreamento}
+
+\centering
+Taxa de acertos para identificar imagens
+\footnotesize{
+\begin{table}
+\begin{tabular}{| c | c | c | c |}
+\hline
+proporções da imagem & correlação & \textit{cross-and-bouquet} \\ \hline
+$640 \times 480$ & $14,29\%$	 & ---\\ \hline
+$320 \times 240$ & $12,25\%$	 & ---\\ \hline
+$160 \times 120$ & $10,20\%$	 & ---\\ \hline
+$80 \times 60$   & $8,16\%$		 & $90,61\%$ \\ \hline
+$40 \times 30$	 & $6,12\%$		 & $91,02\%$ \\ \hline
+$20 \times 15$	 & $2,04\%$		 & $86,94\%$ \\ \hline
+\end{tabular}
+\end{table}
+}
 \end{frame}
 
 \begin{frame}
