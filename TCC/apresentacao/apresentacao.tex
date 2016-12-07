@@ -201,7 +201,7 @@ Queremos encontrar $x$ mais esparso com $Ax = y$, ou seja,
 
 onde $\Vert x \Vert_0$ é a quantidade de elementos não nulos de $x$. \\
 
-Mas $\eqref{eqn:P0}$ é NP.
+Mas $\eqref{eqn:P0}$ é não pode ser resolvido em tempo polinomial.
 \end{frame}
 
 \begin{frame}
@@ -220,7 +220,7 @@ Mas $\eqref{eqn:P0}$ é NP.
 
 \begin{frame}
 \frametitle{Compressive Sensing}
-CS estuda as condições que $A$ deve satisfazer para garantir a equivalência entre
+Compressive Sensing estuda as condições que $A$ deve satisfazer para garantir a equivalência entre
 
 \begin{equation}
 \min_{x \in \mathbb{R}^n} \Vert x \Vert_0 \textit{ sujeito a } Ax = y
@@ -274,7 +274,7 @@ $$y = Ax = \sum_{i = 1}^n a_i x_i$$
 
 \begin{frame}
 \frametitle{Compressive Sensing}
-$A$ com $a_{ij}$ iid $\mathcal{N}(0,1)$ satisfaz essas condições com alta probabilidade.
+$A$, com $a_{ij} \sim \mathcal{N}(0,1)$ independentes, satisfaz essas condições com alta probabilidade.
 \end{frame}
 
 \begin{frame}
@@ -332,7 +332,17 @@ qual é a coluna de $A$ (amostra) mais parecida com $y$?
 \frametitle{Compressive Sensing}
 \framesubtitle{O modelo cross-and-bouquet}
 
-Vamos formular essa pergunta como um problema de CS.
+Poderíamos estimar a amostra mais parecida com $y$ como a coluna $a_i$ que maximiza, em módulo, a correlação entre $y$ e $a_i$.\\
+
+
+Fizemos um teste para identificar a posição do olho e taxa de acerto foi de $14,286\%$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Compressive Sensing}
+\framesubtitle{O modelo cross-and-bouquet}
+
+Vamos formular essa pergunta como um problema de Compressive Sensing.
 
 $$y = Ax + e = \left[ \begin{tabular}{c | c} A & I \end{tabular} \right] \left[ \begin{tabular}{c} x \\ e \end{tabular}\right] = Bc$$
 
@@ -411,7 +421,7 @@ $$y = \left[ \raisebox{-4pt}{\includegraphics[scale=.3]{imagens/olhos/(5,2).jpg}
 
 $$y = Ax + e$$
 
-Calculamos o olhar como a média das posições das três amostras mais próximas de $y$.
+Calculamos o olhar como a média ponderada das posições das três amostras mais próximas de $y$.
 \end{frame}
 
 \begin{frame}
@@ -421,19 +431,21 @@ Calculamos o olhar como a média das posições das três amostras mais próxima
 \begin{center}
 Desempenho do rastreador para diferentes resoluções de imagem
 \end{center}
-\footnotesize{
+%\footnotesize{
+\scriptsize{
 \begin{table}
 \centering
 \begin{tabular}{ c  c  c  c }
 \hline
-dimensões das imagens & $15 \times 20$ & $30 \times 40$ & $60 \times 80$ \\ \hline
+Dimensões das imagens & $15 \times 20$ & $30 \times 40$ & $60 \times 80$ \\ \hline
 Erro				  & $1,471 \pm 2,398$ & $1,113 \pm 2,291$ & $1,053 \pm 2,279$ \\ \hline
 Imagem & \vspace{2pt} \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_20_15.jpg}} & \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_40_30.jpg}} & \raisebox{-16pt}{\includegraphics[width=1cm]{imagens/olho_80_60.jpg}} \\ \hline
+Tempo necessário & $13,46$s & $55,42$s & $22,98$ min \\ \hline
 \end{tabular}
 \end{table}
 }
-
-O rastreador apresenta desempenho semelhante ao Eyex ( $1,42 \pm 1,7$)
+\centering
+\footnotesize{O rastreador apresenta desempenho semelhante ao Eyex ( $1,42 \pm 1,7$)}
 \end{frame}
 
 \begin{frame}
@@ -448,18 +460,18 @@ O rastreador apresenta desempenho semelhante ao Eyex ( $1,42 \pm 1,7$)
 \column{.5\textwidth}
 \centering
 \tiny{usando imagens $15 \times 20$}
-\includegraphics[scale=.3]{imagens/erros5pyrDown.png}
+\includegraphics[scale=.25]{imagens/erros5pyrDown.png}
 
 %\column{.5\textwidth}
 %\centering
-\includegraphics[scale=.3]{imagens/erros4pyrDown.png}
+\includegraphics[scale=.25]{imagens/erros4pyrDown.png}
 
 \tiny{usando imagens $30 \times 40$}
 
 \column{.5\textwidth}
 \centering
 \tiny{usando imagens $60 \times 80$}
-\includegraphics[scale=.3]{imagens/erros3pyrDown.png}
+\includegraphics[scale=.25]{imagens/erros3pyrDown.png}
 \end{columns}
 \end{frame}
 
