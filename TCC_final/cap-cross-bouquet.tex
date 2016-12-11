@@ -1,0 +1,77 @@
+\chapter{O modelo \textit{cross-and-bouquet}}
+
+%O modelo \textit{cross-and-bouquet} usa CS para classificar imagens, no caso, dado um $frame$ encontrar a imagem em um dicionário mais parecida ele.
+
+O modelo \textit{cross-and-bouquet} usa \oldc{CS}\textit{Compressive Sensing} para classificar imagens, ou seja, dada uma amostra $y$ e uma família de imagens \oldc{$(\Phi_i)$}\newc{$(a_i)_{i=1}^n$}, encontrar qual \oldc{$\Phi_i$}\newc{$a_i$} é mais \oldc{próxima}\newc{próximo} de $y$.
+
+Podemos interpretar o problema $\eqref{eqn:P0}$ da seguinte forma: dado um vetor $y \in \mathbb{R}^m$, quais colunas $a_i \in \mathbb{R}^m$ de $A$ melhor representam $y$? Se $y$ puder ser escrito como $y = Ax$ com $x$ esparso, podemos assumir que a coluna $a_i$ mais próxima de $y$ é aquela onde $x_i$ possui maior valor absoluto, ou seja,
+
+$$ i = \argmax_{j = 1, \hdots, n} \vert x_j \vert $$
+
+%Dado um conjunto de sinais $a_i \in \mathbb{R}^m$ com $A = \left[ a_1 \vert \hdots \vert a_m]$ e uma amostra $y \in \mathbb{R}^m$
+Como vimos, CS garante que conseguimos encontrar $x$ esparso resolvendo $\eqref{eqn:P1}$ apenas quando $A$ é incoerente. Em aplicações, como em processamento de imagens, os vetores $a_i$ não são ``muito diferentes'' entre si, por isso não podemos assumir que $A$ é incorente. Então formularemos o problema de uma forma um pouco diferente:
+
+Dado $y \in \mathbb{R}^m$ e $A$ uma matriz $m \gg n$ (ou seja, o número de amostras é pequeno se comparado à dimensão de cada amostra),
+
+\begin{equation}
+\tag{$\tilde{P_1}$}
+\min_{x \in \mathbb{R}^n} \Vert x \Vert_{1} + \Vert e \Vert_{1} \textit{ sujeito a } y = Ax + e
+%\label{eqn:P1_tilde}
+\end{equation}
+
+o que é equivalente a encontrar um vetor $c = \left[ \begin{tabular}{c}
+x \\
+e
+\end{tabular} \right]$, com $x \in \mathbb{R}^n$ e $e \in \mathbb{R}^m$, onde $c$ resolve o problema
+
+\begin{equation}
+\tag{$\tilde{P_1}$}
+\min_{c \in \mathbb{R}^{n + m}} \Vert c \Vert_{1} \textit{ sujeito a } y = \left[ \begin{tabular}{c c} A &  I \end{tabular} \right] c
+\label{eqn:P1_tilde}
+\end{equation}
+
+onde $I$ é a matriz identidade $m \times m$.
+
+Como $I$ é incoerente, pois é ortonormal, e possui muito mais colunas que $A$, é razoável supor que $\left[\begin{tabular}{c c} A &  I \end{tabular} \right]$ também seja incoerente e, neste caso, a solução $c$ de $\eqref{eqn:P1_tilde}$ seria esparsa.
+
+Identificamos a amostra $y$ com o vetor $a_i$ onde
+$$i = \argmax_{i = 1, \hdots, n} \vert c_i \vert$$
+
+Essa é a ideia do modelo \textit{cross-and-bouquet} \cite{wrima}. O modelo tem esse nome porque as colunas de $I$ são ortonormais, lembrando uma cruz e as colunas de $A$ estão próximas, lembrando um buquê, como mostra a Figura \ref{fig:cross_bouquet}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=.6]{imagens/cross-and-bouquet.png}
+\caption{Modelo \textit{cross-and-bouquet}. Imagem representando as colunas de $\left[ A \vert I \right]$ onde cada coluna de $A$ pode representar uma imagem, por exemplo. Adaptado de \cite{yangetal}.}
+\label{fig:cross_bouquet}
+\end{figure}
+
+\section{Desempenho}
+
+Dada uma imagem $y$, poderíamos ter identificado a imagem com a amostra $a_i$ que maximiza a correlação entre $a_i$ e $y$. Desenvolvemos um programa para classificar imagens do olho usando correlação e \textit{cross-and-bouquet}.
+
+Coletamos imagens de uma pessoa olhando para pontos dispostos numa grade $7 \times 7$ no monitor, como descrito no Capítulo $6$.  Calculamos a matriz $A$ usando a primeira imagem registrada para cada amostra e selecionamos aleatoriamente $5$ imagens do olhos correspondendo a cada posição da grade. Para cada imagem $y$, estimamos a posição da grade correspondente a $y$ como:
+
+\begin{itemize}
+\item {\bf Correlação:} usando correlação, estimamos a posição cuja coluna $a_i$ apresenta maior correlação em módulo entre $a_i$ e $y$;
+
+\item {\bf \textit{Cross-and-bouquet:}} identificamos a coluna $a_i$ mais próxima de $y$ usando o modelo \textit{cross-and-bouquet}.
+\end{itemize}
+
+Testamos para diferentes tamanhos de imagem e, calculamos a taxa de acertos (ou seja, a quantidade de vezes em que o algoritmo identificou a posição correta do olhar dividido pelo número de imagens usadas, $5 \times 7 \times 7 = 245$). A Tabela  $\ref{tab:acertos_cross}$ mostra os resultados para diferentes tamanhos de imagem. O melhor resultado calculado usando correlação é bem inferior aos resultados calculados usando \textit{Compressive Sensing}.
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c | c |}
+\hline
+{\bf proporções da imagem} & {\bf correlação} & {\bf \textit{cross-and-bouquet}}  \\ \hline
+$640 \times 480$ & $14,29\%$	 & ---\\ \hline
+$320 \times 240$ & $12,25\%$	 & ---\\ \hline
+$160 \times 120$ & $10,20\%$	 & ---\\ \hline
+$80 \times 60$   & $8,16\%$		 & $90,61\%$ \\ \hline
+$40 \times 30$	 & $6,12\%$		 & $91,02\%$ \\ \hline
+$20 \times 15$	 & $2,04\%$		 & $86,94\%$ \\ \hline
+\end{tabular}
+\caption{Desempenho dos algoritmos de correlação e \textit{cross-and-bouquet} para identificar imagens. Note que o desempenho é muito inferior quando usamos correlação.}
+\label{tab:acertos_cross}
+\end{table}

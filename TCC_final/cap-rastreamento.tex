@@ -1,0 +1,121 @@
+\chapter{Rastreamento de olhar}
+
+%Rastreamento de olhar consiste em técnicas para determinar a direção do olhar, ou seja, a partir da posição da íris identificar para onde uma pessoa está olhando.
+
+Rastreamento de olhar consiste em determinar a direção do olhar, ou seja, a partir da posição do olho identificar para onde uma pessoa está olhando em determinado instante e também mudanças na direção do olhar em determinado período \cite{lupung}.
+
+\oldc{Podemos usar o rastreamento de olhar para construir interfaces para ajudar pessoas com dificuldades motoras a interagir com computadores \cite{lidade}. Informações de olhar também podem ser usadas em pesquisas com o objetivo de entender como o olho se move quando uma pessoa realiza diferentes atividades \cite{lupung}.}
+
+\newc{Abaixo listamos algumas aplicações de rastreamento de olhar.}
+
+\section{Aplicações}
+
+\newc{Podemos usar o rastreamento de olhar para construir interfaces para ajudar pessoas com dificuldades motoras a interagir com computadores \cite{lidade}. \cite{kurauchi2016eyeswipe} desenvolveu um teclado virtual que permite a digitação através do olhar, como mostra a Figura $\ref{fig:eyeswipe}$.}
+
+\begin{figure}
+\centering
+\includegraphics[scale=.3]{imagens/teclado.png}
+\caption{Um teclado virtual controlado pelo olhar permite a interação de pessoas com dificuldades motoras com o computador. Reproduzido de \cite{kurauchi2016eyeswipe}.}
+\label{fig:eyeswipe}
+\end{figure}
+
+Através da análise da posição do olhar é possível avaliar a influência de um anúncio sobre a atenção dos consumidores e, assim, ajudar na criação de propagandas mais eficientes \cite{duchowski2002breadth}. \newc{A Figura \ref{fig:propaganda} mostra as regiões onde as pessoas mais prestam atenção ao observar um anúncio.}
+
+\afterpage{
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.4]{imagens/dolcegabbana.jpg}
+\caption[]{O rastreamento de olhar pode ser usado para a avaliar a eficiência de uma propaganda. Regiões coloridas indicam onde as pessoas prestam mais atenção no anúncio. Reproduzido de \protect \footnotemark}
+\label{fig:propaganda}
+\end{center}
+\end{figure}
+\footnotetext{\url{http://www.businessinsider.com.au/eye-tracking-heatmaps-2014-7}}
+}
+
+O olhar também pode ser usado como um indicador de usabilidade de interfaces de \textit{software}, sendo usado em estudos de interação humano-computador (IHC) \cite{duchowski2002breadth}. \newc{Um estudo feito por \cite{nielsen2007fancy} mostra que usuários tendem ignorar informações que parecem propagandas em um site. No caso, solicitaram para os participantes encontrarem a população dos Estados Unidos e $86\%$ dos participantes falharam, mesmo com o número localizado no topo da página e escrito em vermelho. A Figura $\ref{fig:censo}$ mostra as regiões mais observadas pelos usuários.}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.7]{imagens/census-homepage-heatmap.jpg}
+\caption{Regiões vermelhas são as mais observadas no site por participantes procurando a população dos Estados Unidos. Note que a região com essa informação, no canto superior direito, é parcipalmente observada, indicando que foi ignorada pelos usuários. Reproduzido de \cite{nielsen2007fancy}.}
+\label{fig:censo}
+\end{center}
+\end{figure}
+
+\section{Técnicas de rastreamento de olhar}
+
+\newc{Técnicas de rastreamento de olhar determinam a posição do olhar a partir do movimento dos olhos}. Algumas partes do olho humano, que estão representadas na Figura $\ref{fig:olho}$,  são as seguintes \cite{lidade}:
+
+\afterpage{
+%assim o footnote funciona http://blog.peschla.net/2012/11/latex-footnotes-in-captions/
+\begin{figure}
+\begin{center}
+\includegraphics[scale=1]{imagens/eye.jpg}
+\caption[]{Regiões do olho. Adaptado de \protect \footnotemark}
+\label{fig:olho}
+\end{center}
+\end{figure}
+\footnotetext{\url{http://commons.wikimedia.org/wiki/File:My_eye.jpg}}
+}
+
+\begin{itemize}
+\item \textbf{pupila}: a abertura que permite a entrada de luz no olho.
+\item \textbf{íris}: o músculo colorido que controla o diâmetro da pupila.
+\item \textbf{esclera}: tecido branco protetor que envolve o restante do olho.
+\item \textbf{limbo}: o contorno entre a íris e a esclera.
+\end{itemize}
+
+%[sic: no texto estava Eye location/tracking techniques can be...]
+%Técnicas de rastreamento de olhar podem ser divididas em três modalidades \cite{valenti2009webcam}.
+
+~ %para evitar um erro estranho de missing item
+
+Técnicas de rastreamento de olhar podem ser divididas em três modalidades \cite{valenti2009webcam}:
+
+\begin{enumerate}
+\item {\bf Eletro-oculografia}, que registra diferenças de potencial elétrico na pele ao redor da cavidade ocular.
+\item \oldc{Instalando algum dispositivo mecânico sobre uma lente de contato.} \newc{{\bf Lente de contato}, uma bobina é instalada no olho sobre uma lente de contato e a posição do olho é estimada ao medir o campo eletromagnético. \cite{duchowski2007eye}. Este método é o mais preciso para medir movimentos do olho, porém é o mais invasivo \cite{duchowski2007eye}.}
+
+%sic: no texto estava oculografia baseada em foto ou vídeo
+\item  {\bf Rastreamento baseado em vídeo}, que usa técnicas de processamento de imagens para identificar a posição da pupila nas imagens do olho.
+\end{enumerate}
+
+O rastreamento baseado em vídeo \newc{é} a modalidade de rastreamento de olhar menos invasiva \cite{valenti2009webcam}.
+
+Dois tipos de imagem \oldc{podem ser}\newc{são comumente} usados no rastramento baseado em vídeo: imagens no espectro visual ou imagens em infravermelho.
+
+No rastreamento pelo espectro visual, a luz refletida pelos olhos é registrada. Neste caso, a eficiência do rastreamento depende das condições de iluminação do ambiente, o que torna o processo complicado $\cite{lidade}$.
+
+No caso de imagens em infravermelho, não temos esse problema, pois o olho é constantemente iluminado por uma fonte de luz infravermelha, que não é percebida pelo usuário. Uma vantagem desta abordagem é que a pupila reflete \oldc{boa} parte da luz infravermelha recebida, sendo a região mais brilhante do olho na imagem $\cite{lidade}$. Devido \oldc{ao tamanho} \newc{ao seu tamanho e posição}, a pupila tem menor chance de ser parcialmente ocultada pelos  cílios do que a esclera, outra região que reflete o infravermelho. %pupila será sempre a região mais brilhante na imagem $\cite{lupung}$: se a fonte de luz estiver alinhada com o olho, a pupila aparecerá branca, caso contrário, estará preta na imagem.
+
+A principal desvantagem é que não é possível usar esse tipo de rastreador ao ar livre durante o dia devido à luz infravermelha do ambiente $\cite{lidade}$.
+
+As técnicas de rastreamento de olhar também variam de acordo com a localização da câmera, que pode ser instalada junto à cabeça do usuário (\textit{head-mounted}) ou remotamente. No caso do rastreamento \textit{head-mounted}, o usuário deve usar um acessório equipado com uma câmera que registra as imagens do olho. A figura $\ref{fig:pupil}$ mostra um rastreador desse tipo
+
+\afterpage{
+%assim o footnote funciona http://blog.peschla.net/2012/11/latex-footnotes-in-captions/
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.7]{imagens/pupil.png}
+\caption[]{Um rastreador de olhar acoplado à cabeça. Reproduzido de \protect \footnotemark}
+\label{fig:pupil}
+\end{center}
+\end{figure}
+\footnotetext{\url{https://pupil-labs.com/blog/2014-01/new-pupil-pro-headset-capture-software-0-3-7/}}
+}
+
+Uma vantagem do rastreamento \textit{head-mounted} é que a câmera \newc{se} move com a cabeça, então mudanças de pose não causam mudanças da posição da pupila na imagem. A desvantagem é a necessidade de usar um equipamento acoplado à cabeça. Por estar muito próxima do olho, a câmera do olho pode ocultar parte do campo de visão, dificultando a interação com o usuário.
+
+\section{\newc{Características em} rastreamento de olhar}
+
+Em algumas aplicações de rastreamento de olhar não estamos interessados apenas na direção do olhar em determinado instante, mas também \oldc{poderemos} \newc{podemos} querer observar outras características \oldc{(métricas)} relacionadas ao movimento do olhos. As \oldc{métricas}\newc{características} mais específicas são \cite{lupung}:
+
+\begin{itemize}
+\item {\bf Fixação e sacada:} Em 1989, Emile Java (oftalmologista francês) observou que os movimentos do olho não ocorrem de forma contínua, e sim de movimentos rápidos, chamados de sacadas, seguidos por breves pausas, conhecidas como fixações;
+
+\item {\bf Área de interesse:} Região no ambiente que está presente no campo visual e que é de interesse em determinada pesquisa;
+
+\item {\bf Duração do olhar:} Duração de um intervalo de tempo em que uma série de fixações está dentro de uma área de interesse;
+
+\item {\bf Caminho de varredura:} localização espacial de uma sequência de fixações.
+\end{itemize}

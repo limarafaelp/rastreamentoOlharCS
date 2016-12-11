@@ -1,0 +1,110 @@
+\begin{thebibliography}{10}
+
+\bibitem{bach2012optimization}
+Francis Bach, Rodolphe Jenatton, Julien Mairal, and Guillaume Obozinski.
+\newblock Optimization with sparsity-inducing penalties.
+\newblock {\em Foundations and Trends{\textregistered} in Machine Learning},
+  4(1):1--106, 2012.
+
+\bibitem{ddek}
+Mark~A Davenport, Marco~F Duarte, Yonina~C Eldar, and Gitta Kutyniok.
+\newblock Introduction to compressed sensing.
+\newblock {\em Preprint}, 93(1):2, 2011.
+
+\bibitem{dontsa}
+D~Donoho and Y~Tsaig.
+\newblock Fast solution of l1-norm minimization problems when the solution may
+  be sparse, 2006.
+\newblock {\em Preprint}, 1(2).
+
+\bibitem{duchowski2007eye}
+Andrew Duchowski.
+\newblock {\em Eye tracking methodology: Theory and practice}, volume 373.
+\newblock Springer Science \& Business Media, 2007.
+
+\bibitem{duchowski2002breadth}
+Andrew~T Duchowski.
+\newblock A breadth-first survey of eye-tracking applications.
+\newblock {\em Behavior Research Methods, Instruments, \& Computers},
+  34(4):455--470, 2002.
+
+\bibitem{fornasier}
+Massimo Fornasier.
+\newblock Numerical methods for sparse recovery.
+\newblock {\em Theoretical foundations and numerical methods for sparse
+  recovery}, 14:93--200, 2010.
+
+\bibitem{fourau}
+Simon Foucart and Holger Rauhut.
+\newblock {\em A mathematical introduction to compressive sensing}, volume~1.
+\newblock Springer, 2013.
+
+\bibitem{greville1958pseudoinverse}
+TNE Greville.
+\newblock The pseudoinverse of a rectangular matrix and its statistical
+  applications.
+\newblock {\em Amer. Statist. Assoc., Proc. Soc. Statist. Sect}, pages
+  116--121, 1958.
+
+\bibitem{horn2012matrix}
+Roger~A Horn and Charles~R Johnson.
+\newblock {\em Matrix analysis}.
+\newblock Cambridge university press, 2012.
+
+\bibitem{kurauchi2016eyeswipe}
+Andrew Kurauchi, Wenxin Feng, Ajjen Joshi, Carlos Morimoto, and Margrit Betke.
+\newblock Eyeswipe: Dwell-free text entry using gaze paths.
+\newblock In {\em Proceedings of the 2016 CHI Conference on Human Factors in
+  Computing Systems}, pages 1952--1956. ACM, 2016.
+
+\bibitem{kutyniok}
+Gitta Kutyniok.
+\newblock Theory and applications of compressed sensing.
+\newblock {\em GAMM-Mitteilungen}, 36(1):79--101, 2013.
+
+\bibitem{lidade}
+Dongheng Li, David Winfield, and Derrick~J Parkhurst.
+\newblock Starburst: A hybrid algorithm for video-based eye tracking combining
+  feature-based and model-based approaches.
+\newblock In {\em 2005 IEEE Computer Society Conference on Computer Vision and
+  Pattern Recognition (CVPR'05)-Workshops}, pages 79--79. IEEE, 2005.
+
+\bibitem{liboku}
+R~Lima, A~Borges, and A~Kurauchi.
+\newblock A comparison between intel realsense and tobii eyex for gaze
+  estimation.
+\newblock 2016.
+
+\bibitem{lupung}
+Robert~Gabriel Lupu and Florina Ungureanu.
+\newblock A survey of eye tracking methods and applications.
+\newblock {\em Bul Inst Polit Iasi}, pages 71--86, 2013.
+
+\bibitem{nielsen2007fancy}
+Jakob Nielsen.
+\newblock Fancy formatting, fancy words= looks like a promotion= ignored.
+\newblock {\em UseIt. com Alerbox}, 2007.
+
+\bibitem{valenti2009webcam}
+Roberto Valenti, Jacopo Staiano, Nicu Sebe, and Theo Gevers.
+\newblock Webcam-based visual gaze estimation.
+\newblock In {\em International Conference on Image Analysis and Processing},
+  pages 662--671. Springer, 2009.
+
+\bibitem{wrima}
+J~Wright and Y~Ma.
+\newblock Dense error correction via l1-minimization (2008)(preprint).
+
+\bibitem{yangetal}
+Allen~Y Yang, Arvind Genesh, Zihan Zhou, S~Shankar Sastry, and Yi~Ma.
+\newblock A review of fast l (1)-minimization algorithms for robust face
+  recognition.
+\newblock Technical report, DTIC Document, 2010.
+
+\bibitem{zhang2008theory}
+Y~Zhang.
+\newblock Theory of compressive sensing via l1-minimization: a non-rip analysis
+  and extensions, rice university, houston.
+\newblock Technical report, TX, Tech. Rep, 2008.
+
+\end{thebibliography}
