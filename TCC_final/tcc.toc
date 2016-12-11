@@ -16,4 +16,5 @@
 \contentsline {chapter}{\numberline {6}Desenvolvimento de um rastreador de olhar usando CS}{44}
 \contentsline {section}{\numberline {6.1}Coleta de amostras}{45}
 \contentsline {section}{\numberline {6.2}Rastreamento de olhar}{46}
+\contentsline {section}{\numberline {6.3}Resultados}{48}
 \contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{51}

@@ -66,18 +66,19 @@ Antes de comparar as imagens usando o modelo \textit{cross-and-bouquet} reduzimo
 \newc{Após calcular a matriz $A$, estimamos o olhar de cada imagem. A entrada do algoritmo será então a imagem e a saída será a posição do olhar em graus do campo de visão do usuário.}
 
 \section{Resultados}
-A Tabela $\ref{tab:erros}$ mostra a média dos erros (conhecida como acurácia) e o desvio padrão (a precisão), considerando  diferentes tamanhos de imagens. Podemos observar que o erro é menor se usamos imagens maiores para estimar o olhar. Para imagens $60 \times 80$, obtemos uma acurácia de $1,053 $ e precisão de $2,279$, semelhantes aos resultados obtidos pelo rastreador Tobii EyeX, que tem acurácia de $1,42$ e precisão de $1,70$, segundo \cite{liboku}.
+A Tabela $\ref{tab:erros}$ mostra a média dos erros (conhecida como acurácia) e o desvio padrão (a precisão), considerando  diferentes tamanhos de imagens. Podemos observar que o erro é menor se usamos imagens maiores para estimar o olhar. Para imagens $60 \times 80$, obtemos uma acurácia de $1,053 $ e precisão de $2,279$, semelhantes aos resultados obtidos pelo rastreador Tobii EyeX, que tem acurácia de $1,42$ e precisão de $1,70$, segundo \cite{liboku}. \newc{A Tabela $\ref{tab:erros}$ indica também o tempo médio para estimar o olhar em cada imagem.}
 
 \begin{table}
 \centering
 \begin{tabular}{| c | c | c | c |}
 \hline
-& \multicolumn{3}{| c |}{dimensão das imagens} \\ \hline
+%& \multicolumn{3}{| c |}{dimensão das imagens} \\ \hline
 dimensões das imagens & $15 \times 20$ & $30 \times 40$ & $60 \times 80$ \\ \hline
 Erro				  & $1,471 \pm 2,398$ & $1,113 \pm 2,291$ & $1,053 \pm 2,279$ \\ \hline
+Tempo de processamento & $0,035s$ & $0,215s$ & $5.311s$ \\ \hline
 Imagem & \vspace{2pt} \includegraphics[width=2cm]{imagens/olho_20_15.jpg} & \includegraphics[width=2cm]{imagens/olho_40_30.jpg} & \includegraphics[width=2cm]{imagens/olho_80_60.jpg} \\ \hline
 \end{tabular}
-\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus. A última linha mostra exemplos de imagens usadas nas respectivas dimensões.}
+\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus. \newc{Vemos também o tempo médio para estimar o olhar de cada imagem.} A última linha mostra exemplos de imagens usadas nas respectivas dimensões.}
 \label{tab:erros}
 \end{table}
 
