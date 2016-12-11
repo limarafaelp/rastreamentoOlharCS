@@ -664,8 +664,8 @@ Uma matriz $A$ cujas entradas são amostradas através de uma distribuição nor
 
 \begin{teorema} \cite{zhang2008theory} Sejam $m < n$, $\Omega \subset \mathbb{R}^n$ e $A \in \mathbb{R}^{m \times n}$ tais que apenas uma das afirmações é verdadeira:
 \begin{enumerate}
-\item os elementos $a_{ij}$ de A são iid e $a_{ij} \sim \mathcal{N}(0,1)$
-\item $A$ é uma matriz de posto $m$ com $BA^{T} = 0$ para uma matriz $B \in \mathbb{R}^{(n - m) \times n}$ cujas entradas são iid $\mathcal{N}(0,1)$.
+\item os elementos $a_{ij}$ de A \oldc{são iid e $a_{ij} \sim \mathcal{N}(0,1)$}\newc{são independentes e têm distribuição normal com média $0$ e variância $1$.}
+\item $A$ é uma matriz de posto $m$ com $BA^{T} = 0$ para uma matriz $B \in \mathbb{R}^{(n - m) \times n}$ cujas entradas são \newc{independentes e têm distribuição normal com média $0$ e variância $1$.}\oldc{iid $\mathcal{N}(0,1)$.}
 \end{enumerate}
 Então com probabilidade maior que $1 - e^{-c_0(n-m)}$, $\bar{x}$ é solução única de $\eqref{eqn:P0}$ e $\eqref{eqn:P1}$ se $\bar{x}$ satisfaz
 
