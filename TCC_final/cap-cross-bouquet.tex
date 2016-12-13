@@ -2,14 +2,14 @@
 
 %O modelo \textit{cross-and-bouquet} usa CS para classificar imagens, no caso, dado um $frame$ encontrar a imagem em um dicionário mais parecida ele.
 
-O modelo \textit{cross-and-bouquet} usa \oldc{CS}\textit{Compressive Sensing} para classificar imagens, ou seja, dada uma amostra $y$ e uma família de imagens \oldc{$(\Phi_i)$}\newc{$(a_i)_{i=1}^n$}, encontrar qual \oldc{$\Phi_i$}\newc{$a_i$} é mais \oldc{próxima}\newc{próximo} de $y$.
+O modelo \textit{cross-and-bouquet} usa \textit{Compressive Sensing} para classificar imagens, ou seja, dada uma amostra $y$ e uma família de imagens $(a_i)_{i=1}^n$, encontrar qual $a_i$ é mais próximo de $y$.
 
 Podemos interpretar o problema $\eqref{eqn:P0}$ da seguinte forma: dado um vetor $y \in \mathbb{R}^m$, quais colunas $a_i \in \mathbb{R}^m$ de $A$ melhor representam $y$? Se $y$ puder ser escrito como $y = Ax$ com $x$ esparso, podemos assumir que a coluna $a_i$ mais próxima de $y$ é aquela onde $x_i$ possui maior valor absoluto, ou seja,
 
 $$ i = \argmax_{j = 1, \hdots, n} \vert x_j \vert $$
 
 %Dado um conjunto de sinais $a_i \in \mathbb{R}^m$ com $A = \left[ a_1 \vert \hdots \vert a_m]$ e uma amostra $y \in \mathbb{R}^m$
-Como vimos, CS garante que conseguimos encontrar $x$ esparso resolvendo $\eqref{eqn:P1}$ apenas quando $A$ é incoerente. Em aplicações, como em processamento de imagens, os vetores $a_i$ não são ``muito diferentes'' entre si, por isso não podemos assumir que $A$ é incorente. Então formularemos o problema de uma forma um pouco diferente:
+Como vimos, CS garante que conseguimos encontrar $x$ esparso resolvendo $\eqref{eqn:P1}$ apenas quando $A$ é incoerente. Em aplicações, como em processamento de imagens, os vetores $a_i$ não são ``muito diferentes'' entre si, por isso não podemos assumir que $A$ é incoerente. Então formularemos o problema de uma forma um pouco diferente:
 
 Dado $y \in \mathbb{R}^m$ e $A$ uma matriz $m \gg n$ (ou seja, o número de amostras é pequeno se comparado à dimensão de cada amostra),
 

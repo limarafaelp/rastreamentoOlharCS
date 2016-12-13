@@ -1,8 +1,8 @@
 \chapter{Desenvolvimento de um rastreador de olhar usando CS}
 
-\newc{Alguns algoritmos de rastreamento de olhar usam técnicas de processamento de imagens para identificar a posição da pupila. Essa tarefa é dificultada pela oclusão parcial da pupila pelos cílios. Em vez de estimar a posição da pupila, podemos comparar a imagem com amostras de imagens do olho onde a posição do olhar é conhecida e depois estimar o olhar a partir das posições de olhar das amostras mais parecidas com a imagem atual.
+Alguns algoritmos de rastreamento de olhar usam técnicas de processamento de imagens para identificar a posição da pupila. Essa tarefa é dificultada pela oclusão parcial da pupila pelos cílios. Em vez de estimar a posição da pupila, podemos comparar a imagem com amostras de imagens do olho onde a posição do olhar é conhecida e depois estimar o olhar a partir das posições de olhar das amostras mais parecidas com a imagem atual.
 
-Usamos o modelo \textit{cross-and-bouquet} para comparar imagens das amostras e estimar a posição do olhar.}
+Usamos o modelo \textit{cross-and-bouquet} para comparar imagens das amostras e estimar a posição do olhar.
 
 Desenvolvemos um programa para estimar o olhar do usuário, ou seja, estimar qual coordenada $(x,y)$ na tela o usuário está olhando. Para isso, usamos câmera da Pupil Labs para coletar imagens do olho direito. Essa câmera fica acoplada à cabeça e registra imagens em infravermelho \footnote{\url{https://github.com/pupil-labs/pupil/wiki/Environment}}. O programa é dividido em duas etapas principais:
 
@@ -36,20 +36,20 @@ Foram exibidos aleatoriamente $49$ pontos dispostos numa grade $7 \times 7$ de p
 Mostramos cada alvo individualmente durante dois segundos e o usuário deveria olhar para o ponto, como mostra a Figura $\ref{fig:alvo}$. Mostramos os pontos aleatoriamente para evitar aprendizado do usuário, ou seja, evitar que o usuário olhe para o ponto correspondendo à amostra seguinte antes de terminar a coleta da amostra atual. Apesar de mostrar cada ponto durante dois segundos, coletamos imagens apenas após o primeiro segundo porque durante os primeiros instantes ocorre a sacada, ou seja, o movimento do olhar até a região de interesse, e queremos registrar apenas imagens correspondendo à fixação, ou seja, quando a pessoa está realmente olhando para o ponto.
 
 %Coletamos um número grande (cerca de 25 amostras por usuário por posição da tela) de imagens porque queremos comparar o desempenho de programa usando diferentes números de amostras para calibrar o rastreador, como explicaremos adiante.
-Usamos um monitor de lagura $37,3cm$ e altura de $32cm$, com resolução $1280 \times 1024$. A coleta durou menos de $10$ minutos por participante.
+Usamos um monitor de $37,3cm$ de largura e altura de $32cm$, com resolução $1280 \times 1024$. A coleta durou menos de $10$ minutos por participante.
 
 \begin{figure}
 \centering
 \includegraphics[scale=1]{imagens/alvo.png}
-\caption{\oldc{Durante uma coleta, a pessoa deve olhar. Os alvos são exibidos em posições diferentes em uma grade $7 \times 7$ na tela.} \newc{Durante uma coleta, a pessoa deve olhar para os alvos que são exibidos em posições diferentes em uma grade $7 \times 7$.}}
+\caption{Durante uma coleta, a pessoa deve olhar para os alvos que são exibidos em posições diferentes em uma grade $7 \times 7$.}
 \label{fig:alvo}
 \end{figure}
 
-\section{\newc{Rastreamento de olhar}}
+\section{Rastreamento de olhar}
 
 Após terminar a coleta das imagens, estimamos a posição do olhar para imagens correspondendo a todos os pontos da grade $7 \times 7$. Como todas imagens registradas correspondem aos pontos da grade, já sabemos a posição do olhar em cada um deles, então usaremos a posição exata e a posição estimada para calcular o erro como a distância euclidiana entre elas. Usaremos a posição de cada alvo em graus horizontal e vertical, e não em \textit{pixels} na tela.
 
-Para cada posição na grade, consideramos a primeira imagem coletada como a amostra correspondente àquela posição na tela, e estimaremos a posição do olhar para cinco das outras imagens, selecionadas aleatoriamente, comparando esta com todas as amostras\newc{, como mostra a Figura $\ref{fig:matriz_olho}$.}
+Para cada posição na grade, consideramos a primeira imagem coletada como a amostra correspondente àquela posição na tela, e estimaremos a posição do olhar para cinco das outras imagens, selecionadas aleatoriamente, comparando esta com todas as amostras, como mostra a Figura $\ref{fig:matriz_olho}$.
 
 \begin{figure}
 $$ A = \left[ \hspace{2pt} \raisebox{-9pt}{\includegraphics[scale=.6]{imagens/olhos/(0,0).jpg}} \hspace{2pt}\Bigg\vert\hspace{2pt} \raisebox{-9pt}{\includegraphics[scale=.6]{imagens/olhos/(2,4).jpg}}\hspace{2pt} \Bigg\vert\hspace{2pt} \raisebox{-9pt}{\includegraphics[scale=.6]{imagens/olhos/(4,1).jpg}} \hspace{2pt}\Bigg\vert \cdots \Bigg\vert \hspace{2pt}\raisebox{-9pt}{\includegraphics[scale=.6]{imagens/olhos/(6,4).jpg}}\hspace{2pt}  \right]$$
@@ -63,10 +63,10 @@ Pelo modelo \textit{cross-and-bouquet}, para cada vetor correspondendo à imagem
 
 Antes de comparar as imagens usando o modelo \textit{cross-and-bouquet} reduzimos as imagens aplicando a pirâmide gaussiana $3$, $4$ ou $5$ vezes, resultando em imagens $60 \times 80$, $40 \times 30$ e $20 \times 15$, respectivamente. Fazemos isso para evitar erros de memória durante a execução do programa.
 
-\newc{Após calcular a matriz $A$, estimamos o olhar de cada imagem. A entrada do algoritmo será então a imagem e a saída será a posição do olhar em graus do campo de visão do usuário.}
+Após calcular a matriz $A$, estimamos o olhar de cada imagem. A entrada do algoritmo será então a imagem e a saída será a posição do olhar em graus do campo de visão do usuário.
 
 \section{Resultados}
-A Tabela $\ref{tab:erros}$ mostra a média dos erros (conhecida como acurácia) e o desvio padrão (a precisão), considerando  diferentes tamanhos de imagens. Podemos observar que o erro é menor se usamos imagens maiores para estimar o olhar. Para imagens $60 \times 80$, obtemos uma acurácia de $1,053 $ e precisão de $2,279$, semelhantes aos resultados obtidos pelo rastreador Tobii EyeX, que tem acurácia de $1,42$ e precisão de $1,70$, segundo \cite{liboku}. \newc{A Tabela $\ref{tab:erros}$ indica também o tempo médio para estimar o olhar em cada imagem.}
+A Tabela $\ref{tab:erros}$ mostra a média dos erros (conhecida como acurácia) e o desvio padrão (a precisão), considerando  diferentes tamanhos de imagens. Podemos observar que o erro é menor se usamos imagens maiores para estimar o olhar. Para imagens $60 \times 80$, obtemos uma acurácia de $1,053 $ e precisão de $2,279$, semelhantes aos resultados obtidos pelo rastreador Tobii EyeX, que tem acurácia de $1,42$ e precisão de $1,70$, segundo \cite{liboku}. A Tabela $\ref{tab:erros}$ indica também o tempo médio para estimar o olhar em cada imagem.
 
 \begin{table}
 \centering
@@ -78,7 +78,7 @@ Erro				  & $1,471 \pm 2,398$ & $1,113 \pm 2,291$ & $1,053 \pm 2,279$ \\ \hline
 Tempo de processamento & $0,035s$ & $0,215s$ & $5.311s$ \\ \hline
 Imagem & \vspace{2pt} \includegraphics[width=2cm]{imagens/olho_20_15.jpg} & \includegraphics[width=2cm]{imagens/olho_40_30.jpg} & \includegraphics[width=2cm]{imagens/olho_80_60.jpg} \\ \hline
 \end{tabular}
-\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus. \newc{Vemos também o tempo médio para estimar o olhar de cada imagem.} A última linha mostra exemplos de imagens usadas nas respectivas dimensões.}
+\caption{Erros na estimação do olhar para diferentes tamanhos de amostras. Cada coluna representa o tamanho das imagens usadas, e cada célula representa o erro médio $\pm$ o desvio padrão em graus. Vemos também o tempo médio para estimar o olhar de cada imagem. A última linha mostra exemplos de imagens usadas nas respectivas dimensões.}
 \label{tab:erros}
 \end{table}
 
@@ -113,7 +113,7 @@ A Figura \ref{fig:erros_participante} mostra a acurácia para cada participante.
 \begin{figure}
     \centering
     \includegraphics[scale=.6]{imagens/errosParticipantes_pyrDown3.png}
-    \caption{A figura mostra a acurácia para diferentes participantes usando o algoritmo para estimar olhar com imagens $60 \times 80$. \newc{A acurácia para o participante $2$ foi pior porque ele piscou durante a coleta das amostras.}}
+    \caption{A figura mostra a acurácia para diferentes participantes usando o algoritmo para estimar olhar com imagens $60 \times 80$. A acurácia para o participante $2$ foi pior porque ele piscou durante a coleta das amostras.}
     \label{fig:erros_participante}
 \end{figure}
 

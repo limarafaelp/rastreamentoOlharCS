@@ -1,0 +1,30 @@
+\small{\protect \url{http://www.celebrityendorsementads.com/celebrity-endorsements/celebrities/scarlett-johansson/}}
+
+
+
+\afterpage{
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\centering
+		\includegraphics[scale=.5]{imagens/dolcegabbana.jpg}
+		\caption{\newc{Reproduzido de \small{\protect \url{http://www.celebrityendorsementads.com/celebrity-endorsements/ } \\ \protect \url{celebrities/scarlett-johansson/}} }}
+	\end{subfigure}\\
+	\begin{subfigure}[b]{1\textwidth}
+		\centering
+		\includegraphics[scale=.5]{imagens/dolcegabbana_heatmap.jpg}
+		\caption{\newc{Reproduzido de \small{\protect \url{http://www.businessinsider.com.au/eye-tracking-heatmaps-2014-7}} } }
+	\end{subfigure}
+	\caption{\newc{O rastreamento de olhar pode ser usado para a avaliar a eficiência de uma propaganda. {\bf (a)} Imagem original. Regiões coloridas em {\bf (b)} indicam onde as pessoas prestam mais atenção no anúncio.}}
+	\label{fig:propaganda}
+\end{figure}
+%\footnotetext{\url{http://www.businessinsider.com.au/eye-tracking-heatmaps-2014-7}}
+}
+
+
+
+
+
+_-_West_Lodge_Park_-_Hadley_Wood_-_Enfield_London_2.jpg
+
+\small{\protect\url{https://commons.wikimedia.org/wiki/File:Along_The_Main_Ride_-_Beale_Arboretum_-_West_Lodge_Park_-_Hadley_Wood_-_Enfield_London_2.jpg}}

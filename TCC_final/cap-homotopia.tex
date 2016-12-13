@@ -4,7 +4,7 @@ O algoritmo de Homotopia \cite{dontsa} é um algoritmo com o objetivo de resolve
 $$J_{\lambda_n}(x) = \frac{1}{2} \Vert Ax - y \Vert_2^2 + \lambda_n \Vert x \Vert_1$$
 para uma sequência decrescente $(\lambda_n)$ de números positivos.
 
-Podemos encontrar o mínimo de uma função diferencial $f: \mathbb{R}^n \longrightarrow \mathbb{R}$ procurando os pontos $x$ no domínio em que $\nabla f(x) = 0$. No nosso caso, a norma $1$ não é diferenciável. Então \oldc{será definida}\newc{definimos} uma generalização para a diferencial, que será usada no algoritmo, chamada de Homotopia.
+Podemos encontrar o mínimo de uma função diferencial $f: \mathbb{R}^n \longrightarrow \mathbb{R}$ procurando os pontos $x$ no domínio em que $\nabla f(x) = 0$. No nosso caso, a norma $1$ não é diferenciável. Então definimos uma generalização para a diferencial, que será usada no algoritmo, chamada de Homotopia.
 
 \begin{definicao}
 Seja $f: \mathbb{R}^n \longrightarrow \mathbb{R}$. A subdiferencial de $f$ em $x \in \mathbb{R}$ é dada por
@@ -15,7 +15,7 @@ $$\partial f(x) = \{ v \in \mathbb{R}^N : f(y) - f(x) \geq \langle v, y - x \ran
 % >>> http://www.staff.science.uu.nl/~balde101/cao10/cursus10_1.pdf
 \end{definicao}
 
-Não é difícil ver que o operador $\partial$ é linear. A subdiferencial coincide com a diferencial de uma função, quando ela for convexa e diferenciável, como mostra a seguinte proposição \newc{\cite{bach2012optimization}, que vamos assumir sem demonstração:}
+Não é difícil ver que o operador $\partial$ é linear. A subdiferencial coincide com a diferencial de uma função, quando ela for convexa e diferenciável, como mostra a seguinte proposição \cite{bach2012optimization}, que vamos assumir sem demonstração:
 
 \begin{proposicao}
 Se $f: \mathbb{R}^n \longrightarrow \mathbb{R}$ for convexa e diferenciável, então para todo $x \in \mathbb{R}^n$, $\partial f(x) = \{ \nabla f(x) \}$.
@@ -141,16 +141,16 @@ O Algoritmo $\ref{alg:homotopia}$ mostra o funcionamento passo a passo.
 	\caption{Homotopia}
 \end{algorithm}
 
-Como o programa calcula a pseudoinversa de $A_I$ em cada iteração e entre uma iteração e a seguinte $A_I$ tem uma coluna a mais ou a menos que a $A_I$ anterior, fizemos uma adaptação do algoritmo recursivo de pseudo-inversa \cite{greville1958pseudoinverse} para calcular \oldc{de maneira mais $A_I^{\dagger}$}\newc{$A_I^{\dagger}$, a pseudo-inversa de $A_I$, de uma forma mais eficiente} quando adicionamos um elemento a $I$, \newc{usando }a pseudoinversa anterior.
+Como o programa calcula a pseudoinversa de $A_I$ em cada iteração e entre uma iteração e a seguinte $A_I$ tem uma coluna a mais ou a menos que a $A_I$ anterior, fizemos uma adaptação do algoritmo recursivo de pseudo-inversa \cite{greville1958pseudoinverse} para calcular $A_I^{\dagger}$, a pseudo-inversa de $A_I$, de uma forma mais eficiente quando adicionamos um elemento a $I$, usando a pseudo-inversa anterior.
 
 Quando removemos um elemento de $I$, calculamos $A_I^{\dagger}$ da maneira usual.
 \section{Exemplo}
 
 Usamos o algoritmo de homotopia para recuperar uma imagem usando diferentes taxas de compressão.
 
-Fixada uma taxa de compressão $r$, calculamos $m = (1 - r) \cdot n$. Dada uma imagem, calculamos um frame com a transformada do cosseno da imagem e depois obtemos um vetor $x$ empilhando todas as linhas do frame. Em seguida, calculamos $y = Ax$, onde os elementos de $A$ são \oldc{iid $\mathcal{N}(0,1)$}\newc{independentes e gerados pela distribuição normal de média $0$ e variância $1$}. Depois encontramos uma aproximação $\tilde{x}$ para $x$ usando o algoritmo de homotopia.
+Fixada uma taxa de compressão $r$, calculamos $m = (1 - r) \cdot n$. Dada uma imagem, calculamos um frame com a transformada do cosseno da imagem e depois obtemos um vetor $x$ empilhando todas as linhas do frame. Em seguida, calculamos $y = Ax$, onde os elementos de $A$ são independentes e gerados pela distribuição normal de média $0$ e variância $1$. Depois encontramos uma aproximação $\tilde{x}$ para $x$ usando o algoritmo de homotopia.
 
-A Figura $\ref{fig:homotopy}$ mostra uma imagem recuperada pelo algoritmo de homotopia usando uma taxa de compressão de $20\%$. Note que o esse algoritmo apresenta melhor resultado que o \oldc{MMQ}\newc{método de mínimos quadrados} com a mesma taxa de compressão.
+A Figura $\ref{fig:homotopy}$ mostra uma imagem recuperada pelo algoritmo de homotopia usando uma taxa de compressão de $20\%$. Note que o esse algoritmo apresenta melhor resultado que o método de mínimos quadrados com a mesma taxa de compressão.
 \afterpage{
 \begin{figure}
 \centering
@@ -175,10 +175,10 @@ A Figura $\ref{fig:homotopy}$ mostra uma imagem recuperada pelo algoritmo de hom
         \caption{}
 	    \label{fig:homotopy_40porc}
     \end{subfigure}
-    \caption{{\bf (a)} Imagem original; {\bf (b)} Imagen recuperada com o algoritmo de homotopia usando taxa de compressão de $r = 20\%$; {\bf (c)} Imagem recuperada usando o método de mínimos quadrados a  $r = 20\%$. Adaptado de \protect \footnotemark }
+    \caption{{\bf (a)} Imagem original; {\bf (b)} Imagem recuperada com o algoritmo de homotopia usando taxa de compressão de $r = 20\%$; {\bf (c)} Imagem recuperada usando o método de mínimos quadrados a  $r = 20\%$. Adaptado de \small{\protect \url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}} }
     %\caption{Imagem recuperada usando mínimos quadrados e MMQ. Adaptado de \protect \footnotemark }
     \label{fig:homotopy}
 \end{figure}
-\footnotetext{\url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}
+%\footnotetext{\url{https://commons.wikimedia.org/wiki/File:5-stip_LHB_09.jpg}}
 }
 \clearpage

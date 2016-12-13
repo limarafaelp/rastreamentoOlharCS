@@ -3,7 +3,7 @@
 \contentsline {chapter}{\numberline {2}Rastreamento de olhar}{9}
 \contentsline {section}{\numberline {2.1}Aplica\IeC {\c c}\IeC {\~o}es}{9}
 \contentsline {section}{\numberline {2.2}T\IeC {\'e}cnicas de rastreamento de olhar}{10}
-\contentsline {section}{\numberline {2.3}Caracter\IeC {\'\i }sticas em rastreamento de olhar}{13}
+\contentsline {section}{\numberline {2.3}Caracter\IeC {\'\i }sticas relevantes}{14}
 \contentsline {chapter}{\numberline {3}\textit {Compressive Sensing}}{15}
 \contentsline {section}{\numberline {3.1}Unicidade de $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P0}\unskip \@@italiccorr )}}$}{20}
 \contentsline {section}{\numberline {3.2}Unicidade de $\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eqn:P1}\unskip \@@italiccorr )}}$}{23}

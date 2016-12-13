@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  11 DEC 2016 18:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.5.10)  13 DEC 2016 09:40
 entering extended mode
 **tcc.tex
 (tcc.tex
@@ -558,18 +558,18 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 Package: ulem 2012/05/18
 \ULdepth=\dimen140
 ) (tcc.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -614,102 +614,119 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 (cap-introducao.tex [6]
 Cap\'{\i }tulo 1.
-[7
+<imagens/dmk-headset.jpg, id=29, 301.125pt x 133.49875pt>
+File: imagens/dmk-headset.jpg Graphic file (type jpg)
 
-]) (cap-rastreamento.tex [8]
+<use imagens/dmk-headset.jpg>
+Package pdftex.def Info: imagens/dmk-headset.jpg used on input line 7.
+(pdftex.def)             Requested size: 301.12425pt x 133.4984pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 8.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [7
+
+])
+(cap-rastreamento.tex [8 <./imagens/dmk-headset.jpg>]
 Cap\'{\i }tulo 2.
-<imagens/teclado.png, id=36, 752.8125pt x 552.0625pt>
+<imagens/teclado.png, id=39, 752.8125pt x 552.0625pt>
 File: imagens/teclado.png Graphic file (type png)
 
 <use imagens/teclado.png>
-Package pdftex.def Info: imagens/teclado.png used on input line 17.
+Package pdftex.def Info: imagens/teclado.png used on input line 15.
 (pdftex.def)             Requested size: 225.84549pt x 165.62003pt.
  [9
 
 ]
-<imagens/dolcegabbana.jpg, id=42, 803.0pt x 529.98pt>
-File: imagens/dolcegabbana.jpg Graphic file (type jpg)
+<imagens/dolcegabbana_heatmap.jpg, id=44, 602.25pt x 401.5pt>
+File: imagens/dolcegabbana_heatmap.jpg Graphic file (type jpg)
 
-<use imagens/dolcegabbana.jpg>
-Package pdftex.def Info: imagens/dolcegabbana.jpg used on input line 36.
-(pdftex.def)             Requested size: 321.1943pt x 211.98824pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 36.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-<imagens/census-homepage-heatmap.jpg, id=43, 501.875pt x 301.125pt>
-File: imagens/census-homepage-heatmap.jpg Graphic file (type jpg)
-
-<use imagens/census-homepage-heatmap.jpg>
-Package pdftex.def Info: imagens/census-homepage-heatmap.jpg used on input line
- 39.
-(pdftex.def)             Requested size: 351.31009pt x 210.78606pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
+<use imagens/dolcegabbana_heatmap.jpg>
+Package pdftex.def Info: imagens/dolcegabbana_heatmap.jpg used on input line 34
+.
+(pdftex.def)             Requested size: 240.89572pt x 160.59715pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
- [10 <./imagens/teclado.png>] <imagens/eye.jpg, id=51, 200.75pt x 150.5625pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+ [10 <./imagens/teclado.png>] <imagens/census-homepage-small.jpg, id=50, 501.87
+5pt x 301.125pt>
+File: imagens/census-homepage-small.jpg Graphic file (type jpg)
+
+<use imagens/census-homepage-small.jpg>
+Package pdftex.def Info: imagens/census-homepage-small.jpg used on input line 9
+3.
+(pdftex.def)             Requested size: 351.31009pt x 210.78606pt.
+
+<imagens/census-homepage-heatmap.jpg, id=51, 501.875pt x 301.125pt>
+File: imagens/census-homepage-heatmap.jpg Graphic file (type jpg)
+
+<use imagens/census-homepage-heatmap.jpg>
+Package pdftex.def Info: imagens/census-homepage-heatmap.jpg used on input line
+ 93.
+(pdftex.def)             Requested size: 351.31009pt x 210.78606pt.
+
+<imagens/eye.jpg, id=52, 200.75pt x 150.5625pt>
 File: imagens/eye.jpg Graphic file (type jpg)
  <use imagens/eye.jpg>
-Package pdftex.def Info: imagens/eye.jpg used on input line 77.
+Package pdftex.def Info: imagens/eye.jpg used on input line 93.
 (pdftex.def)             Requested size: 200.7495pt x 150.56212pt.
-
-[11 <./imagens/dolcegabbana.jpg>] [12 <./imagens/census-homepage-heatmap.jpg> <
-./imagens/eye.jpg>] [13] <imagens/pupil.png, id=63, 200.75pt x 202.7575pt>
+ [11 <./imagens/dolcegabbana_heatmap.jpg>] [12 <./imagens/census-homepage-small
+.jpg> <./imagens/census-homepage-heatmap.jpg>] [13 <./imagens/eye.jpg>]
+<imagens/pupil.png, id=64, 200.75pt x 202.7575pt>
 File: imagens/pupil.png Graphic file (type png)
-
-<use imagens/pupil.png>
-Package pdftex.def Info: imagens/pupil.png used on input line 115.
+ <use imagens/pupil.png>
+Package pdftex.def Info: imagens/pupil.png used on input line 128.
 (pdftex.def)             Requested size: 140.52403pt x 141.92928pt.
-) (cap-cs.tex [14 <./imagens/pupil.png>]
+)
+(cap-cs.tex [14 <./imagens/pupil.png>]
 Cap\'{\i }tulo 3.
 [15
 
-] <imagens/homotopy/joaninha.png, id=75, 362.7954pt x 269.5671pt>
+] <imagens/homotopy/joaninha.png, id=76, 362.7954pt x 269.5671pt>
 File: imagens/homotopy/joaninha.png Graphic file (type png)
 
 <use imagens/homotopy/joaninha.png>
-Package pdftex.def Info: imagens/homotopy/joaninha.png used on input line 31.
+Package pdftex.def Info: imagens/homotopy/joaninha.png used on input line 35.
 (pdftex.def)             Requested size: 126.98029pt x 94.34988pt.
 
-<imagens/homotopy/joaninhaMMQ_20porcento.png, id=76, 364.2408pt x 269.5671pt>
+<imagens/homotopy/joaninhaMMQ_20porcento.png, id=77, 364.2408pt x 269.5671pt>
 File: imagens/homotopy/joaninhaMMQ_20porcento.png Graphic file (type png)
 
 <use imagens/homotopy/joaninhaMMQ_20porcento.png>
 Package pdftex.def Info: imagens/homotopy/joaninhaMMQ_20porcento.png used on in
-put line 31.
+put line 35.
 (pdftex.def)             Requested size: 127.48619pt x 94.34988pt.
  [16 <./imagens/homotopy/joaninha.png> <./imagens/homotopy/joaninhaMMQ_20porcen
 to.png>]
-<imagens/Beale_Arboretum_gray.png, id=86, 361.35pt x 241.3818pt>
+<imagens/Beale_Arboretum_gray.png, id=88, 361.35pt x 241.3818pt>
 File: imagens/Beale_Arboretum_gray.png Graphic file (type png)
 
 <use imagens/Beale_Arboretum_gray.png>
-Package pdftex.def Info: imagens/Beale_Arboretum_gray.png used on input line 71
+Package pdftex.def Info: imagens/Beale_Arboretum_gray.png used on input line 72
 .
 (pdftex.def)             Requested size: 252.94327pt x 168.96611pt.
 
-<imagens/Beale_Arboretum_60porc_freq_maiores.png, id=87, 361.35pt x 239.2137pt>
+<imagens/Beale_Arboretum_60porc_freq_maiores.png, id=89, 361.35pt x 239.2137pt>
 File: imagens/Beale_Arboretum_60porc_freq_maiores.png Graphic file (type png)
 <use imagens/Beale_Arboretum_60porc_freq_maiores.png>
 Package pdftex.def Info: imagens/Beale_Arboretum_60porc_freq_maiores.png used o
-n input line 71.
+n input line 72.
 (pdftex.def)             Requested size: 252.94327pt x 167.44844pt.
  [17] [18 <./imagens/Beale_Arboretum_gray.png> <./imagens/Beale_Arboretum_60por
 c_freq_maiores.png>]
-[19] <imagens/normas.png, id=101, 711.4078pt x 197.23688pt>
+[19] <imagens/normas.png, id=103, 711.4078pt x 197.23688pt>
 File: imagens/normas.png Graphic file (type png)
 
 <use imagens/normas.png>
-Package pdftex.def Info: imagens/normas.png used on input line 150.
+Package pdftex.def Info: imagens/normas.png used on input line 151.
 (pdftex.def)             Requested size: 426.84798pt x 118.34302pt.
  [20 <./imagens/normas.png>] [21] [22] [23] [24]
 [25] [26] [27] [28] [29]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 584.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 585.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
@@ -723,7 +740,7 @@ File: imagens/homotopy/joaninha.png Graphic file (type png)
 Package pdftex.def Info: imagens/homotopy/joaninha.png used on input line 184.
 (pdftex.def)             Requested size: 126.98029pt x 94.34988pt.
 
-<imagens/homotopy/joaninhaHomotopy_20porcento.png, id=170, 363.5181pt x 269.567
+<imagens/homotopy/joaninhaHomotopy_20porcento.png, id=172, 363.5181pt x 269.567
 1pt>
 File: imagens/homotopy/joaninhaHomotopy_20porcento.png Graphic file (type png)
  <use imagens/homotopy/joaninhaHomotopy_20porcento.png>
@@ -737,14 +754,12 @@ Package pdftex.def Info: imagens/homotopy/joaninhaMMQ_20porcento.png used on in
 put line 184.
 (pdftex.def)             Requested size: 127.48619pt x 94.34988pt.
 ) (cap-cross-bouquet.tex
-[39
-
-
- <./imagens/homotopy/joaninhaHomotopy_20porcento.png>]
+[39 <./imagens/homotopy/joaninhaHomotopy_20porcento.png>]
 Cap\'{\i }tulo 5.
 [40
 
-] <imagens/cross-and-bouquet.png, id=178, 487.8225pt x 285.065pt>
+
+] <imagens/cross-and-bouquet.png, id=180, 487.8225pt x 285.065pt>
 File: imagens/cross-and-bouquet.png Graphic file (type png)
 
 <use imagens/cross-and-bouquet.png>
@@ -755,48 +770,48 @@ Package pdftex.def Info: imagens/cross-and-bouquet.png used on input line 44.
 Cap\'{\i }tulo 6.
 [44
 
-] <imagens/ajustando_camera.png, id=193, 240.9pt x 135.50626pt>
+] <imagens/ajustando_camera.png, id=196, 240.9pt x 135.50626pt>
 File: imagens/ajustando_camera.png Graphic file (type png)
 
 <use imagens/ajustando_camera.png>
 Package pdftex.def Info: imagens/ajustando_camera.png used on input line 29.
 (pdftex.def)             Requested size: 240.8994pt x 135.5059pt.
- [45 <./imagens/ajustando_camera.png (PNG copy)>] <imagens/alvo.png, id=197, 36
+ [45 <./imagens/ajustando_camera.png (PNG copy)>] <imagens/alvo.png, id=200, 36
 1.35pt x 289.08pt>
 File: imagens/alvo.png Graphic file (type png)
  <use imagens/alvo.png>
 Package pdftex.def Info: imagens/alvo.png used on input line 43.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
 
-<imagens/olhos/(0,0).jpg, id=198, 64.24pt x 48.18pt>
+<imagens/olhos/(0,0).jpg, id=201, 64.24pt x 48.18pt>
 File: imagens/olhos/(0,0).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(0,0).jpg>
 Package pdftex.def Info: imagens/olhos/(0,0).jpg used on input line 55.
 (pdftex.def)             Requested size: 38.54428pt x 28.9082pt.
 
-<imagens/olhos/(2,4).jpg, id=199, 64.24pt x 48.18pt>
+<imagens/olhos/(2,4).jpg, id=202, 64.24pt x 48.18pt>
 File: imagens/olhos/(2,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(2,4).jpg>
 Package pdftex.def Info: imagens/olhos/(2,4).jpg used on input line 55.
 (pdftex.def)             Requested size: 38.54428pt x 28.9082pt.
 
-<imagens/olhos/(4,1).jpg, id=200, 64.24pt x 48.18pt>
+<imagens/olhos/(4,1).jpg, id=203, 64.24pt x 48.18pt>
 File: imagens/olhos/(4,1).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(4,1).jpg>
 Package pdftex.def Info: imagens/olhos/(4,1).jpg used on input line 55.
 (pdftex.def)             Requested size: 38.54428pt x 28.9082pt.
 
-<imagens/olhos/(6,4).jpg, id=201, 64.24pt x 48.18pt>
+<imagens/olhos/(6,4).jpg, id=204, 64.24pt x 48.18pt>
 File: imagens/olhos/(6,4).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(6,4).jpg>
 Package pdftex.def Info: imagens/olhos/(6,4).jpg used on input line 55.
 (pdftex.def)             Requested size: 38.54428pt x 28.9082pt.
 
-<imagens/olhos/(5,2).jpg, id=202, 64.24pt x 48.18pt>
+<imagens/olhos/(5,2).jpg, id=205, 64.24pt x 48.18pt>
 File: imagens/olhos/(5,2).jpg Graphic file (type jpg)
 
 <use imagens/olhos/(5,2).jpg>
@@ -805,21 +820,21 @@ Package pdftex.def Info: imagens/olhos/(5,2).jpg used on input line 57.
  [46] [47 <./imagens/alvo.png (PNG copy)> <./imagens/olhos/(0,0).jpg> <./imagen
 s/olhos/(2,4).jpg> <./imagens/olhos/(4,1).jpg> <./imagens/olhos/(6,4).jpg> <./i
 magens/olhos/(5,2).jpg>]
-<imagens/olho_20_15.jpg, id=209, 20.075pt x 15.05624pt>
+<imagens/olho_20_15.jpg, id=212, 20.075pt x 15.05624pt>
 File: imagens/olho_20_15.jpg Graphic file (type jpg)
 
 <use imagens/olho_20_15.jpg>
 Package pdftex.def Info: imagens/olho_20_15.jpg used on input line 79.
 (pdftex.def)             Requested size: 56.9055pt x 42.68051pt.
 
-<imagens/olho_40_30.jpg, id=210, 40.15pt x 30.1125pt>
+<imagens/olho_40_30.jpg, id=213, 40.15pt x 30.1125pt>
 File: imagens/olho_40_30.jpg Graphic file (type jpg)
 
 <use imagens/olho_40_30.jpg>
 Package pdftex.def Info: imagens/olho_40_30.jpg used on input line 79.
 (pdftex.def)             Requested size: 56.9055pt x 42.68053pt.
 
-<imagens/olho_80_60.jpg, id=211, 80.3pt x 60.225pt>
+<imagens/olho_80_60.jpg, id=214, 80.3pt x 60.225pt>
 File: imagens/olho_80_60.jpg Graphic file (type jpg)
 
 <use imagens/olho_80_60.jpg>
@@ -827,21 +842,21 @@ Package pdftex.def Info: imagens/olho_80_60.jpg used on input line 79.
 (pdftex.def)             Requested size: 56.9055pt x 42.68008pt.
  [48 <./imagens/olho_20_15.jpg> <./imagens/olho_40_30.jpg> <./imagens/olho_80_6
 0.jpg>]
-<imagens/erros5pyrDown.png, id=215, 462.528pt x 346.896pt>
+<imagens/erros5pyrDown.png, id=218, 462.528pt x 346.896pt>
 File: imagens/erros5pyrDown.png Graphic file (type png)
 
 <use imagens/erros5pyrDown.png>
 Package pdftex.def Info: imagens/erros5pyrDown.png used on input line 91.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/erros4pyrDown.png, id=216, 462.528pt x 346.896pt>
+<imagens/erros4pyrDown.png, id=219, 462.528pt x 346.896pt>
 File: imagens/erros4pyrDown.png Graphic file (type png)
 
 <use imagens/erros4pyrDown.png>
 Package pdftex.def Info: imagens/erros4pyrDown.png used on input line 97.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<imagens/erros3pyrDown.png, id=217, 462.528pt x 346.896pt>
+<imagens/erros3pyrDown.png, id=220, 462.528pt x 346.896pt>
 File: imagens/erros3pyrDown.png Graphic file (type png)
 
 <use imagens/erros3pyrDown.png>
@@ -849,7 +864,7 @@ Package pdftex.def Info: imagens/erros3pyrDown.png used on input line 103.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
  [49 <./imagens/erros5pyrDown.png> <./imagens/erros4pyrDown.png> <./imagens/err
 os3pyrDown.png>]
-<imagens/errosParticipantes_pyrDown3.png, id=225, 462.528pt x 346.896pt>
+<imagens/errosParticipantes_pyrDown3.png, id=228, 462.528pt x 346.896pt>
 File: imagens/errosParticipantes_pyrDown3.png Graphic file (type png)
 
 <use imagens/errosParticipantes_pyrDown3.png>
@@ -871,49 +886,50 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6759 strings out of 493698
- 98019 string characters out of 3144409
- 191084 words of memory out of 3000000
- 9893 multiletter control sequences out of 15000+200000
- 32840 words of font info for 91 fonts, out of 3000000 for 9000
+ 6774 strings out of 493698
+ 98433 string characters out of 3144409
+ 191094 words of memory out of 3000000
+ 9905 multiletter control sequences out of 15000+200000
+ 33591 words of font info for 94 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 37i,18n,41p,961b,2618s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,18n,41p,1034b,2653s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi600\ecbx0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ectt0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk> <C:\Users\rafael\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc0600.pk> <C:\Users\rafael\AppDa
-ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\r
-afael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> 
+ppen\ec\dpi600\ectt1000.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecbx0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt0800.pk> <C:\Users\rafael\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm12.pk> <C:\Users\rafael\AppDa
+ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc0600.pk> <C:\Users\r
+afael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> 
 <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-bi2488.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
+rm0700.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
 c\dpi600\ecrm0800.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\rafael\AppData\Local\MiKT
-eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\rafael\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\raf
-ael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C
-:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx
-2488.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecbx1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
-knappen\ec\dpi600\ecrm1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\
-pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on tcc.pdf (54 pages, 1530037 bytes).
+\jknappen\ec\dpi600\ecbi2488.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\rafael\AppData\Local\MiKT
+eX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk> <C:\Users\rafael\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbi1200.pk> <C:\Users\raf
+ael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C
+:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti
+1200.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
+dpi600\ecbx2488.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecbx1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\rafael\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb>
+Output written on tcc.pdf (54 pages, 1638409 bytes).
 PDF statistics:
- 812 PDF objects out of 1000 (max. 8388607)
+ 838 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
